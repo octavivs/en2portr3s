@@ -1,0 +1,169 @@
+/*************************/
+/*        Content        */
+/*************************/
+
+#content {
+    margin-top: 2.4%;
+    margin-bottom: 1.4%;
+}
+
+p {
+    text-align: justify !important;
+}
+
+@media only screen and (max-width: 40em) {
+    h1, h2, h3, h4, h5, h6, p {
+        text-align: center !important;
+    }
+
+    .button {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+}
+
+/************************/
+/*        Header        */
+/************************/
+
+#top img.logo {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#top nav.top-bar {
+    margin-top: 4%;
+    background: #000;
+}
+
+#top {
+    max-width: 100%;
+    background: #000;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background: #000;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background: #000;
+}
+
+@media only screen and (max-width: 40em) {
+    #top {
+        text-align: center;
+    }
+
+    #top .columns {
+        padding: 0;
+    }
+
+    #top img.logo {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #top nav.top-bar {
+        margin-top: 0%;
+    }
+}
+
+/************************/
+/*        Footer        */
+/************************/
+
+#bottom {
+    max-width: 100%;
+    padding: 24px 0 10px;
+    background-color: #000;
+}
+
+/* Links */
+#bottom ul.inline-list {
+    margin: 0;
+    display: inline-block;
+    padding-bottom: 0px;
+}
+
+#bottom ul.inline-list li {
+    display: block;
+    float: left;
+    margin-left: 6px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+#bottom ul.inline-list li a {
+    color: #666666;
+    padding: 3px 6px;
+}
+
+#bottom ul.inline-list li a:hover {
+    color: #777777;
+}
+
+/* Social */
+#bottom ul.home-social {
+    display: block;
+    float: right;
+    margin-bottom: 8px;
+}
+
+#bottom ul.home-social li {
+    list-style: none;
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+
+#bottom ul.home-social li:first-child {
+    margin-left: 0;
+}
+
+#bottom ul.home-social li a {
+    display: block;
+    height: 50px;
+    width: 50px;
+    background: url("../img/social.png") no-repeat center 0;
+}
+
+#bottom ul.home-social li a:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+#bottom ul.home-social li a.twitter {
+    background-position: center 0;
+}
+
+#bottom ul.home-social li a.facebook {
+    background-position: center -200px;
+}
+
+#bottom ul.home-social li a.mail {
+    background-position: center -400px;
+}
+
+@media only screen and (max-width: 40em) {
+    #bottom {
+        text-align: center;
+    }
+
+    #bottom .columns {
+        padding: 0;
+    }
+
+    #bottom ul.inline-list {
+        margin: 16px 0 10px;
+    }
+
+    #bottom ul.home-social {
+        float: none;
+        margin: 0;
+        text-align: center;
+        height: 44px;
+        display: inline-block;
+    }
+}
