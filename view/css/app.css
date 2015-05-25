@@ -27,6 +27,65 @@ span.required {
     }
 }
 
+/*  daniel servicios y conocenos */
+#ejem {
+    text-align: center;
+}
+
+#ejem h4 {
+    border-radius: 40px;
+    background-color: #0c4ec8;
+    color: white;
+    font-style: italic;
+}
+
+#conoce {
+    font-style: oblique;
+    text-align: justify ;
+}
+
+#conoce h5 {
+    background-color: #0c4ec8;
+    color: white;
+    text-align: center;
+}
+
+#cono  p {
+
+    font-style: oblique;
+}
+
+#cono {
+    font-style: oblique;
+    text-align: justify ;
+}
+
+#cono h6 {
+    background-color: #0c4ec8;
+    color: white;
+
+}
+
+#cono h5 {
+    background-color: #0c4ec8;
+    color: white;
+    text-align: center;
+}
+
+#ejem img {
+    border-radius: 40px;
+}
+
+#ejem img:hover {
+    -webkit-box-shadow: 0px 0px 10px rgba(210, 210, 210, 0.65);
+    -moz-box-shadow:    0px 0px 10px rgba(210, 210, 210, 0.65);
+    box-shadow:         0px 0px 10px rgba(210, 210, 210, 0.65);
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+}
+
 /************************/
 /*        Header        */
 /************************/
