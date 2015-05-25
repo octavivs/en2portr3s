@@ -60,12 +60,12 @@
 
 <div class="row">
     <div class="large-4 columns" id="ejem">
-        <h4>serigrafia</h4>
-        <img src="view/img/Captura-de-pantalla-(578).png" />
+        <h4>Serigrafía</h4>
+        <img src="view/img/serigrafia.png" />
     </div>
     <div class="large-4 columns" id="ejem">
-        <h4>lonas </h4>
-        <img src="view/img/LONA IMPRESA.jpg" />
+        <h4>Lonas</h4>
+        <img src="view/img/lonas.jpg" />
     </div>
     <div class="large-4  columns" id="ejem">
         <h4></h4>
