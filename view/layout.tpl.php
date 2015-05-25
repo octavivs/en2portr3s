@@ -15,7 +15,7 @@
         <!-- Override default settings in framework -->
         <link rel="stylesheet" type="text/css" href="view/css/app.css" />
 
-        <script type="text/javascript" src="view/js/vendor/modernizr.js"></script>
+        <script type="text/javascript" src="view/scripts/vendor/modernizr.js"></script>
     </head>
     <body>
         <div id="top"><!-- top -->
@@ -73,11 +73,11 @@
             </footer>
         </div><!-- End of bottom -->
 
-        <script type="text/javascript" src="view/js/vendor/jquery.js"></script>
-        <script type="text/javascript" src="view/js/foundation.js"></script>
+        <script type="text/javascript" src="view/scripts/vendor/jquery.js"></script>
+        <script type="text/javascript" src="view/scripts/foundation.js"></script>
         <script>
             $(document).foundation();
         </script>
-        <script type="text/javascript" src="view/js/signup.js"></script>
+        <script type="text/javascript" src="view/scripts/signup.js"></script>
     </body>
 </html>
