@@ -12,6 +12,14 @@
                             <div class="medium-10 columns">
                                 <input type="text" id="nombre" name="Nombre" autofocus />
                             </div>
+						 </div>
+						 <div class="row collapse">
+							<div class="medium-2 columns">
+                                <label class="inline">Apellidos</label>
+                            </div>
+                            <div class="medium-10 columns">
+                                <input type="text" id="Apellidos" name="Apellidos" />
+                            </div>
                         </div>
                         <div class="row collapse">
                             <div class="medium-2 columns">
