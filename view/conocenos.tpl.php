@@ -1,4 +1,8 @@
-<div class="large-6 columns">
+<div class="large-12 columns" >
+    <img src="view/img/en2portr3s_banner.png" />
+</div>
+
+<div class="large-6 columns" id="conoce">
     <section>
         <blockquote>
             <h5>Quienes somos:</h5>
@@ -22,7 +26,7 @@
     </section>
 </div>
 
-<div class="large-6 columns">
+<div class="large-6 columns" id="cono">
     <section>
         <blockquote>
             <h5>Valores:</h5>
