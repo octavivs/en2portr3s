@@ -27,16 +27,46 @@ span.required {
     }
 }
 
-/*  daniel servicios y conocenos */
-#ejem {
+/*  Daniel servicios y conocenos */
+#services {
     text-align: center;
 }
 
-#ejem h4 {
+#services .button,
+#services .button:hover {
+    border-radius: 40px;
+    cursor: default;
+}
+
+#services h4 {
     border-radius: 40px;
     background-color: #0c4ec8;
     color: white;
     font-style: italic;
+}
+
+@media only screen and (max-width: 40em) {
+    #services .button:hover {
+        cursor: pointer;
+    }
+
+    #services .button:hover + img {
+        display: inline-block;
+        position: static !important;
+        height: auto;
+        width: auto;
+        overflow: visible;
+        clip: auto;
+    }
+
+    #services img:hover {
+        display: inline-block;
+        position: static !important;
+        height: auto;
+        width: auto;
+        overflow: visible;
+        clip: auto;
+    }
 }
 
 #conoce {
@@ -72,18 +102,8 @@ span.required {
     text-align: center;
 }
 
-#ejem img {
+#services img {
     border-radius: 40px;
-}
-
-#ejem img:hover {
-    -webkit-box-shadow: 0px 0px 10px rgba(210, 210, 210, 0.65);
-    -moz-box-shadow:    0px 0px 10px rgba(210, 210, 210, 0.65);
-    box-shadow:         0px 0px 10px rgba(210, 210, 210, 0.65);
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
 }
 
 /************************/

@@ -1,73 +1,72 @@
-<div class="row">
-    <div class="large-4 columns" id="ejem">
-        <h4>Playeras</h4>
-        <img src="view/img/Captura-de-pantalla-(571).png" />
+<div id="services">
+    <div class="row">
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Playeras"/>
+            <img src="view/img/Captura-de-pantalla-(571).png" class="hidden-for-small" />
+        </div>
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Mouse pack"/>
+            <img src="view/img/Captura-de-pantalla5711.png" class="hidden-for-small"/>
+        </div>
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Platos"/>
+            <img src="view/img/Captura-de-pantalla-(572).png" class="hidden-for-small" />
+        </div>
     </div>
-    <div class="large-4 columns" id="ejem">
-        <h4>Mouse pack</h4>
-        <img src="view/img/Captura-de-pantalla5711.png" />
-    </div>
-    <div class="large-4  columns" id="ejem">
-        <h4>Platos</h4>
-        <img src="view/img/Captura-de-pantalla-(572).png" />
-    </div>
-</div>
 
-<div class="row">
-    <div class="large-4 columns" id="ejem">
-        <h4>Rompecabezas </h4>
-        <img src="view/img/Captura-de-pantalla-5722.png" />
+    <div class="row">
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Rompecabezas"/>
+            <img src="view/img/Captura-de-pantalla-5722.png" class="hidden-for-small" />
+        </div>
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Almohadas" />
+            <img src="view/img/Captura-de-pantalla-(573).png" class="hidden-for-small" />
+        </div>
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Tazas"/>
+            <img src="view/img/Captura-de-pantalla-5733.png" class="hidden-for-small" />
+        </div>
     </div>
-    <div class="large-4 columns" id="ejem">
-        <h4>Almohadas</h4>
-        <img src="view/img/Captura-de-pantalla-(573).png" />
-    </div>
-    <div class="large-4  columns" id="ejem">
-        <h4>Tazas</h4>
-        <img src="view/img/Captura-de-pantalla-5733.png" />
-    </div>
-</div>
 
-<div class="row">
-    <div class="large-4 columns" id="ejem">
-        <h4>Fotobotones </h4>
-        <img src="view/img/Captura-de-pantalla-(574).png" />
+    <div class="row">
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Fotobotones"/>
+            <img src="view/img/Captura-de-pantalla-(574).png" class="hidden-for-small" />
+        </div>
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Flyers digital"/>
+            <img src="view/img/Captura-de-pantalla-(575).png" class="hidden-for-small" />
+        </div>
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Flyers 1 tinta"/>
+            <img src="view/img/Captura-de-pantalla-(575)5.png" class="hidden-for-small" />
+        </div>
     </div>
-    <div class="large-4 columns" id="ejem">
-        <h4>Flyers digital</h4>
-        <img src="view/img/Captura-de-pantalla-(575).png" />
-    </div>
-    <div class="large-4  columns" id="ejem">
-        <h4>Flyers 1 tinta</h4>
-        <img src="view/img/Captura-de-pantalla-(575)5.png" />
-    </div>
-</div>
 
-<div class="row">
-    <div class="large-4 columns" id="ejem">
-        <h4>Tarjetas </h4>
-        <img src="view/img/Captura-de-pantalla-(576).png" />
+    <div class="row">
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Tarjetas"/>
+            <img src="view/img/Captura-de-pantalla-(576).png" class="hidden-for-small" />
+        </div>
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Credencial 4x1"/>
+            <img src="view/img/Captura-de-pantalla-(577).png" class="hidden-for-small" />
+        </div>
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Credenciales 4x4"/>
+            <img src="view/img/Captura-de-pantalla-(577).png" class="hidden-for-small" />
+        </div>
     </div>
-    <div class="large-4 columns" id="ejem">
-        <h4>Credencial 4x1</h4>
-        <img src="view/img/Captura-de-pantalla-(577).png" />
-    </div>
-    <div class="large-4  columns" id="ejem">
-        <h4>Credenciales 4x4</h4>
-        <img src="view/img/Captura-de-pantalla-(577).png" />
-    </div>
-</div>
 
-<div class="row">
-    <div class="large-4 columns" id="ejem">
-        <h4>Serigrafía</h4>
-        <img src="view/img/serigrafia.png" />
-    </div>
-    <div class="large-4 columns" id="ejem">
-        <h4>Lonas</h4>
-        <img src="view/img/lonas.jpg" />
-    </div>
-    <div class="large-4  columns" id="ejem">
-        <h4></h4>
+    <div class="row">
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Serigrafía"/>
+            <img src="view/img/serigrafia.png" class="hidden-for-small" />
+        </div>
+        <div class="large-4 columns">
+            <input type="button" class="button expand" value="Lonas"/>
+            <img src="view/img/lonas.jpg" class="hidden-for-small" />
+        </div>
     </div>
 </div>

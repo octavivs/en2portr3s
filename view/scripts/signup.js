@@ -22,6 +22,13 @@ function initialize() {
     getYears();
     $("input#SignUp").click(signUp);
     $("input#Reset").click(clearMessages);
+    /*
+    $("#services .button").hover(function() {
+        $(this).siblings("img").removeClass("hidden-for-small");
+    }, function() {
+        $(this).siblings("img").addClass("hidden-for-small");
+    });
+    */
 }
 
 function signUp() {
