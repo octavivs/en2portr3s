@@ -75,8 +75,11 @@ function signUp() {
     }
     if ( telephone === '' ) {
         $( message(required) ).insertAfter("#Telephone");
-    } else if ( !isInteger(telephone) ) {
-        $( message(invalid) ).insertAfter("#Telephone");
+    } else {
+        telephone = telephone.replace(/ /g,"");
+        if ( !isInteger(telephone) ) {
+            $( message(invalid) ).insertAfter("#Telephone");
+        }
     }
     if ( birthMonth === '' || birthDay === '' || birthYear === '' ) {
         $( message(required) ).insertAfter("#BirthYear");
