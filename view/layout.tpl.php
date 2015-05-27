@@ -78,6 +78,6 @@
         <script>
             $(document).foundation();
         </script>
-        <script type="text/javascript" src="view/scripts/signup.js"></script>
+        <script type="text/javascript" src="view/scripts/app.js"></script>
     </body>
 </html>
