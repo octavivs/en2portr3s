@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS person (
     first_name varchar(36) NOT NULL,
     last_name varchar(64) NOT NULL,
     email varchar(64) NOT NULL,
-    tel varchar(16) NOT NULL,
+    phone varchar(16) NOT NULL,
     address varchar(255) NOT NULL,
     birthdate Date NOT NULL,
 
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS account (
     id int(10) NOT NULL AUTO_INCREMENT,
     username varchar(36) NOT NULL,
     pass varchar(64) NOT NULL,
-    type varchar(64) NOT NULL,
+    kind varchar(64) NOT NULL,
 
     PRIMARY KEY (id)
 );
