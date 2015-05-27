@@ -76,7 +76,8 @@ function signUp() {
     if ( telephone === '' ) {
         $( message(required) ).insertAfter("#Telephone");
     } else {
-        telephone = telephone.replace(/ /g,"");
+        var staticRegex = / /g;
+        telephone = telephone.replace(staticRegex,"");
         if ( !isInteger(telephone) ) {
             $( message(invalid) ).insertAfter("#Telephone");
         }
@@ -87,10 +88,11 @@ function signUp() {
     if ( checkAge(birthYear, birthMonth, birthDay) < 13 ) {
         $( message(minor) ).insertAfter("#BirthYear");
     }
+    var birthDate = new Date(birthYear, birthMonth, birthDay);
     /*
     $.post(
         "view/js/register.php",
-        {first_name: firstName, last_name: lastName, username: userName, pass: password, address: address, city: city, telephone: telephone },
+        {first_name: firstName, last_name: lastName, username: userName, pass: password, address: address, city: city, telephone: telephone, birthdate: birthDate},
         function(data) {
             alert(data);
         }
