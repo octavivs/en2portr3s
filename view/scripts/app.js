@@ -91,9 +91,16 @@ function signUp() {
     var birthDate = new Date(birthYear, birthMonth, birthDay);
     /*
     $.post(
-        "view/js/register.php",
-        {first_name: firstName, last_name: lastName, username: userName, pass: password, address: address, city: city, telephone: telephone, birthdate: birthDate},
-        function(data) {
+        "view/js/register.php", {
+            first_name: firstName,
+            last_name: lastName,
+            username: userName,
+            pass: password,
+            address: address,
+            city: city,
+            telephone: telephone,
+            birthdate: birthDate
+        }, function(data) {
             alert(data);
         }
     );
