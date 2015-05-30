@@ -1,5 +1,7 @@
 <?php
 
+namespace en2portr3s\library;
+
 class Inflector {
 
     public static function camel($value) {

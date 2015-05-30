@@ -1,5 +1,7 @@
 <?php
 
+namespace en2portr3s\library;
+
 class View extends Response {
 
     protected $template;

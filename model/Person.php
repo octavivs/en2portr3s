@@ -19,7 +19,7 @@ class Person extends Database {
         if ($email != '') {
             $this->query("
                 SELECT first_name, last_name, email, phone, address, birthdate
-                FROM users
+                FROM person
                 WHERE email = '$email'
             ");
             $this->dql();
@@ -32,7 +32,6 @@ class Person extends Database {
         } else {
             $this->message = 'Usuario no encontrado';
         }
-        return $user;
     }
 
     public function set($user_data) {

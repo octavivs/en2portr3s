@@ -2,27 +2,29 @@
 -- Procedure to add a person to table.
 --
 delimiter $
-create procedure add_person(
-        in first_name varchar(36),
-        in last_name varchar(64),
+create procedure register_person(
+        in fname varchar(36),
+        in lname varchar(64),
         in email varchar(64),
         in phone varchar(16),
-        in address varchar(255),
-        in birthdate date
+        in addr varchar(255),
+        in birth date
     )
     begin
-        insert into clientes(
-            nombre_cliente,
-            apaterno_cliente,
-            amaterno_cliente,
-            fecha_de_nacimiento,
-            fecha_de_inscripcion
+        insert into person(
+            first_name,
+            last_name,
+            email,
+            phone,
+            address,
+            birthdate
         ) values (
-            nombre,
-            apaterno,
-            amaterno,
-            nacimiento,
-            CURDATE()
+            fname,
+            lname,
+            email,
+            phone,
+            addr,
+            birth
         );
     end $
 delimiter ;
@@ -32,19 +34,23 @@ delimiter ;
 --
 delimiter $
 create procedure update_person_info(
-        in id int,
-        in nombre varchar(30),
-        in apaterno varchar(30),
-        in amaterno varchar(30),
-        in nacimiento date
+        in ident int
+        in fname varchar(36),
+        in lname varchar(64),
+        in email varchar(64),
+        in phone varchar(16),
+        in addr varchar(255),
+        in birth date
     )
     begin
-	update clientes
-	set nombre_cliente = nombre,
-            apaterno_cliente = apaterno,
-            amaterno_cliente = amaterno,
-            fecha_de_nacimiento = nacimiento
-        where id_cliente = id;
+	update person
+	set first_name = fname,
+            last_name = lname,
+            email = email,
+            phone = phone,
+            address = addr,
+            birthdate = birth
+        where id = ident;
     end $
 delimiter ;
 
@@ -52,9 +58,9 @@ delimiter ;
 -- Procedure to delete a person from the table.
 --
 delimiter $
-create procedure borrar(in id int)
+create procedure unreg_person(in ident int)
     begin
-	delete from clientes where id_cliente = id;
+	delete from person where id = ident;
     end $
 delimiter ;
 
@@ -62,8 +68,8 @@ delimiter ;
 -- Procedure to retrieve the information of a person in the table.
 --
 delimiter $
-create procedure mostrar(OUT comentarios varchar(255))
+create procedure show_person(OUT comentarios varchar(255))
     begin
-	select * from comentarios;
+	select * from person;
     end $
 delimiter ;

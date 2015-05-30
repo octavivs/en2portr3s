@@ -1,5 +1,7 @@
 <?php
 
+namespace en2portr3s\library;
+
 class Request {
 
     protected $url;
@@ -73,8 +75,9 @@ class Request {
             $controllerFileName = 'controller/IncidenceController.php';
             $actionMethodName = 'indexAction';
         }
-        require $controllerFileName;
-        $controller = new $controllerClassName();
+        $namespace = "\\en2portr3s\\controller\\";
+        $qualifiedControllerClassName = $namespace . $controllerClassName;
+        $controller = new $qualifiedControllerClassName();
         $response = call_user_func_array([$controller, $actionMethodName], $params);
         $this->executeResponse($response);
     }
