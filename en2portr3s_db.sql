@@ -5,23 +5,23 @@ COLLATE utf8_general_ci;
 USE en2portr3s;
 
 CREATE TABLE IF NOT EXISTS person (
-    id int(10) NOT NULL AUTO_INCREMENT,
-    first_name varchar(36) NOT NULL,
-    last_name varchar(64) NOT NULL,
-    email varchar(64) NOT NULL,
-    phone varchar(16) NOT NULL,
-    address varchar(255) NOT NULL,
-    birthdate date NOT NULL,
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(36) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    email VARCHAR(64) NOT NULL,
+    phone VARCHAR(16) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    birthdate TIMESTAMP NOT NULL,
 
     PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS account (
-    id int(10) NOT NULL AUTO_INCREMENT,
-    username varchar(36) NOT NULL,
-    pass varchar(32) NOT NULL,
-    kind varchar(24) NOT NULL,
-    since date NOT NULL,
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(36) NOT NULL,
+    pass VARCHAR(32) NOT NULL,
+    kind VARCHAR(24) NOT NULL,
+    since TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
     PRIMARY KEY (id)
 );

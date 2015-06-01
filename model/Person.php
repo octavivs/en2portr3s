@@ -45,7 +45,7 @@ class Person extends Database {
                     INSERT INTO usuarios
                     (first_name, last_name, email, phone, address, birthdate)
                     VALUES
-                    ('$first_name', '$last_name', '$email', '$phone', '$address','$birthdate')
+                    ('$this->first_name', '$this->last_name', '$this->email', '$this->phone', '$this->address','$this->birthdate')
                 ";
                 $this->dml();
                 $this->mensaje = 'Usuario agregado exitosamente';
@@ -63,19 +63,19 @@ class Person extends Database {
         }
         $this->query = "
             UPDATE person
-            SET first_name='$nombre',
-                last_name='$apellido',
-                email='$email',
-                phone='$phone',
-                address='$address',
-                birthdate='$birthdate'
-            WHERE email = '$email'
+            SET first_name='$this->first_name',
+                last_name='$this->last_name',
+                email='$this->email',
+                phone='$this->phone',
+                address='$this->address',
+                birthdate='$this->birthdate'
+            WHERE email = '$this->email'
         ";
         $this->dml();
         $this->mensaje = 'Usuario modificado';
     }
 
-    public function delete($user_email='') {
+    public function delete($email = '') {
         $this->query = "
             DELETE FROM person
             WHERE email = '$email'

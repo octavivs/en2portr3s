@@ -1,75 +1,74 @@
 --
 -- Procedure to add a person to table.
 --
-delimiter $
-create procedure register_person(
-        in fname varchar(36),
-        in lname varchar(64),
-        in email varchar(64),
-        in phone varchar(16),
-        in addr varchar(255),
-        in birth date
-    )
-    begin
-        insert into person(
-            first_name,
-            last_name,
-            email,
-            phone,
-            address,
-            birthdate
-        ) values (
-            fname,
-            lname,
-            email,
-            phone,
-            addr,
-            birth
-        );
-    end $
-delimiter ;
+DELIMITER $
+CREATE PROCEDURE register_person(
+    IN fname VARCHAR(36),
+    IN lname VARCHAR(64),
+    IN email VARCHAR(64),
+    IN phone VARCHAR(16),
+    IN addr VARCHAR(255),
+    IN birth TIMESTAMP
+)BEGIN
+    insert INTO person(
+        first_name,
+        last_name,
+        email,
+        phone,
+        address,
+        birthdate
+    ) values (
+        fname,
+        lname,
+        email,
+        phone,
+        addr,
+        birth
+    );
+END $
+DELIMITER ;
 
 --
 -- Procedure to update a person in the table.
 --
-delimiter $
-create procedure update_person_info(
-        in ident int
-        in fname varchar(36),
-        in lname varchar(64),
-        in email varchar(64),
-        in phone varchar(16),
-        in addr varchar(255),
-        in birth date
-    )
-    begin
-	update person
-	set first_name = fname,
-            last_name = lname,
-            email = email,
-            phone = phone,
-            address = addr,
-            birthdate = birth
-        where id = ident;
-    end $
-delimiter ;
+DELIMITER $
+CREATE DEFINER='n2x3_user'@'localhost'
+PROCEDURE update_person_info(
+    IN ident INT
+    IN fname VARCHAR(36),
+    IN lname VARCHAR(64),
+    IN email VARCHAR(64),
+    IN phone VARCHAR(16),
+    IN addr VARCHAR(255),
+    IN birth TIMESTAMP
+)BEGIN
+    UPDATE person
+    SET first_name = fname,
+        last_name = lname,
+        email = email,
+        phone = phone,
+        address = addr,
+        birthdate = birth
+    WHERE id = ident;
+END $
+DELIMITER ;
 
 --
 -- Procedure to delete a person from the table.
 --
-delimiter $
-create procedure unreg_person(in ident int)
-    begin
-	delete from person where id = ident;
-    end $
-delimiter ;
+DELIMITER $
+CREATE PROCEDURE unreg_person(IN ident INT)
+BEGIN
+    DELETE FROM person WHERE id = ident;
+END $
+DELIMITER ;
 
 --
 -- Procedure to retrieve the information of a person in the table.
 --
-delimiter $
-create procedure show_person(OUT comentarios varchar(255))
-    begin
-	select * from person;
-    end $
-delimiter ;
+DELIMITER $
+CREATE PROCEDURE show_person(OUT info VARCHAR, IN ident INT)
+BEGIN
+    SELECT * FROM person ;
+END $
+DELIMITER ;
