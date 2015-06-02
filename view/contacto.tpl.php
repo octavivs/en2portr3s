@@ -4,7 +4,7 @@
         <div class="section-container tabs" data-section>
             <section class="section">
                 <div class="content" data-slug="panel1">
-                    <form method="post" action="promen.php">
+                   
                         <div class="row collapse">
                             <div class="medium-2 columns">
                                 <label class="inline">Nombre</label>
@@ -31,10 +31,10 @@
                         </div>
                         <div class="row collapse">
                             <label class="inline">Mensaje</label>
-                            <textarea rows="4" id="Mensaje" name="Mensaje"></textarea>
-                            <input type="button" class="button tiny" id="alre" value="guardar">
+                            <textarea rows="4" id="content" name="content"></textarea>
+                            <input type="button" class="button tiny" id="alre" value="enviar">
                         </div>
-                    </form>
+                   
                 </div>
             </section>
         </div>

@@ -1,13 +1,13 @@
 <?php
 
-use en2portr3s\model\Coment;
+use en2portr3s\model\Comment;
 
-$objcoment = new Coment();
+$objcomment = new Comment();
 
-$nom = real_escape_string($_POST['nom']);
-$ape = real_escape_string($_POST['ape']);
-$Ema = real_escape_string($_POST['Ema']);
-$Men = real_escape_string($_POST['Men']);
+$first_name = real_escape_string($_POST['nom']);
+$last_name = real_escape_string($_POST['ape']);
+$email = real_escape_string($_POST['Ema']);
+$content = real_escape_string($_POST['cont']);
 
-$objcoment->set($nom,$ape,$Ema,$Men);
+$objcomment->set($first_name,$last_name,$email,$content);
 

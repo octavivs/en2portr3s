@@ -2,12 +2,12 @@
 
 namespace en2portr3s\model;
 
-class Coment extends Database {
+class Comment extends Database {
 
     private $first_name;
     private $last_name;
     private $email;
-    private $mensaje;
+    private $content;
 
     function __construct() {
         $this->db_name = "en2portr3s";
@@ -16,8 +16,8 @@ class Coment extends Database {
     public function get($email = '') {
         if ($email != '') {
             $this->query("
-                SELECT first_name, last_name, email, mensaje
-                FROM comentarios
+                SELECT first_name, last_name, email, content
+                FROM comment
                 WHERE email = '$email'
             ");
             $this->dql();
@@ -33,26 +33,27 @@ class Coment extends Database {
     }
 
     public function set($user_data) {
-        if (array_key_exists('email', $user_data)) {
-            $this->get($user_data['email']);
-            if ($user_data['email'] != $this->email) {
+        /*if (array_key_exists('email', $user_data)) {
+            /*$this->get($user_data['email']);
+            if ($user_data['email'] != $this->email) {*/
                 foreach ($user_data as $campo => $valor) {
                     $campo = $valor;
                 }
                 $this->query = "
-                    INSERT INTO comentarios
-                    (first_name, last_name, email, mensaje)
+                    INSERT INTO comment
+                    (first_name, last_name, email, content)
                     VALUES
-                    ('$first_name', '$last_name', '$email', '$mensaje')
+                    ('$first_name', '$last_name', '$email', '$content')
                 ";
                 $this->dml();
-                $this->mensaje = 'mensaje guardado correctamente';
-            } else {
-                $this->mensaje = 'error al guardar mensaje';
+                $this->message = 'mensaje guardado correctamente';
+      
+              /*  } else {
+                $this->message = 'error al guardar mensaje';
             }
         } else {
-            $this->mensaje = 'No se ha agregado el mensaje';
-        }
+            $this->message = 'No se ha agregado el mensaje';
+        }*/
     }
 
     public function edit($user_data = []) {
@@ -64,11 +65,11 @@ class Coment extends Database {
             SET first_name='$nombre',
                 last_name='$apellido',
                 email='$email',
-                phone='$mensaje',
+                content='$content',
             WHERE email = '$email'
         ";
         $this->dml();
-        $this->mensaje = 'comentarios modificados';
+        $this->message = 'comentarios modificados';
     }
 
     public function delete($user_email='') {
@@ -77,7 +78,7 @@ class Coment extends Database {
             WHERE email = '$email'
         ";
         $this->dml();
-        $this->mensaje = 'comentario  eliminado';
+        $this->message = 'comentario  eliminado';
     }
 
 }
