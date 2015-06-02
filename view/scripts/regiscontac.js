@@ -16,11 +16,8 @@ function presionSubmit() {
  var apellido = $("#apellido").val();
  var email = $("#email").val();
  var content = $("#cont").val();
- alert(content);
-
- $.get("registrarcomentario.php",{nom:nombre,ape:apellido,ema:email,cont:content},llegadaDa);
- return false;
-
+ $.get("view/scripts/registrarcomentario.php",{nom:nombre,ape:apellido,ema:email,cont:content},llegadaDa);
+return false;
   }
  
  function llegadaDa(datos) {
