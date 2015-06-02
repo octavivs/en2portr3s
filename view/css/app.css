@@ -124,18 +124,17 @@ span.required {
 /*        Header        */
 /************************/
 
+#top {
+    max-width: 100%;
+    background: #000;
+}
+
 #top img.logo {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
 #top nav.top-bar {
-    margin-top: 4%;
-    background: #000;
-}
-
-#top {
-    max-width: 100%;
     background: #000;
 }
 
@@ -147,15 +146,12 @@ span.required {
     background: #000;
 }
 
+#login {
+    margin-top: 1.25rem;
+    margin-right: 0.9375rem;
+}
+
 @media only screen and (max-width: 40em) {
-    #top {
-        text-align: center;
-    }
-
-    #top .columns {
-        padding: 0;
-    }
-
     #top img.logo {
         margin-top: 0;
         margin-bottom: 0;
@@ -163,6 +159,7 @@ span.required {
 
     #top nav.top-bar {
         margin-top: 0%;
+        text-align: center;
     }
 }
 
