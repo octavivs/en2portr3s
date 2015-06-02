@@ -4,13 +4,13 @@
         <div class="section-container tabs" data-section>
             <section class="section">
                 <div class="content" data-slug="panel1">
-                   
+                    <form> 
                         <div class="row collapse">
                             <div class="medium-2 columns">
                                 <label class="inline">Nombre</label>
                             </div>
                             <div class="medium-10 columns">
-                                <input type="text" id="Nombre" name="Nombre" autofocus />
+                                <input type="text" id="nombre" name="nombre" autofocus />
                             </div>
                         </div>
                         <div class="row collapse">
@@ -18,7 +18,7 @@
                                 <label class="inline">Apellidos</label>
                             </div>
                             <div class="medium-10 columns">
-                                <input type="text" id="Apellido" name="Apellido" />
+                                <input type="text" id="apellido" name="apellido" />
                             </div>
                         </div>
                         <div class="row collapse">
@@ -26,15 +26,15 @@
                                 <label class="inline">Email</label>
                             </div>
                             <div class="medium-10 columns">
-                                <input type="text" id="Email" name="Email" />
+                                <input type="text" id="email" name="email" />
                             </div>
                         </div>
                         <div class="row collapse">
                             <label class="inline">Mensaje</label>
-                            <textarea rows="4" id="content" name="content"></textarea>
+                            <textarea rows="4" id="cont" name="cont"></textarea>
                             <input type="button" class="button tiny" id="alre" value="enviar">
                         </div>
-                   
+                   </form>
                 </div>
             </section>
         </div>

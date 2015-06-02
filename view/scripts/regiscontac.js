@@ -1,4 +1,5 @@
-varx; x=$(document);
+var x; 
+x=$(document);
 x.ready(inicializarEventos);
 
 
@@ -10,13 +11,20 @@ var x;
 
 
 function presionSubmit() { 
- var Nombre = $("#Nombre").val();
- var Apellido = $("#Apellido").val();
- var Email = $("#Email").val();
- var content = $("#content").val();
- $.get("registrarcomentario.php",{nom:Nombre,ape:Apellido,Ema:Email,cont:content},llegadaDatos);
- return false; }
+    
+ var nombre = $("#nombre").val();
+ var apellido = $("#apellido").val();
+ var email = $("#email").val();
+ var content = $("#cont").val();
+ alert(content);
+
+ $.get("registrarcomentario.php",{nom:nombre,ape:apellido,ema:email,cont:content},llegadaDa);
+ return false;
+
+  }
  
- function llegadaDatos(datos) {
+ function llegadaDa(datos) {
 	 alert(datos);
 	 }
+         
+        
