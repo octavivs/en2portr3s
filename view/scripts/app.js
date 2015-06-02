@@ -34,22 +34,22 @@ function initialize() {
 
 function alre (){
     var required = "Esta información es obligatoria.";
-    var Nombre = $("#Nombre").val();
-    var Apellido = $("#Apellido").val();
-    var Email = $("#Email").val();
-    var Mensaje = $("#Mensaje").val();
+    var nombre = $("#nombre").val();
+    var apellido = $("#apellido").val();
+    var email = $("#email").val();
+    var content = $("#cont").val();
     
-    if ( Nombre === '') {
-        $( message(required) ).insertAfter("#Nombre");
+    if ( nombre === '') {
+        $( message(required) ).insertAfter("#nombre");
     }
-    if ( Apellido === '') {
-        $( message(required) ).insertAfter("#Apellido");
+    if ( apellido === '') {
+        $( message(required) ).insertAfter("#apellido");
     }
-    if ( Email === '') {
-        $( message(required) ).insertAfter("#Email");
+    if ( email === '') {
+        $( message(required) ).insertAfter("#email");
     }
-    if ( Mensaje === '') {
-        $( message(required) ).insertAfter("#Mensaje");
+    if ( content === '') {
+        $( message(required) ).insertAfter("#cont");
     }
     
 }

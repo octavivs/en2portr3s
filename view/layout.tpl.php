@@ -80,10 +80,11 @@
 
         <script type="text/javascript" src="view/scripts/vendor/jquery.js"></script>
         <script type="text/javascript" src="view/scripts/foundation.js"></script>
-        <script type="text/javascript" src="view/scripts/regiscontac.js"></script>
+        
         <script>
             $(document).foundation();
         </script>
         <script type="text/javascript" src="view/scripts/app.js"></script>
+        <script type="text/javascript" src="view/scripts/regiscontac.js"></script>
     </body>
 </html>
