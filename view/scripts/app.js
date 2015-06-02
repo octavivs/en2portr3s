@@ -100,10 +100,10 @@ function signUp() {
         $( message(required) ).insertAfter("#Telephone");
     } else {
         var staticRegex = / /g;
-        telephone = telephone.replace(staticRegex,"");
+        telephone = telephone.replace(staticRegex,"");/*
         if ( !isInteger(telephone) ) {
             $( message(invalid) ).insertAfter("#Telephone");
-        }
+        }*/
     }
     if ( birthMonth === '' || birthDay === '' || birthYear === '' ) {
         $( message(required) ).insertAfter("#BirthYear");
@@ -111,10 +111,10 @@ function signUp() {
     if ( checkAge(birthYear, birthMonth, birthDay) < 13 ) {
         $( message(minor) ).insertAfter("#BirthYear");
     }
-    var birthDate = new Date(birthYear, birthMonth, birthDay);
-    /*
+    var birthDate = birthYear+'-'+birthMonth+'-'+birthDay;
+    
     $.post(
-        "view/js/register.php", {
+        "view/scripts/register.php", {
             first_name: firstName,
             last_name: lastName,
             username: userName,
@@ -127,7 +127,7 @@ function signUp() {
             alert(data);
         }
     );
-    */
+    
 }
 
 function isInteger(x) {
