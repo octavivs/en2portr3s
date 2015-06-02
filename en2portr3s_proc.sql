@@ -1,15 +1,16 @@
 --
--- Procedure to add a person to table.
+-- Procedure: registration of people's personal data in the database.
 --
 DELIMITER $
-CREATE PROCEDURE register_person(
+CREATE DEFINER = 'n2x3_user'@'localhost' PROCEDURE register_person(
     IN fname VARCHAR(36),
     IN lname VARCHAR(64),
     IN email VARCHAR(64),
     IN phone VARCHAR(16),
     IN addr VARCHAR(255),
     IN birth TIMESTAMP
-)BEGIN
+) SQL SECURITY INVOKER
+BEGIN
     insert INTO person(
         first_name,
         last_name,
@@ -29,19 +30,19 @@ END $
 DELIMITER ;
 
 --
--- Procedure to update a person in the table.
+-- Procedure: updates people's personal data in the database.
 --
 DELIMITER $
-CREATE DEFINER='n2x3_user'@'localhost'
-PROCEDURE update_person_info(
-    IN ident INT
+CREATE DEFINER = 'n2x3_user'@'localhost' PROCEDURE update_person_info(
+    IN ident INT(10),
     IN fname VARCHAR(36),
     IN lname VARCHAR(64),
     IN email VARCHAR(64),
     IN phone VARCHAR(16),
     IN addr VARCHAR(255),
     IN birth TIMESTAMP
-)BEGIN
+) SQL SECURITY INVOKER
+BEGIN
     UPDATE person
     SET first_name = fname,
         last_name = lname,
@@ -54,20 +55,25 @@ END $
 DELIMITER ;
 
 --
--- Procedure to delete a person from the table.
+-- Procedure: deletes people's personal data in the database.
 --
 DELIMITER $
-CREATE PROCEDURE unreg_person(IN ident INT)
+CREATE DEFINER = 'n2x3_user'@'localhost' PROCEDURE unreg_person(
+    IN ident INT(10)
+) SQL SECURITY INVOKER
 BEGIN
     DELETE FROM person WHERE id = ident;
 END $
 DELIMITER ;
 
 --
--- Procedure to retrieve the information of a person in the table.
+-- Procedure: retrieves people's personal data from the database.
 --
 DELIMITER $
-CREATE PROCEDURE show_person(OUT info VARCHAR, IN ident INT)
+CREATE DEFINER = 'n2x3_user'@'localhost' PROCEDURE show_person(
+    OUT info VARCHAR(255),
+    IN ident INT(10)
+) SQL SECURITY INVOKER
 BEGIN
     SELECT * FROM person ;
 END $
