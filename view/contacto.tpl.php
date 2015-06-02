@@ -10,7 +10,7 @@
                                 <label class="inline">Nombre</label>
                             </div>
                             <div class="medium-10 columns">
-                                <input type="text" id="nombre" name="Nombre" autofocus />
+                                <input type="text" id="Nombre" name="Nombre" autofocus />
                             </div>
                         </div>
                         <div class="row collapse">
@@ -18,7 +18,7 @@
                                 <label class="inline">Apellidos</label>
                             </div>
                             <div class="medium-10 columns">
-                                <input type="text" id="Apellidos" name="Apellidos" />
+                                <input type="text" id="Apellido" name="Apellido" />
                             </div>
                         </div>
                         <div class="row collapse">
@@ -31,8 +31,8 @@
                         </div>
                         <div class="row collapse">
                             <label class="inline">Mensaje</label>
-                            <textarea rows="4" id="mensaje" name="mensaje"></textarea>
-                            <input type="button" class="button tiny" name="enviar" value="Enviar">
+                            <textarea rows="4" id="Mensaje" name="Mensaje"></textarea>
+                            <input type="button" class="button tiny" id="alre" value="guardar">
                         </div>
                     </form>
                 </div>

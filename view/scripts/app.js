@@ -22,6 +22,7 @@ function initialize() {
     getYears();
     $("input#SignUp").click(signUp);
     $("input#Reset").click(clearMessages);
+    $("input#alre").click(alre);
     /*
     $("#services .button").hover(function() {
         $(this).siblings("img").removeClass("hidden-for-small");
@@ -29,6 +30,28 @@ function initialize() {
         $(this).siblings("img").addClass("hidden-for-small");
     });
     */
+}
+
+function alre (){
+    var required = "Esta información es obligatoria.";
+    var Nombre = $("#Nombre").val();
+    var Apellido = $("#Apellido").val();
+    var Email = $("#Email").val();
+    var Mensaje = $("#Mensaje").val();
+    
+    if ( Nombre === '') {
+        $( message(required) ).insertAfter("#Nombre");
+    }
+    if ( Apellido === '') {
+        $( message(required) ).insertAfter("#Apellido");
+    }
+    if ( Email === '') {
+        $( message(required) ).insertAfter("#Email");
+    }
+    if ( Mensaje === '') {
+        $( message(required) ).insertAfter("#Mensaje");
+    }
+    
 }
 
 function signUp() {

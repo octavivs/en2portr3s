@@ -70,38 +70,55 @@ span.required {
 }
 
 #conoce {
-    font-style: oblique;
+   background:  url(http://s.cdpn.io/79/cloud_tl.png) no-repeat fixed left top,
+    url(http://s.cdpn.io/79/cloud_br.png) no-repeat fixed right bottom, 
+    #cfd6da url(http://s.cdpn.io/79/zeppelin-bg.jpg) no-repeat fixed center top;
+
+  
     text-align: justify ;
 }
 
-#conoce h5 {
+#conoce  p {
+      font-style: oblique;
+    padding:20px;
+    border-radius:5px 40px 20px;
+    background-color: #1bbe00;
+    color: #fff;
+   font-size: 20px;
+   
+   font-family: initial;
+ }
+
+#conoce h3 {
+    border-radius:5px 40px 20px;
     background-color: #0c4ec8;
     color: white;
     text-align: center;
+   
+    text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #b8b4b4,
+                 0 4px 0 #b9b9b9,
+                 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1);
+    color: #fff;
+    font-size: 30px;
+    font-family: Impact;
 }
-
-#cono  p {
-
-    font-style: oblique;
-}
-
-#cono {
-    font-style: oblique;
-    text-align: justify ;
-}
-
-#cono h6 {
-    background-color: #0c4ec8;
-    color: white;
-
-}
-
-#cono h5 {
+#conoce h4 {
+    border-radius:5px 40px 20px;
     background-color: #0c4ec8;
     color: white;
     text-align: center;
+   
+    text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #b8b4b4,
+                 0 4px 0 #b9b9b9,
+                 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1);
+    color: #fff;
+    font-size: 30px;
+    font-family: Impact;
 }
-
 #services img {
     border-radius: 40px;
 }
