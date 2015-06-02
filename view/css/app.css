@@ -45,6 +45,10 @@ span.required {
     font-style: italic;
 }
 
+#services img {
+    border-radius: 40px;
+}
+
 @media only screen and (max-width: 40em) {
     #services .button:hover {
         cursor: pointer;
@@ -69,32 +73,28 @@ span.required {
     }
 }
 
-#conoce {
+#about {
    background:  url(http://s.cdpn.io/79/cloud_tl.png) no-repeat fixed left top,
     url(http://s.cdpn.io/79/cloud_br.png) no-repeat fixed right bottom, 
     #cfd6da url(http://s.cdpn.io/79/zeppelin-bg.jpg) no-repeat fixed center top;
-
-  
     text-align: justify ;
 }
 
-#conoce  p {
-      font-style: oblique;
-    padding:20px;
-    border-radius:5px 40px 20px;
+#about p {
+    font-style: oblique;
+    padding: 20px;
+    border-radius: 5px 40px 20px;
     background-color: #1bbe00;
     color: #fff;
-   font-size: 20px;
-   
-   font-family: initial;
+    font-size: 20px;
+    font-family: initial;
  }
 
-#conoce h3 {
-    border-radius:5px 40px 20px;
+#about h3 {
+    border-radius: 5px 40px 20px;
     background-color: #0c4ec8;
     color: white;
     text-align: center;
-   
     text-shadow: 0 1px 0 #ccc,
                  0 2px 0 #b8b4b4,
                  0 4px 0 #b9b9b9,
@@ -104,12 +104,12 @@ span.required {
     font-size: 30px;
     font-family: Impact;
 }
-#conoce h4 {
-    border-radius:5px 40px 20px;
+
+#about h4 {
+    border-radius: 5px 40px 20px;
     background-color: #0c4ec8;
     color: white;
     text-align: center;
-   
     text-shadow: 0 1px 0 #ccc,
                  0 2px 0 #b8b4b4,
                  0 4px 0 #b9b9b9,
@@ -118,9 +118,6 @@ span.required {
     color: #fff;
     font-size: 30px;
     font-family: Impact;
-}
-#services img {
-    border-radius: 40px;
 }
 
 /************************/

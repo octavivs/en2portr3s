@@ -1,5 +1,5 @@
 
-<div id="conoce" >   
+<div id="about" >   
    
      <div class="row">
 	<div class="large-4 columns" > 

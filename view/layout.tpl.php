@@ -26,21 +26,26 @@
                     </header>
                 </div>
                 <div class="large-9 medium-9 columns">
-                    <nav class="top-bar" data-topbar>
-                        <ul class="title-area">
-                            <li class="name"></li>
-                            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                        </ul>
-                        <div class="top-bar-section">
-                            <ul class="right">
-                                <li><a href="inicio">Inicio</a></li>
-                                <li><a href="servicios">Servicios</a></li>
-                                <li><a href="conocenos">Conócenos</a></li>
-                                <li><a href="contacto">Contacto</a></li>
-                                <li><a href="registro">Registro</a></li>
+                    <div class="row">
+                        <input type="button" class="button tiny right hidden-for-small" id="login" value="Login"/>
+                    </div>
+                    <div class="row">
+                        <nav class="top-bar" data-topbar>
+                            <ul class="title-area">
+                                <li class="name"></li>
+                                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
                             </ul>
-                        </div>
-                    </nav>
+                            <div class="top-bar-section">
+                                <ul class="right">
+                                    <li><a href="inicio">Inicio</a></li>
+                                    <li><a href="servicios">Servicios</a></li>
+                                    <li><a href="conocenos">Conócenos</a></li>
+                                    <li><a href="contacto">Contacto</a></li>
+                                    <li><a href="registro">Registro</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div><!-- End of top -->

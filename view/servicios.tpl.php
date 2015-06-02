@@ -50,8 +50,8 @@
             <img src="view/img/tarjetas.png" class="hidden-for-small" />
         </div>
         <div class="large-4 columns">
-            <input type="button" class="button expand" value="Credencial 4x1"/>
-            <img src="view/img/credencial_4x1.png" class="hidden-for-small" />
+            <input type="button" class="button expand" value="Credenciales 4x1"/>
+            <img src="view/img/credenciales_4x1.png" class="hidden-for-small" />
         </div>
         <div class="large-4 columns">
             <input type="button" class="button expand" value="Credenciales 4x4"/>
