@@ -25,3 +25,13 @@ CREATE TABLE IF NOT EXISTS account (
 
     PRIMARY KEY (id)
 );
+
+CREATE TABLE IF NOT EXISTS comment (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    first_name VARCHAR(36) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    email VARCHAR(64) NOT NULL,
+    content VARCHAR(800) NOT NULL,
+
+    PRIMARY KEY (id)
+);

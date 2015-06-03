@@ -32,7 +32,7 @@
                         <div class="row collapse">
                             <label class="inline">Mensaje</label>
                             <textarea rows="4" id="cont" name="cont"></textarea>
-                            <input type="button" class="button tiny" id="alre" value="enviar">
+                            <input type="button" class="button tiny" id="comment" value="enviar">
                         </div>
                    </form>
                 </div>

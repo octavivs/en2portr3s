@@ -22,7 +22,7 @@ function initialize() {
     getYears();
     $("input#SignUp").click(signUp);
     $("input#Reset").click(clearMessages);
-    $("input#alre").click(alre);
+    $("input#comment").click(comment);
     /*
     $("#services .button").hover(function() {
         $(this).siblings("img").removeClass("hidden-for-small");
@@ -32,13 +32,12 @@ function initialize() {
     */
 }
 
-function alre (){
+function comment() {
     var required = "Esta información es obligatoria.";
     var nombre = $("#nombre").val();
     var apellido = $("#apellido").val();
     var email = $("#email").val();
     var content = $("#cont").val();
-    
     if ( nombre === '') {
         $( message(required) ).insertAfter("#nombre");
     }
@@ -51,7 +50,7 @@ function alre (){
     if ( content === '') {
         $( message(required) ).insertAfter("#cont");
     }
-    
+    $.post("view/scripts/registrarcomentario.php",{nom:nombre,ape:apellido,ema:email,cont:content});
 }
 
 function signUp() {
