@@ -11,17 +11,17 @@ var x;
 
 
 function presionSubmit() { 
-    
+  
  var nombre = $("#nombre").val();
  var apellido = $("#apellido").val();
  var email = $("#email").val();
  var content = $("#cont").val();
- $.get("view/scripts/registrarcomentario.php",{nom:nombre,ape:apellido,ema:email,cont:content},llegadaDa);
+  $.post("view/scripts/registrarcomentario.php",{nom:nombre,ape:apellido,ema:email,cont:content});
+
 return false;
+
   }
  
- function llegadaDa(datos) {
-	 alert(datos);
-	 }
+ 
          
         

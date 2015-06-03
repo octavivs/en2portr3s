@@ -23,10 +23,8 @@ class Comment extends Database {
             $this->dql();
         }
         if (count($this->rows) === 1) {
-            foreach ($this->rows[0] as $propiedad => $valor) {
-                $this->$propiedad = $valor;
-            }
-            $this->message = 'Usuario encontrado';
+            $this->synchronize($this->rows[0]);  
+               $this->message = 'Usuario encontrado';
         } else {
             $this->message = 'Usuario no encontrado';
         }
@@ -36,18 +34,17 @@ class Comment extends Database {
         /*if (array_key_exists('email', $user_data)) {
             /*$this->get($user_data['email']);
             if ($user_data['email'] != $this->email) {*/
-                foreach ($user_data as $campo => $valor) {
-                    $campo = $valor;
-                }
+         $this->synchronize($user_data);        
+        
                 $this->query = "
                     INSERT INTO comment
-                    (first_name, last_name, email, content)
+                    ( first_name, last_name, email, content)
                     VALUES
-                    ('$first_name', '$last_name', '$email', '$content')
-                ";
+                    ('$this->first_name','$this->last_name','$this->email','$this->content')
+                   ";
                 $this->dml();
                 $this->message = 'mensaje guardado correctamente';
-      
+                  
               /*  } else {
                 $this->message = 'error al guardar mensaje';
             }
@@ -57,9 +54,7 @@ class Comment extends Database {
     }
 
     public function edit($user_data = []) {
-        foreach ($user_data as $campo => $valor) {
-            $campo = $valor;
-        }
+        $this->synchronize($user_data);  
         $this->query = "
             UPDATE comentarios
             SET first_name='$nombre',
@@ -81,4 +76,9 @@ class Comment extends Database {
         $this->message = 'comentario  eliminado';
     }
 
+     private function synchronize($data) {
+        foreach ($data as $propiedad => $valor) {
+            $this->$propiedad = $valor;
+        }
+    }
 }

@@ -2,17 +2,22 @@
 
 use en2portr3s\model\Comment;
 
-$objcomment = new Comment();
 
-$first_name = $_POST['nom'];
-$last_name = $_POST['ape'];
-$email = $_POST['ema'];
-$content = $_POST['cont'];
+$user_data = [];
+$user_data['first_name'] = $_POST['nom'];
+$user_data['last_name'] = $_POST['ape'];
+$user_data['email'] = $_POST['ema'];
+$user_data['content'] = $_POST['cont'];
 
-$objcomment->set($first_name,$last_name,$email,$content);
+$cont = new Comment();
+
+$cont->set($user_data);
+
+
+/*$objcomment->set($first_name,$last_name,$email,$content);
 
 echo $objcomment;
-
+*/
 function __autoload($qClassName) {
     $global_space = "en2portr3s";
     $lastNsPos = strripos($qClassName, '\\');
