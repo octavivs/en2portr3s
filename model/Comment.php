@@ -15,11 +15,11 @@ class Comment extends Database {
 
     public function get($email = '') {
         if ($email != '') {
-            $this->query("
+            $this->query = "
                 SELECT first_name, last_name, email, content
                 FROM comment
                 WHERE email = '$email'
-            ");
+            ";
             $this->dql();
         }
         if (count($this->rows) === 1) {

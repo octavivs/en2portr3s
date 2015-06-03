@@ -37,7 +37,7 @@ abstract class Database {
      * Conectar a la base de datos
      */
     private function connect() {
-        $this->connection = new mysqli(
+        $this->connection = new \mysqli(
                 self::$db_host, self::$db_user, self::$db_pass, $this->db_name);
     }
 
