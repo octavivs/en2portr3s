@@ -27,13 +27,15 @@
                 </div>
                 <div class="large-9 medium-9 columns">
                     <div class="row">
-                        <input type="button" class="button tiny right hidden-for-small" id="login" value="Login"/>
+                        <input type="button" class="button right" value="Login"/>
                     </div>
                     <div class="row">
                         <nav class="top-bar" data-topbar>
                             <ul class="title-area">
                                 <li class="name"></li>
-                                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                                <li class="toggle-topbar menu-icon">
+                                    <a href="#"><span>Menu</span></a>
+                                </li>
                             </ul>
                             <div class="top-bar-section">
                                 <ul class="right">
@@ -69,11 +71,11 @@
                 </div>
                 <div class="medium-8 pull-4 columns">
                     <ul class="inline-list">
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 4</a></li>
+                        <li><a href="privacidad">Política de privacidad</a></li>
+                        <li><a href="conocenos">Conócenos</a></li>
+                        <li><a href="contacto">Contacto</a></li>
                     </ul>
+                    <p class="copyright">© En2porTr3s Soluciones gráficas. Derechos reservados.</p>
                 </div>
             </footer>
         </div><!-- End of bottom -->

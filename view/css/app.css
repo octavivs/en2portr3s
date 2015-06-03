@@ -11,6 +11,10 @@ p {
     text-align: justify !important;
 }
 
+p.ul {
+    margin-bottom: 0;
+}
+
 span.required {
     color: red;
 }
@@ -18,6 +22,11 @@ span.required {
 @media only screen and (max-width: 40em) {
     h1, h2, h3, h4, h5, h6, p {
         text-align: center !important;
+    }
+
+    ul {
+        text-align: center;
+        list-style: none;
     }
 
     .button {
@@ -146,9 +155,11 @@ span.required {
     background: #000;
 }
 
-#login {
+#top .button {
     margin-top: 1.25rem;
     margin-right: 0.9375rem;
+    padding: 0.625rem 1.25rem 0.6875rem 1.25rem;
+    font-size: 0.6875rem;
 }
 
 @media only screen and (max-width: 40em) {
@@ -158,8 +169,14 @@ span.required {
     }
 
     #top nav.top-bar {
-        margin-top: 0%;
         text-align: center;
+    }
+
+    #top .button {
+        margin: 0;
+        padding: 0.875rem 1.75rem 0.9375rem 1.75rem;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
     }
 }
 
@@ -196,6 +213,13 @@ span.required {
 
 #bottom ul.inline-list li a:hover {
     color: #777777;
+}
+
+/* Copyright */
+p.copyright {
+    margin: 6px 0 0 10px;
+    font-size: 0.75rem;
+    color: #666;
 }
 
 /* Social */
@@ -250,7 +274,11 @@ span.required {
     }
 
     #bottom ul.inline-list {
-        margin: 16px 0 10px;
+        margin: 16px 0 8px;
+    }
+
+    p.copyright {
+        margin: 0 0 16px 0;
     }
 
     #bottom ul.home-social {

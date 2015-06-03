@@ -10,7 +10,7 @@
 
 <div class="row"><!-- About -->
     <hr>
-    <div class="large-8 columns">
+    <div class="large-12 columns">
         <h4>Acerca de nosotros</h4>
         <p>
             Somos una empresa dedicada a brindar soluciones gráficas, asesorando y educando a nuestros clientes
@@ -23,8 +23,8 @@
 <div class="row"><!-- Clients -->
     <hr>
     <div class="large-12 columns">
-        <h4>Clientes</h4>
-        <p>Algunos de nuestros clientes.</p>
+        <h4>Algunos de nuestros clientes</h4>
+        <br />
         <ul class="clearing-thumbs small-block-grid-4 medium-block-grid-6 large-block-grid-6" data-clearing>
             <li>
                 <a href="view/img/intel_logo.png">
