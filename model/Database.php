@@ -7,6 +7,7 @@ abstract class Database {
     private static $db_host = 'localhost';
     private static $db_user = 'n2x3_user';
     private static $db_pass = 'En2porTr3$';
+    private static $db_enc = 'utf8';
     protected $db_name = 'default';
     protected $query;
     protected $rows = array();
@@ -39,7 +40,7 @@ abstract class Database {
     private function connect() {
         $this->connection = new \mysqli(
                 self::$db_host, self::$db_user, self::$db_pass, $this->db_name);
-        $this->connection->set_charset("utf8");
+        $this->connection->set_charset(self::$db_enc);
     }
 
     /**
