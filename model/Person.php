@@ -25,9 +25,7 @@ class Person extends Database {
             $this->dql();
         }
         if (count($this->rows) === 1) {
-            foreach ($this->rows[0] as $propiedad => $valor) {
-                $this->$propiedad = $valor;
-            }
+            $this->synchronize($this->rows[0]);
             $this->message = 'Usuario encontrado';
         } else {
             $this->message = 'Usuario no encontrado';
@@ -38,29 +36,25 @@ class Person extends Database {
         if (array_key_exists('email', $user_data)) {
             $this->get($user_data['email']);
             if ($user_data['email'] != $this->email) {
-                foreach ($user_data as $campo => $valor) {
-                    $campo = $valor;
-                }
+                $this->synchronize($user_data);
                 $this->query = "
-                    INSERT INTO usuarios
+                    INSERT INTO person
                     (first_name, last_name, email, phone, address, birthdate)
                     VALUES
                     ('$this->first_name', '$this->last_name', '$this->email', '$this->phone', '$this->address','$this->birthdate')
                 ";
                 $this->dml();
-                $this->mensaje = 'Usuario agregado exitosamente';
+                $this->message = 'Usuario agregado exitosamente';
             } else {
-                $this->mensaje = 'El usuario ya existe';
+                $this->message = 'El usuario ya existe';
             }
         } else {
-            $this->mensaje = 'No se ha agregado al usuario';
+            $this->message = 'No se ha agregado al usuario';
         }
     }
 
     public function edit($user_data = []) {
-        foreach ($user_data as $campo => $valor) {
-            $campo = $valor;
-        }
+        $this->synchronize($user_data);
         $this->query = "
             UPDATE person
             SET first_name='$this->first_name',
@@ -72,7 +66,7 @@ class Person extends Database {
             WHERE email = '$this->email'
         ";
         $this->dml();
-        $this->mensaje = 'Usuario modificado';
+        $this->message = 'Usuario modificado';
     }
 
     public function delete($email = '') {
@@ -81,7 +75,16 @@ class Person extends Database {
             WHERE email = '$email'
         ";
         $this->dml();
-        $this->mensaje = 'Usuario eliminado';
+        $this->message = 'Usuario eliminado';
+    }
+
+    /**
+     * Sincroniza los datos de la clase con la tabla en la base de datos.
+     */
+    private function synchronize($data) {
+        foreach ($data as $propiedad => $valor) {
+            $this->$propiedad = $valor;
+        }
     }
 
 }

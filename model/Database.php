@@ -39,6 +39,7 @@ abstract class Database {
     private function connect() {
         $this->connection = new \mysqli(
                 self::$db_host, self::$db_user, self::$db_pass, $this->db_name);
+        $this->connection->set_charset("utf8");
     }
 
     /**
@@ -69,6 +70,13 @@ abstract class Database {
         $result->close();
         $this->disonnect();
         array_pop($this->rows);
+    }
+
+    /**
+     * Escapa caracteres para su posterior utilización en alguna consulta.
+     */
+    protected function safe($data) {
+        $this->connection->real_escape_string($data);
     }
 
 }
