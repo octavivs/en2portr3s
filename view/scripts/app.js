@@ -83,29 +83,38 @@ function signUp() {
     clearMessages();
     if ( firstName === '') {
         $( message(required) ).insertAfter("#FirstName");
+        state = required+" (#FirstName)";
     }
     if ( lastName === '') {
         $( message(required) ).insertAfter("#LastName");
+        state = required+" (#LastName)";
     }
     if ( userName === '') {
         $( message(required) ).insertAfter("#UserName");
+        state = required+" (#UserName)";
     }
     if ( password === '') {
         $( message(required) ).insertAfter("#Password");
+        state = required+" (#Password)";
     }
     if ( rePassword !== password ) {
         $( message(different) ).insertAfter("#RePassword");
+        state = different;
     } else if ( rePassword === '') {
         $( message(required) ).insertAfter("#RePassword");
+        state = required+" (#RePassword)";
     }
     if ( address === '' ) {
         $( message(required) ).insertAfter("#Address");
+        state = required+" (#Address)";
     }
     if ( city === '' ) {
         $( message(required) ).insertAfter("#City");
+        state = required+" (#City)";
     }
     if ( telephone === '' ) {
         $( message(required) ).insertAfter("#Telephone");
+        state = required+" (#Telephone)";
     } else {
         var staticRegex = / /g;
         telephone = telephone.replace(staticRegex,"");/*
@@ -115,25 +124,36 @@ function signUp() {
     }
     if ( birthMonth === '' || birthDay === '' || birthYear === '' ) {
         $( message(required) ).insertAfter("#BirthYear");
+        state = required+" (#BirthYear)";
     }
     if ( checkAge(birthYear, birthMonth, birthDay) < 13 ) {
         $( message(minor) ).insertAfter("#BirthYear");
+        state = minor;
     }
     var birthDate = birthYear+'-'+birthMonth+'-'+birthDay;
-    $.post(
-        "view/scripts/register.php", {
-            first_name: firstName,
-            last_name: lastName,
-            username: userName,
-            pass: password,
-            address: address,
-            phone: telephone,
-            city: city,
-            birthdate: birthDate
-        }, function(data) {
-            alert(data);
-        }
-    );
+    /*
+    if (state === "ok") {
+        alert(state);
+    } else {
+        alert(state);
+    }
+    */
+   if (state === "ok") {
+       $.post(
+            "view/scripts/register.php", {
+                first_name: firstName,
+                last_name: lastName,
+                username: userName,
+                pass: password,
+                address: address,
+                phone: telephone,
+                city: city,
+                birthdate: birthDate
+            }, function(data) {
+                alert(data);
+            }
+        );
+    }
 }
 
 function isInteger(x) {
