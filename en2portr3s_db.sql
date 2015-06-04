@@ -22,8 +22,15 @@ CREATE TABLE IF NOT EXISTS account (
     pass VARCHAR(32) NOT NULL,
     kind VARCHAR(24) NOT NULL,
     since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    person_id INT(10) NOT NULL,
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    INDEX (person_id),
+
+    FOREIGN KEY (person_id)
+    REFERENCES person(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS comment (

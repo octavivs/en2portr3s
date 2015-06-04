@@ -3,7 +3,6 @@
         <div id="featured" data-orbit>
             <img src="view/img/navidad_banner.png" alt="¡Feliz navidad!" />
             <img src="view/img/en2portr3s_banner.png" alt="Llamanos" />
-            <img src="http://placehold.it/1200x500&text=Slide Image 3" alt="slide image" />
         </div>
     </div>
 </div><!-- End of Slider -->

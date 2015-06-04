@@ -52,7 +52,7 @@
             </div>
         </div><!-- End of top -->
 
-        <div id="content"><!-- content -->
+        <div id="page-content"><!-- content -->
             <div class="row">
                 <div class="large-12 columns">
                     <?= $tpl_content; ?>

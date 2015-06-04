@@ -2,11 +2,12 @@
 
 use en2portr3s\model\Comment;
 
-$user_data = [];
-$user_data['first_name'] = $_POST['nom'];
-$user_data['last_name'] = $_POST['ape'];
-$user_data['email'] = $_POST['ema'];
-$user_data['content'] = $_POST['cont'];
+$user_data = [
+    'first_name' => $_POST['first_name'],
+    'last_name' => $_POST['last_name'],
+    'email' => $_POST['email'],
+    'content' => $_POST['content']
+];
 
 $coment = new Comment();
 $coment->set($user_data);

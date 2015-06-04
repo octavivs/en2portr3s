@@ -1,9 +1,9 @@
 <section>
     <h3>Crear una cuenta</h3>
     <p>
-        Usa cualquier dirección de correo electrónico como
-        nombre de usuario de tu nueva cuenta. Recomiendamos
-        que la contraseña sea diferente a la del correo electrónico.
+        Usa cualquier dirección de correo electrónico como nombre de
+        usuario de tu nueva cuenta. Recomiendamos que la contraseña
+        sea diferente a la del correo electrónico.
     </p>
     <form>
         <div class="row">

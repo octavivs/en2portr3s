@@ -22,7 +22,7 @@ function initialize() {
     getYears();
     $("input#SignUp").click(signUp);
     $("input#Reset").click(clearMessages);
-    $("input#comment").click(comment);
+    $("input#Comment").click(saveComment);
     /*
     $("#services .button").hover(function() {
         $(this).siblings("img").removeClass("hidden-for-small");
@@ -32,25 +32,34 @@ function initialize() {
     */
 }
 
-function comment() {
+function saveComment() {
     var required = "Esta información es obligatoria.";
-    var nombre = $("#nombre").val();
-    var apellido = $("#apellido").val();
-    var email = $("#email").val();
-    var content = $("#cont").val();
-    if ( nombre === '') {
-        $( message(required) ).insertAfter("#nombre");
+    var firstName = $("#FirstName").val();
+    var lastName = $("#LastName").val();
+    var email = $("#Email").val();
+    var content = $("#Content").val();
+    if ( firstName === '') {
+        $( message(required) ).insertAfter("#FirstName");
     }
-    if ( apellido === '') {
-        $( message(required) ).insertAfter("#apellido");
+    if ( lastName === '') {
+        $( message(required) ).insertAfter("#LastName");
     }
     if ( email === '') {
-        $( message(required) ).insertAfter("#email");
+        $( message(required) ).insertAfter("#Email");
     }
     if ( content === '') {
-        $( message(required) ).insertAfter("#cont");
+        $( message(required) ).insertAfter("#Content");
     }
-    $.post("view/scripts/registrarcomentario.php",{nom:nombre,ape:apellido,ema:email,cont:content});
+    $.post(
+        "view/scripts/saveComment.php", {
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            content: content
+        }, function(data) {
+            alert(data);
+        }
+    );
 }
 
 function signUp() {
@@ -111,7 +120,6 @@ function signUp() {
         $( message(minor) ).insertAfter("#BirthYear");
     }
     var birthDate = birthYear+'-'+birthMonth+'-'+birthDay;
-    
     $.post(
         "view/scripts/register.php", {
             first_name: firstName,
@@ -119,14 +127,13 @@ function signUp() {
             username: userName,
             pass: password,
             address: address,
+            phone: telephone,
             city: city,
-            telephone: telephone,
             birthdate: birthDate
         }, function(data) {
             alert(data);
         }
     );
-    
 }
 
 function isInteger(x) {

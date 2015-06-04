@@ -3,7 +3,8 @@
 namespace en2portr3s\model;
 
 class Person extends Database {
-
+    
+    private $id;
     private $first_name;
     private $last_name;
     private $email;
@@ -17,18 +18,14 @@ class Person extends Database {
 
     public function get($email = '') {
         if ($email != '') {
-            $this->query = "
-                SELECT first_name, last_name, email, phone, address, birthdate
-                FROM person
-                WHERE email = '$email'
-            ";
+            $this->query = "SELECT * FROM person WHERE email = '$email'";
             $this->dql();
         }
         if (count($this->rows) === 1) {
             $this->synchronize($this->rows[0]);
-            $this->message = 'Usuario encontrado';
+            $this->message = 'Persona encontrada';
         } else {
-            $this->message = 'Usuario no encontrado';
+            $this->message = 'Persona no encontrada';
         }
     }
 
@@ -38,18 +35,16 @@ class Person extends Database {
             if ($user_data['email'] != $this->email) {
                 $this->synchronize($user_data);
                 $this->query = "
-                    INSERT INTO person
-                    (first_name, last_name, email, phone, address, birthdate)
-                    VALUES
-                    ('$this->first_name', '$this->last_name', '$this->email', '$this->phone', '$this->address','$this->birthdate')
+                    INSERT INTO person(first_name, last_name, email, phone, address, birthdate)
+                    VALUES('$this->first_name', '$this->last_name', '$this->email', '$this->phone', '$this->address','$this->birthdate')
                 ";
                 $this->dml();
-                $this->message = 'Usuario agregado exitosamente';
+                $this->message = 'Persona agregada exitosamente';
             } else {
-                $this->message = 'El usuario ya existe';
+                $this->message = 'La persona ya existe';
             }
         } else {
-            $this->message = 'No se ha agregado al usuario';
+            $this->message = 'No se ha agregado a la persona';
         }
     }
 
@@ -66,7 +61,7 @@ class Person extends Database {
             WHERE email = '$this->email'
         ";
         $this->dml();
-        $this->message = 'Usuario modificado';
+        $this->message = 'Información personal modificada';
     }
 
     public function delete($email = '') {
@@ -75,7 +70,14 @@ class Person extends Database {
             WHERE email = '$email'
         ";
         $this->dml();
-        $this->message = 'Usuario eliminado';
+        $this->message = 'Información personal eliminada';
+    }
+
+    public function getId($email = '') {
+        if ($email !== '') {
+            $this->get($email);
+        }
+        return $this->id;
     }
 
     /**
