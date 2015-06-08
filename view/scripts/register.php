@@ -1,7 +1,7 @@
 <?php
 
 use en2portr3s\model\Person;
-Use en2portr3s\model\Account;
+use en2portr3s\model\Account;
 
 $user_data = [
     'first_name' => $_POST['first_name'],
@@ -24,6 +24,7 @@ $register_data = [
 
 $register = new Account();
 $register->set($register_data);
+
 echo $register->message;
 
 function __autoload($qClassName) {
