@@ -1,6 +1,6 @@
 $(document).ready(initialize);
 
-var state = "ok";
+var state;
 var already = "Ya hay otra persona con esta dirección de correo electrónico.";
 var required = "Esta información es obligatoria.";
 var invalid = "Información incorrecta.";
@@ -41,6 +41,7 @@ function initialize() {
 }
 
 function saveComment() {
+    state = "ok";
     var firstName = $("#FirstName").val();
     var lastName = $("#LastName").val();
     var email = $("#Email").val();
@@ -78,17 +79,21 @@ function saveComment() {
         state = invalid;
     }
 
-    $.post("view/scripts/saveComment.php", {
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        content: content
-    }, function (data) {
-        alert(data);
-    });
+    if (state === "ok") {
+        clearDataFields();
+        $.post("view/scripts/saveComment.php", {
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            content: content
+        }, function (data) {
+            alert(data);
+        });
+    }
 }
 
 function signUp() {
+    state = "ok";
     var firstName = $("#FirstName").val();
     var lastName = $("#LastName").val();
     var userName = $("#UserName").val();
@@ -179,6 +184,7 @@ function signUp() {
     var birthDate = birthYear + '-' + birthMonth + '-' + birthDay;
 
     if (state === "ok") {
+        clearDataFields();
         $.post("view/scripts/register.php", {
             first_name: firstName,
             last_name: lastName,
@@ -231,6 +237,10 @@ function clearMessages() {
     if ($("span.required").length) {
         $("span.required").remove();
     }
+}
+
+function clearDataFields() {
+    $(".data-field").val("");
 }
 
 function checkAge(year, month, day) {

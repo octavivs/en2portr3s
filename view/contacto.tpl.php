@@ -10,7 +10,7 @@
                                 <label for="FirstName" class="inline">Nombre</label>
                             </div>
                             <div class="medium-10 columns">
-                                <input type="text" id="FirstName" autofocus />
+                                <input type="text" class="data-field" id="FirstName" autofocus />
                             </div>
                         </div>
                         <div class="row collapse">
@@ -18,7 +18,7 @@
                                 <label for="LastName" class="inline">Apellidos</label>
                             </div>
                             <div class="medium-10 columns">
-                                <input type="text" id="LastName" />
+                                <input type="text" class="data-field" id="LastName" />
                             </div>
                         </div>
                         <div class="row collapse">
@@ -26,12 +26,12 @@
                                 <label for="Email" class="inline">Email</label>
                             </div>
                             <div class="medium-10 columns">
-                                <input type="text" id="Email" />
+                                <input type="text" class="data-field" id="Email" />
                             </div>
                         </div>
                         <div class="row collapse">
                             <label for="Content" class="inline">Mensaje</label>
-                            <textarea rows="4" id="Content"></textarea>
+                            <textarea rows="4" class="data-field" id="Content"></textarea>
                             <input type="button" class="button tiny" id="Comment" value="Enviar">
                         </div>
                     </form>
@@ -57,7 +57,7 @@
     </div>
     <div class="medium-10 columns">
         <h5>Buzón de sugerencias</h5>
-        <textarea  rows="2" id="buzon"></textarea>
+        <textarea  rows="2" class="data-field" id="buzon"></textarea>
         <input type="button" class="button tiny" value="Enviar">
     </div>
 </div>
