@@ -4,28 +4,36 @@ namespace en2portr3s\model;
 class Buzon extends Database {
 	private $buzon;
 	private $content;
-	
+	private $state;
+        
 	function __construct() {
         $this->db_name = "en2portr3s";
     }
 
-	public function get(){
-		$this->query = "
+	public function get($id = ''){
+            
+	$consulta=$result=$this->query = "
                 SELECT *
-                FROM buzon
+                FROM buzon 
                     ";
-            $this->dql();
+    while($filas=$consulta->fetch_assoc()){
+		$this->buzon[]=$filas;
+    }
+    	 $this->dql();
+	return $this->buzon;
 	}
+        
 	
 	public function set($user_data) {
          $this->synchronize($user_data);        
                    $this->query = "
                     INSERT INTO buzon
-                    (content)
+                    (content,state)
                     VALUES
-                    ('$this->content')
+                    ('$this->content','$this->state')
                    ";
-                $this->dml();
+                
+                 $this->dml();
                 $this->message = 'mensaje guardado correctamente';
     }
 	
@@ -55,11 +63,6 @@ class Buzon extends Database {
             $this->$propiedad = $valor;
         }
     }
-
-    protected function get($data) {
-        
-    }
-
 }
 
 /* 

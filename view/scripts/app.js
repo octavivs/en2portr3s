@@ -95,18 +95,18 @@ function saveComment() {
 }
 
 function saveBuzon(){
-    var conten = $("#Conten").val();
-    if (isEmpty(conten)) {
-        $(message(required)).insertAfter("#Conten");
+    var buzon = $("#Buzon").val();
+    if (isEmpty(buzon)) {
+        $(message(required)).insertAfter("#Buzon");
         state = required;
-    } else if (!isText(conten)) {
-        $(message(invalid)).insertAfter("#Conten");
+    } else if (!isText(buzon)) {
+        $(message(invalid)).insertAfter("#Buzon");
         state = invalid;
     }
     
     
     $.post("view/scripts/saveBuzon.php", {
-        conten: conten
+        buzon: buzon
     }, function (data) {
         alert(data);
     });

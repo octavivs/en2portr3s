@@ -39,6 +39,17 @@ CREATE TABLE IF NOT EXISTS comment (
     last_name VARCHAR(64) NOT NULL,
     email VARCHAR(64) NOT NULL,
     content VARCHAR(800) NOT NULL,
-
+    state varchar (20) not null,
+    since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+		
     PRIMARY KEY (id)
-);
+	);
+
+CREATE TABLE IF NOT EXISTS buzon (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    content VARCHAR(800) NOT NULL,
+     state varchar (20) not null,
+    since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+     
+    PRIMARY KEY (id)
+	);
