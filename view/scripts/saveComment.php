@@ -7,7 +7,7 @@ $user_data = [
     'last_name' => $_POST['last_name'],
     'email' => $_POST['email'],
     'content' => $_POST['content'],
-    'state' => 'Pendiente'
+    'status' => 'Pendiente'
 ];
 
 $coment = new Comment();

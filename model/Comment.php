@@ -8,7 +8,7 @@ class Comment extends Database {
     private $last_name;
     private $email;
     private $content;
-    private $state;
+    private $status;
 
     function __construct() {
         $this->db_name = "en2portr3s";
@@ -17,7 +17,7 @@ class Comment extends Database {
     public function get($email = '') {
         if ($email != '') {
             $this->query = "
-                SELECT first_name, last_name, email, content, state
+                SELECT first_name, last_name, email, content, status
                 FROM comment
                 WHERE email = '$email'
             ";
@@ -39,9 +39,9 @@ class Comment extends Database {
         
                 $this->query = "
                     INSERT INTO comment
-                    ( first_name, last_name, email, content,state)
+                    ( first_name, last_name, email, content,status)
                     VALUES
-                    ('$this->first_name','$this->last_name','$this->email','$this->content','$this->state')
+                    ('$this->first_name','$this->last_name','$this->email','$this->content','$this->status')
                    ";
                 $this->dml();
                 $this->message = 'mensaje guardado correctamente';
@@ -62,6 +62,7 @@ class Comment extends Database {
                 last_name='$apellido',
                 email='$email',
                 content='$content',
+                status='$status'    
             WHERE email = '$email'
         ";
         $this->dml();

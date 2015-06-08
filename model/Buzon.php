@@ -4,7 +4,7 @@ namespace en2portr3s\model;
 class Buzon extends Database {
 	private $buzon;
 	private $content;
-	private $state;
+	private $status;
         
 	function __construct() {
         $this->db_name = "en2portr3s";
@@ -28,7 +28,7 @@ class Buzon extends Database {
          $this->synchronize($user_data);        
                    $this->query = "
                     INSERT INTO buzon
-                    (content,state)
+                    (content,status)
                     VALUES
                     ('$this->content','$this->state')
                    ";
