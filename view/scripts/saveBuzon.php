@@ -3,7 +3,7 @@
 use en2portr3s\model\Buzon;
 
 $user_data = [
-       'content' => $_POST['content']
+       'content' => $_POST['conten']
 ];
 
 $buzon = new Buzon();

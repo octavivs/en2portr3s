@@ -102,7 +102,7 @@ function saveBuzon(){
     
     
     $.post("view/scripts/saveBuzon.php", {
-        content: content
+        conten: conten
     }, function (data) {
         alert(data);
     });
