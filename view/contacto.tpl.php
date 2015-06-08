@@ -57,7 +57,6 @@
     </div>
     <div class="medium-10 columns">
         <h5>Buzón de sugerencias</h5>
-        <textarea  rows="2" class="data-field" id="buzon"></textarea>
-        <input type="button" class="button tiny" value="Enviar">
+        <textarea  rows="2" id="Conten"></textarea>
+        <input type="button" class="button tiny" id="Buzon" value="Enviar">
     </div>
-</div>

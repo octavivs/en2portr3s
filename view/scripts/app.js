@@ -30,6 +30,8 @@ function initialize() {
     $("input#SignUp").click(signUp);
     $("input#Comment").click(clearMessages);
     $("input#Comment").click(saveComment);
+    $("input#Buzon").click(clearMessages);
+    $("input#Buzon").click(saveBuzon);
     $("input#Reset").click(clearMessages);
     /*
      $("#services .button").hover(function() {
@@ -90,6 +92,24 @@ function saveComment() {
             alert(data);
         });
     }
+}
+
+function saveBuzon(){
+    var conten = $("#Conten").val();
+    if (isEmpty(conten)) {
+        $(message(required)).insertAfter("#Conten");
+        state = required;
+    } else if (!isText(conten)) {
+        $(message(invalid)).insertAfter("#Conten");
+        state = invalid;
+    }
+    
+    
+    $.post("view/scripts/saveBuzon.php", {
+        conten: conten
+    }, function (data) {
+        alert(data);
+    });
 }
 
 function signUp() {
