@@ -32,8 +32,14 @@
                         <div class="row collapse">
                             <label for="Content" class="inline">Mensaje</label>
                             <textarea rows="4" class="data-field" id="Content"></textarea>
-                            <input type="button" class="button tiny" id="Comment" value="Enviar">
+
                         </div>
+
+                        <div class="row collapse">
+                            <input type="button" class="button tiny" id="Comment" value="Enviar"> 
+
+                        </div>
+
                     </form>
                 </div>
             </section>
