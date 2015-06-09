@@ -1,16 +1,16 @@
 <?php
 
-use en2portr3s\model\Buzon;
+use en2portr3s\model\Suggestion;
 
 $user_data = [
     'content' => $_POST['buzon'],
     'status' => 'Pendiente'
 ];
 
-$buzon = new Buzon();
-$buzon->set($user_data);
+$suggestion = new Suggestion();
+$suggestion->set($user_data);
 
-echo $buzon->message;
+echo $suggestion->message;
 
 function __autoload($qClassName) {
     $global_space = "en2portr3s";

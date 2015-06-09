@@ -1,9 +1,9 @@
 <?php
 
-use en2portr3s\model\Buzon;
+use en2portr3s\model\Suggestion;
 
-$buzon = new Buzon();
-$datos = $buzon->get();
+$suggestion = new Suggestion();
+$datos = $suggestion->get();
 
 foreach ($datos as $dato) {
     echo "<tr><td>" . $dato['id'] . "</td>";

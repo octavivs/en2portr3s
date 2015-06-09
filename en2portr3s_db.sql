@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS account (
     ON UPDATE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS comment (
+CREATE TABLE IF NOT EXISTS question (
     id INT(10) NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(36) NOT NULL,
     last_name VARCHAR(64) NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS comment (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS buzon (
+CREATE TABLE IF NOT EXISTS suggestion (
     id INT(10) NOT NULL AUTO_INCREMENT,
     content VARCHAR(800) NOT NULL,
     status varchar (20) not null,

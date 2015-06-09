@@ -1,6 +1,6 @@
 <?php
 
-use en2portr3s\model\Comment;
+use en2portr3s\model\Question;
 
 $user_data = [
     'first_name' => $_POST['first_name'],
@@ -10,10 +10,10 @@ $user_data = [
     'status' => 'Pendiente'
 ];
 
-$coment = new Comment();
-$coment->set($user_data);
+$question = new Question();
+$question->set($user_data);
 
-echo $coment->message;
+echo $question->message;
 
 function __autoload($qClassName) {
     $global_space = "en2portr3s";

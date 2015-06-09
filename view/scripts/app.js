@@ -29,9 +29,9 @@ function initialize() {
     $("input#SignUp").click(clearMessages);
     $("input#SignUp").click(signUp);
     $("input#Comment").click(clearMessages);
-    $("input#Comment").click(saveComment);
+    $("input#Comment").click(saveQuestion);
     $("input#Buzon").click(clearMessages);
-    $("input#Buzon").click(saveBuzon);
+    $("input#Buzon").click(saveSuggestion);
     $("input#Reset").click(clearMessages);
     /*
      $("#services .button").hover(function() {
@@ -42,7 +42,7 @@ function initialize() {
      */
 }
 
-function saveComment() {
+function saveQuestion() {
     state = "ok";
     var firstName = $("#FirstName").val();
     var lastName = $("#LastName").val();
@@ -83,7 +83,7 @@ function saveComment() {
 
     if (state === "ok") {
         clearDataFields();
-        $.post("view/scripts/saveComment.php", {
+        $.post("view/scripts/saveQuestion.php", {
             first_name: firstName,
             last_name: lastName,
             email: email,
@@ -94,7 +94,8 @@ function saveComment() {
     }
 }
 
-function saveBuzon(){
+function saveSuggestion() {
+    state = "ok";
     var buzon = $("#Buzon").val();
     if (isEmpty(buzon)) {
         $(message(required)).insertAfter("#Buzon");
@@ -103,13 +104,14 @@ function saveBuzon(){
         $(message(invalid)).insertAfter("#Buzon");
         state = invalid;
     }
-    
-    
-    $.post("view/scripts/saveBuzon.php", {
-        buzon: buzon
-    }, function (data) {
-        alert(data);
-    });
+
+    if (state === "ok") {
+        $.post("view/scripts/saveSuggestion.php", {
+            buzon: buzon
+        }, function (data) {
+            alert(data);
+        });
+    }
 }
 
 function signUp() {
@@ -190,6 +192,7 @@ function signUp() {
         telephone = telephone.replace(pattern, "");
         if (!isInteger(telephone)) {
             $(message(invalid)).insertAfter("#Telephone");
+            state = invalid;
         }
     }
 
