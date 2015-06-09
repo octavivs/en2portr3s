@@ -32,8 +32,14 @@
                         <div class="row collapse">
                             <label for="Content" class="inline">Mensaje</label>
                             <textarea rows="4" class="data-field" id="Content"></textarea>
-                            <input type="button" class="button tiny" id="Comment" value="Enviar">
+
                         </div>
+
+                        <div class="row collapse">
+                            <input type="button" class="button tiny" id="Comment" value="Enviar"> 
+
+                        </div>
+
                     </form>
                 </div>
             </section>
@@ -57,6 +63,6 @@
     </div>
     <div class="medium-10 columns">
         <h5>Buzón de sugerencias</h5>
-        <textarea  rows="2" id="Buzon"></textarea>
+        <textarea  rows="2" class="data-field" id="Buzon"></textarea>
         <input type="button" class="button tiny" id="Buzon" value="Enviar">
     </div>

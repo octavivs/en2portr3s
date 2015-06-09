@@ -106,6 +106,7 @@ function saveSuggestion() {
     }
 
     if (state === "ok") {
+         clearDataFields();
         $.post("view/scripts/saveSuggestion.php", {
             buzon: buzon
         }, function (data) {
