@@ -6,6 +6,9 @@
         <!-- If you delete this meta tag World War Z will become a reality -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <meta name="author" content="José Octavio Sánchez Contreras" />
+        <meta name="author" content="Juan Daniel Gutiérrez Torres" />
+
         <title>en2portr3s</title>
 
         <!-- Foundation framework, used to do responsive the website -->
@@ -27,7 +30,15 @@
                 </div>
                 <div class="large-9 medium-9 columns">
                     <div class="row">
-                        <input type="button" class="button right" value="Login"/>
+                        <div class="large-8 medium-10 columns right" id="login-form">
+                            <input type="button" class="button right" id="login-btn" value="Login" />
+                            <div class="large-5 medium-5 columns right">
+                                <input type="password" class="data-field" id="login-pass" placeholder="Contraseña" />
+                            </div>
+                            <div class="large-5 medium-5 columns right">
+                                <input type="email" class="data-field" id="login-id" placeholder="ejemplo@mail.com" />
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <nav class="top-bar" data-topbar>

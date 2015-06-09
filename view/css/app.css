@@ -83,9 +83,9 @@ span.required {
 }
 
 #about {
-   background:  url(http://s.cdpn.io/79/cloud_tl.png) no-repeat fixed left top,
-    url(http://s.cdpn.io/79/cloud_br.png) no-repeat fixed right bottom, 
-    #cfd6da url(http://s.cdpn.io/79/zeppelin-bg.jpg) no-repeat fixed center top;
+    background:  url(http://s.cdpn.io/79/cloud_tl.png) no-repeat fixed left top,
+        url(http://s.cdpn.io/79/cloud_br.png) no-repeat fixed right bottom, 
+        #cfd6da url(http://s.cdpn.io/79/zeppelin-bg.jpg) no-repeat fixed center top;
     text-align: justify ;
 }
 
@@ -97,7 +97,7 @@ span.required {
     color: #fff;
     font-size: 20px;
     font-family: initial;
- }
+}
 
 #about h3 {
     border-radius: 5px 40px 20px;
@@ -105,10 +105,10 @@ span.required {
     color: white;
     text-align: center;
     text-shadow: 0 1px 0 #ccc,
-                 0 2px 0 #b8b4b4,
-                 0 4px 0 #b9b9b9,
-                 1px rgba(0,0,0,.1),
-                 0 0 5px rgba(0,0,0,.1);
+        0 2px 0 #b8b4b4,
+        0 4px 0 #b9b9b9,
+        1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1);
     color: #fff;
     font-size: 30px;
     font-family: Impact;
@@ -120,10 +120,10 @@ span.required {
     color: white;
     text-align: center;
     text-shadow: 0 1px 0 #ccc,
-                 0 2px 0 #b8b4b4,
-                 0 4px 0 #b9b9b9,
-                 1px rgba(0,0,0,.1),
-                 0 0 5px rgba(0,0,0,.1);
+        0 2px 0 #b8b4b4,
+        0 4px 0 #b9b9b9,
+        1px rgba(0,0,0,.1),
+        0 0 5px rgba(0,0,0,.1);
     color: #fff;
     font-size: 30px;
     font-family: Impact;
@@ -155,11 +155,30 @@ span.required {
     background: #000;
 }
 
-#top .button {
-    margin-top: 1.25rem;
-    margin-right: 0.9375rem;
-    padding: 0.625rem 1.25rem 0.6875rem 1.25rem;
-    font-size: 0.6875rem;
+#login-form {
+    margin-top: 1rem;
+}
+
+#login-form > .columns {
+    padding-left: 0rem;
+    padding-right: 1rem;
+}
+
+#login-id,
+#login-pass, 
+#login-btn {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-width: 1px;
+    font-size: 0.8125rem;
+    height: auto;
+}
+
+/* 49.14 rem = 688px.*/
+@media only screen and (max-width: 49rem) {
+    #login-form {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 40em) {
@@ -168,15 +187,17 @@ span.required {
         margin-bottom: 0;
     }
 
-    #top nav.top-bar {
-        text-align: center;
+    #login-form > .columns {
+        padding-left: 0rem;
+        padding-right: 0rem;
     }
 
-    #top .button {
-        margin: 0;
-        padding: 0.875rem 1.75rem 0.9375rem 1.75rem;
-        font-size: 0.8125rem;
+    #login-btn {
         text-transform: uppercase;
+    }
+
+    #top nav.top-bar {
+        text-align: center;
     }
 }
 
