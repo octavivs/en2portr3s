@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
-	RewriteEngine on
-	RewriteBase /en2portr3s/
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+    RewriteEngine on
+    RewriteBase /en2portr3s/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 </IfModule>
