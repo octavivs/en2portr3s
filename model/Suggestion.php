@@ -37,8 +37,8 @@ class Suggestion extends Database {
         $this->synchronize($user_data);
         $this->query = "
             UPDATE suggestion
-            SET content = '$content',
-            WHERE buzon = '$buzon'
+            SET content = '$this->content',
+            WHERE buzon = '$this->buzon'
         ";
         $this->dml();
         $this->message = 'Sugerencia modificada';
@@ -47,7 +47,6 @@ class Suggestion extends Database {
     /*
      * Falta moduficar esta parte para eliminar el mensaje de la tabla buzon.
      */
-
     public function delete($content = '') {
         $this->query = "
             DELETE FROM suggestion

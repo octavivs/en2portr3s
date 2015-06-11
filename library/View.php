@@ -5,9 +5,9 @@ namespace en2portr3s\library;
 class View extends Response {
 
     protected $template;
-    protected $vars = array();
+    protected $vars = [];
 
-    public function __construct($template, $vars = array()) {
+    public function __construct($template, $vars = []) {
         $this->template = $template;
         $this->vars = $vars;
     }
@@ -20,7 +20,7 @@ class View extends Response {
         return $this->vars;
     }
 
-    public function execute() {
+    public function output() {
         $template = $this->getTemplate();
         $vars = $this->getVars();
         call_user_func(function () use ($template, $vars) {

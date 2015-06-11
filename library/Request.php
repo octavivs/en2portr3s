@@ -6,13 +6,13 @@ class Request {
 
     protected $url;
     protected $controller;
-    protected $defaultController = 'inicio';
+    protected $default_controller = 'inicio';
     protected $action;
-    protected $defaultAction = 'index';
-    protected $params = array();
+    protected $default_action = 'index';
+    protected $params = [];
 
-    public function __construct($urlRecibida) {
-        $this->url = $urlRecibida;
+    public function __construct($received_url) {
+        $this->url = $received_url;
         $segments = explode('/', $this->getUrl());
         $this->resolveController($segments);
         $this->resolveAction($segments);
@@ -26,14 +26,14 @@ class Request {
     public function resolveController(&$segments) {
         $this->controller = array_shift($segments);
         if (empty($this->controller)) {
-            $this->controller = $this->defaultController;
+            $this->controller = $this->default_controller;
         }
     }
 
     public function resolveAction(&$segments) {
         $this->action = array_shift($segments);
         if (empty($this->action)) {
-            $this->action = $this->defaultAction;
+            $this->action = $this->default_action;
         }
     }
 
@@ -54,7 +54,7 @@ class Request {
     }
 
     public function getControllerClassName() {
-        return Inflector::camel($this->getController()) . 'Controller';
+        return Inflector::camelCase($this->getController()) . 'Controller';
     }
 
     public function getControllerFileName() {
@@ -62,29 +62,29 @@ class Request {
     }
 
     public function getActionMethodName() {
-        return Inflector::camel($this->getAction()) . 'Action';
+        return Inflector::camelCase($this->getAction()) . 'Action';
     }
 
     public function execute() {
-        $controllerClassName = $this->getControllerClassName();
-        $controllerFileName = $this->getControllerFileName();
-        $actionMethodName = $this->getActionMethodName();
+        $controller_class_name = $this->getControllerClassName();
+        $controller_file_name = $this->getControllerFileName();
+        $action_method_name = $this->getActionMethodName();
         $params = $this->getParams();
-        if (!file_exists($controllerFileName)) {
-            $controllerClassName = 'IncidenceController';
-            $controllerFileName = 'controller/IncidenceController.php';
-            $actionMethodName = 'indexAction';
+        if (!file_exists($controller_file_name)) {
+            $controller_class_name = 'IncidenceController';
+            $controller_file_name = 'controller/IncidenceController.php';
+            $action_method_name = 'indexAction';
         }
-        $namespace = "\\en2portr3s\\controller\\";
-        $qualifiedControllerClassName = $namespace . $controllerClassName;
-        $controller = new $qualifiedControllerClassName();
-        $response = call_user_func_array([$controller, $actionMethodName], $params);
+        $namespaces = "\\en2portr3s\\controller\\";
+        $qualified_controller_name = $namespaces . $controller_class_name;
+        $controller = new $qualified_controller_name();
+        $response = call_user_func_array([$controller, $action_method_name], $params);
         $this->executeResponse($response);
     }
 
     public function executeResponse($response) {
         if ($response instanceof Response) {
-            $response->execute();
+            $response->output();
         } else if (is_string($response)) {
             echo $response;
         } else if (is_array($response)) {
