@@ -92,7 +92,8 @@
         </div><!-- End of bottom -->
 
         <script type="text/javascript" src="view/scripts/vendor/jquery.js"></script>
-        <script type="text/javascript" src="view/scripts/foundation.js"></script>
+        <script type="text/javascript" src="view/scripts/vendor/fastclick.js"></script>
+        <script type="text/javascript" src="view/scripts/vendor/foundation.js"></script>
         <script>
             $(document).foundation();
         </script>

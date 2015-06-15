@@ -1,6 +1,6 @@
 <div class="row"><!-- Slider -->
     <div class="large-12">
-        <div id="featured" data-orbit>
+        <div id="featured" data-orbit data-options="animation_speed:400;resume_on_mouseout:true;slide_number:false">
             <img src="view/img/navidad_banner.png" alt="¡Feliz navidad!" />
             <img src="view/img/en2portr3s_banner.png" alt="Llamanos" />
         </div>

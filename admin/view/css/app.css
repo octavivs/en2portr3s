@@ -1,0 +1,21 @@
+/*
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.top-bar .name h1 a {
+  opacity: .75;
+  filter: alpha(opacity=75);
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  padding: 0;
+}
+
+.top-bar .title-area h1 a {
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif !important;
+}
+*/
