@@ -14,13 +14,10 @@ class Suggestion extends Database {
         $this->db_name = "en2portr3s";
     }
 
-    public function get($id = '') {
-        $result = $this->query = "SELECT * FROM suggestion";
-        while ($filas = $result->fetch_assoc()) {
-            $this->buzon[] = $filas;
-        }
-        $this->dql();
-        return $this->buzon;
+     public function get($id = '') {
+              $this->query = "SELECT * FROM suggestion";
+            $this->dql();
+             return $this->rows;   
     }
 
     public function set($user_data) {
@@ -37,16 +34,20 @@ class Suggestion extends Database {
         $this->synchronize($user_data);
         $this->query = "
             UPDATE suggestion
-            SET content = '$this->content',
-            WHERE buzon = '$this->buzon'
+            SET id='$this->id',
+                content='$this->content',
+                status='$this->status',
+                since='$this->since'
+            WHERE id = '$this->id'
         ";
         $this->dml();
-        $this->message = 'Sugerencia modificada';
+        $this->message = 'Información modificada';
     }
 
     /*
      * Falta moduficar esta parte para eliminar el mensaje de la tabla buzon.
      */
+
     public function delete($content = '') {
         $this->query = "
             DELETE FROM suggestion

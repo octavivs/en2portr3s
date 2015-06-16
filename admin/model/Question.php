@@ -16,17 +16,10 @@ class Question extends Database {
         $this->db_name = "en2portr3s";
     }
 
-    public function get($email = '') {
-        if ($email != '') {
-            $this->query = "SELECT * FROM question WHERE email = '$email'";
+   public function get($id = '') {
+              $this->query = "SELECT * FROM question";
             $this->dql();
-        }
-        if (count($this->rows) === 1) {
-            $this->synchronize($this->rows[0]);
-            $this->message = 'Pregunta encontrada';
-        } else {
-            $this->message = 'Pregunta no encontrada';
-        }
+             return $this->rows;   
     }
 
     public function set($user_data) {
