@@ -1,6 +1,6 @@
 <?php
 
-namespace en2portr3s\model;
+namespace en2portr3s\admin\model;
 
 class Account extends Database {
 
