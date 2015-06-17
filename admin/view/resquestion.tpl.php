@@ -14,7 +14,7 @@ $mail = $_POST['email'];
         <h3>Email de Contacto</h3>
 
 
-        <form action="enviar.php" method="post" enctype="multipart/form-data">
+        <form action="scripts/enviar" method="post" enctype="multipart/form-data">
 
             <table border="0">
                 <tr>
@@ -39,7 +39,9 @@ $mail = $_POST['email'];
                 </tr>
                 <tr>
                     <td></td><td><input type="submit" value="Enviar"></td>
+                     <td><input type="submit" value="regresar"></td>
                 </tr>
+                
             </table>
             <input type="hidden" name="phpmailer">
         </form>
