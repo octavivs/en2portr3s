@@ -30,14 +30,12 @@
                 </div>
                 <div class="large-9 medium-9 columns">
                     <div class="row">
-                        <div class="large-8 medium-10 columns right" id="login-form">
-                            <input type="button" class="button right" id="login-btn" value="Login" />
-                            <div class="large-5 medium-5 columns right">
-                                <input type="password" class="data-field" id="login-pass" placeholder="Contraseña" />
-                            </div>
-                            <div class="large-5 medium-5 columns right">
-                                <input type="email" class="data-field" id="login-id" placeholder="ejemplo@mail.com" />
-                            </div>
+                        <div class="medium-12 columns" id="login-form">
+                            <ul class="inline-list right">
+                                <li><input type="email" class="data-field" id="login-id" placeholder="ejemplo@mail.com" /></li>
+                                <li><input type="password" class="data-field" id="login-pass" placeholder="Contraseña" /></li>
+                                <li><input type="button" class="button" id="login-btn" value="Login" /></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="row">

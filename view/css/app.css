@@ -159,26 +159,14 @@ span.required {
     margin-top: 1rem;
 }
 
-#login-form > .columns {
-    padding-left: 0rem;
-    padding-right: 1rem;
-}
-
 #login-id,
 #login-pass, 
 #login-btn {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     border-width: 1px;
     font-size: 0.8125rem;
     height: auto;
-}
-
-/* 49.14 rem = 688px.*/
-@media only screen and (max-width: 49rem) {
-    #login-form {
-        width: 100%;
-    }
 }
 
 @media only screen and (max-width: 40em) {
@@ -187,9 +175,22 @@ span.required {
         margin-bottom: 0;
     }
 
-    #login-form > .columns {
-        padding-left: 0rem;
-        padding-right: 0rem;
+    #login-form * {
+        display: block;
+        float: none;
+        margin-left: 0px;
+        margin-bottom:  0px;
+        width: 100%;
+    }
+
+    #login-id,
+    #login-pass, 
+    #login-btn {
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border-width: 1px;
+        font-size: 0.8125rem;
+        height: auto;
     }
 
     #login-btn {
