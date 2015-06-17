@@ -70,6 +70,14 @@ class Account extends Database {
         $this->message = 'Usuario eliminado';
     }
 
+    public function isAdmin($username, $password) {
+        $this->get($username);
+        $first_step = $this->username === $username;
+        $second_step = $this->pass === $password;
+        $third_step = $this->kind === 'admin';
+        return $first_step && $second_step && $third_step;
+    }
+
     /**
      * Sincroniza los datos de la clase con la tabla en la base de datos.
      */

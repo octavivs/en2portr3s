@@ -1,6 +1,7 @@
 --
 -- Procedure: registration of people's personal data in the database.
 --
+
 DELIMITER $
 CREATE DEFINER = 'n2x3_user'@'localhost' PROCEDURE register_person(
     IN fname VARCHAR(36),
@@ -29,9 +30,12 @@ BEGIN
 END $
 DELIMITER ;
 
+-- --------------------------------------------------------
+
 --
 -- Procedure: updates people's personal data in the database.
 --
+
 DELIMITER $
 CREATE DEFINER = 'n2x3_user'@'localhost' PROCEDURE update_person_info(
     IN ident INT(10),
@@ -54,9 +58,12 @@ BEGIN
 END $
 DELIMITER ;
 
+-- --------------------------------------------------------
+
 --
 -- Procedure: deletes people's personal data in the database.
 --
+
 DELIMITER $
 CREATE DEFINER = 'n2x3_user'@'localhost' PROCEDURE unreg_person(
     IN ident INT(10)
@@ -66,9 +73,12 @@ BEGIN
 END $
 DELIMITER ;
 
+-- --------------------------------------------------------
+
 --
 -- Procedure: retrieves people's personal data from the database.
 --
+
 DELIMITER $
 CREATE DEFINER = 'n2x3_user'@'localhost' PROCEDURE show_person(
     OUT info VARCHAR(255),
