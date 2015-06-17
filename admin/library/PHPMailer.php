@@ -2,6 +2,8 @@
 
 namespace en2portr3s\admin\library;
 
+use en2portr3s\admin\library\SMTP;
+
 /* ~ class.phpmailer.php
   .---------------------------------------------------------------------------.
   |  Software: PHPMailer - PHP email class                                    |
@@ -513,7 +515,7 @@ class PHPMailer {
      * @return bool
      */
     function SmtpSend($header, $body) {
-        include_once($this->PluginDir . 'class.smtp.php');
+        include_once($this->PluginDir . 'SMTP.php');
         $error = '';
         $bad_rcpt = array();
 

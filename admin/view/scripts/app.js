@@ -33,6 +33,7 @@ function initialize() {
     $("input#Buzon").click(clearMessages);
     $("input#Buzon").click(saveSuggestion);
     $("input#Reset").click(clearMessages);
+    $("input#enviar").click(enviar);
     /*
      $("#services .button").hover(function() {
      $(this).siblings("img").removeClass("hidden-for-small");
@@ -88,16 +89,38 @@ function saveQuestion() {
             last_name: lastName,
             email: email,
             content: content
+            
+            
         }, function (data) {
             alert(data);
         });
     }
 }
 
+function enviar() {
+    var nombre =$("#nombre").val();
+    var email =$("#email").val();
+    var asunto =$("#asunto").val();
+var adjunto =$("#adjunto").val();
+var mensaje =$("#mensaje").val();
+
+$.post("admin/view/scripts/enviar.php", {
+        
+        nombre:nombre,
+        email: email,
+        asunto: asunto,
+        adjunto:adjunto,
+        mensaje: mensaje
+        
+        }, function (data) {
+            alert(data);
+        });
+}
+
 function saveSuggestion() {
     state = "ok";
     var buzon = $("#Buzon").val();
-    if (isEmpty(buzon)) {
+    if (isEompty(buzon)) {
         $(message(required)).insertAfter("#Buzon");
         state = required;
     } else if (!isText(buzon)) {
