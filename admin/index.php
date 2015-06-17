@@ -10,11 +10,12 @@ $received_url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
 $url = empty($received_url) ? "" : $received_url;
 
 $request = new Request($url);
+$account = new Account();
 
 if (isset($_POST['uid']) && isset($_POST['pwd'])) {
     $uid = filter_input(INPUT_POST, 'uid', FILTER_SANITIZE_EMAIL);
-    $pwd = filter_input(INPUT_POST, 'uid', FILTER_VALIDATE_REGEXP, '/^([a-z0-9@#$%]{8,16})$/i');
-    echo "POST = $uid and $pwd";
+    $pwd = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_EMAIL);
+    echo "POST = $uid ($pwd)";
     $_SESSION['uid'] = $uid;
     $_SESSION['pwd'] = $pwd;
     $request->execute();
@@ -22,7 +23,7 @@ if (isset($_POST['uid']) && isset($_POST['pwd'])) {
 } else if (isset($_SESSION['uid']) && isset($_SESSION['pwd'])) {
     $uid = $_SESSION['uid'];
     $pwd = $_SESSION['pwd'];
-    echo "SESSION = $uid and $pwd";
+    echo "SESSION = $uid ($pwd)";
     $request->execute();
     exit;
 }
