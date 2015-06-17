@@ -2,6 +2,7 @@
 
 namespace en2portr3s\admin\library;
 
+
 /* ~ class.smtp.php
   .---------------------------------------------------------------------------.
   |  Software: PHPMailer - PHP email class                                    |

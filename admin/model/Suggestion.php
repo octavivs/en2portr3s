@@ -48,10 +48,10 @@ class Suggestion extends Database {
      * Falta moduficar esta parte para eliminar el mensaje de la tabla buzon.
      */
 
-    public function delete($content = '') {
+    public function delete($id = '') {
         $this->query = "
             DELETE FROM suggestion
-            WHERE id = '$content'
+            WHERE id = '$id'
         ";
         $this->dml();
         $this->message = 'Sugerencia eliminada';
