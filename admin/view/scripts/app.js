@@ -33,7 +33,8 @@ function initialize() {
     $("input#Buzon").click(clearMessages);
     $("input#Buzon").click(saveSuggestion);
     $("input#Reset").click(clearMessages);
-    $("input#enviar").click(enviar);
+    $("input#eliminar").click(eliminar);
+
     /*
      $("#services .button").hover(function() {
      $(this).siblings("img").removeClass("hidden-for-small");
@@ -89,33 +90,23 @@ function saveQuestion() {
             last_name: lastName,
             email: email,
             content: content
-            
-            
+
+
         }, function (data) {
             alert(data);
         });
     }
 }
 
-function enviar() {
-    var nombre =$("#nombre").val();
-    var email =$("#email").val();
-    var asunto =$("#asunto").val();
-var adjunto =$("#adjunto").val();
-var mensaje =$("#mensaje").val();
-
-$.post("admin/view/scripts/enviar.php", {
-        
-        nombre:nombre,
-        email: email,
-        asunto: asunto,
-        adjunto:adjunto,
-        mensaje: mensaje
-        
-        }, function (data) {
-            alert(data);
-        });
+function eliminar() {
+    var id = $("#id").val();
+    $.post("view/scripts/eliminar.php", {
+        id: id
+    }, function (data) {
+        alert(data);
+    });
 }
+
 
 function saveSuggestion() {
     state = "ok";
@@ -129,7 +120,7 @@ function saveSuggestion() {
     }
 
     if (state === "ok") {
-         clearDataFields();
+        clearDataFields();
         $.post("view/scripts/saveSuggestion.php", {
             buzon: buzon
         }, function (data) {
