@@ -1,6 +1,6 @@
 <div class="row"><!-- Slider -->
     <div class="large-12">
-        <div id="featured" data-orbit data-options="animation_speed:400;resume_on_mouseout:true;slide_number:false">
+        <div id="featured" data-orbit data-page="inicio" data-options="animation_speed:400;resume_on_mouseout:true;slide_number:false">
             <img src="view/img/navidad_banner.png" alt="¡Feliz navidad!" />
             <img src="view/img/en2portr3s_banner.png" alt="Llamanos" />
         </div>
@@ -9,14 +9,7 @@
 
 <div class="row"><!-- About -->
     <hr>
-    <div class="large-12 columns">
-        <h4>Acerca de nosotros</h4>
-        <p>
-            Somos una empresa dedicada a brindar soluciones gráficas, asesorando y educando a nuestros clientes
-            sobre las buenas prácticas publicitarias. Nuestro servicio está enfocado en brindar una solución integral,
-            enfocándonos en escuchar al cliente y proponer soluciones cumpliendo con las necesidades que requieren.
-        </p>
-    </div>
+    <div class="large-12 columns" data-id="1"></div>
 </div><!-- End of About -->
 
 <div class="row"><!-- Clients -->

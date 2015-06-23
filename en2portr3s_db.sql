@@ -53,3 +53,39 @@ CREATE TABLE IF NOT EXISTS suggestion (
 
     PRIMARY KEY (id)
 );
+
+CREATE TABLE IF NOT EXISTS content (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    mime VARCHAR(16) NOT NULL,
+    page VARCHAR(48) NOT NULL,
+
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS image (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    url VARCHAR(255) NOT NULL,
+    alt VARCHAR(128) NOT NULL,
+    content_id INT(10) NOT NULL,
+
+    PRIMARY KEY (id),
+    INDEX (content_id),
+
+    FOREIGN KEY (content_id)
+    REFERENCES content(id)
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS text_entry (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    body VARCHAR(21831) NOT NULL,
+    lang_code VARCHAR(10) NOT NULL,
+    content_id INT(10) NOT NULL,
+
+    PRIMARY KEY (id),
+    INDEX (content_id),
+
+    FOREIGN KEY (content_id)
+    REFERENCES content(id)
+    ON UPDATE CASCADE
+);
