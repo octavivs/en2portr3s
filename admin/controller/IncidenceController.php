@@ -2,7 +2,7 @@
 
 namespace en2portr3s\admin\controller;
 
-use en2portr3s\library\View;
+use en2portr3s\admin\library\View;
 
 class IncidenceController {
 

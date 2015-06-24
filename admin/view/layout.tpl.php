@@ -14,6 +14,7 @@
         <!-- Foundation framework, used to do responsive the website -->
         <link rel="stylesheet" type="text/css" href="view/css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="view/css/foundation.css" />
+        <link rel="stylesheet" type="text/css" href="view/css/responsive-tables.css" />
 
         <!-- Override default settings in framework -->
         <link rel="stylesheet" type="text/css" href="view/css/app.css" />
@@ -35,7 +36,7 @@
                     <!-- Right Nav Section -->
                     <ul class="right">
                         <li><a href="#">Contenido</a></li>
-                        <li><a href="#">Usuarios</a></li>
+                        <li><a href="users">Usuarios</a></li>
                         <li><a href="#">Permisos</a></li>
                         <li><a href="question">Comentarios</a></li>
                         <li><a href="suggestion">Sugerencias</a></li>
@@ -55,6 +56,7 @@
         <script type="text/javascript" src="view/scripts/vendor/jquery.js"></script>
         <script type="text/javascript" src="view/scripts/vendor/fastclick.js"></script>
         <script type="text/javascript" src="view/scripts/vendor/foundation.js"></script>
+        <script type="text/javascript" src="view/scripts/vendor/responsive-tables.js"></script>
         <script>
             $(document).foundation();
         </script>

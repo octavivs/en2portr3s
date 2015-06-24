@@ -2,6 +2,23 @@ body {
     background: #F0F0F3;
 }
 
+/*************************/
+/*        Content        */
+/*************************/
+
+#page-content {
+    margin-top: 2.4%;
+    margin-bottom: 1.4%;
+}
+
+table {
+    width: 100%;
+}
+
+/************************/
+/*        Header        */
+/************************/
+
 .login-box, .login-error {
     background: #fff;
     border: 1px solid #ddd; 

@@ -4,10 +4,10 @@ namespace en2portr3s\admin\controller;
 
 use en2portr3s\admin\library\View;
 
-class UserController {
+class UsersController {
 
     public function indexAction() {
-        return new View('user');
+        return new View('users');
     }
 
 }
