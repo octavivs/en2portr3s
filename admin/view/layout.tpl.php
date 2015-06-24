@@ -37,7 +37,7 @@
                     <ul class="right">
                         <li><a href="#">Contenido</a></li>
                         <li><a href="users">Usuarios</a></li>
-                        <li><a href="#">Permisos</a></li>
+                        <li><a href="permisos">Permisos</a></li>
                         <li><a href="question">Comentarios</a></li>
                         <li><a href="suggestion">Sugerencias</a></li>
                     </ul>

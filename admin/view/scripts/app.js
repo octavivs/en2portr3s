@@ -34,7 +34,7 @@ function initialize() {
     $("input#Buzon").click(saveSuggestion);
     $("input#Reset").click(clearMessages);
     $("input#eliminar").click(eliminar);
-
+    $("input#eliminar2").click(eliminar2);
     /*
      $("#services .button").hover(function() {
      $(this).siblings("img").removeClass("hidden-for-small");
@@ -107,6 +107,14 @@ function eliminar() {
     });
 }
 
+function eliminar2() {
+    var id = $("#id2").val();
+    $.post("view/scripts/eliminar2.php", {
+        id: id
+    }, function (data) {
+        alert(data);
+    });
+}
 
 function saveSuggestion() {
     state = "ok";

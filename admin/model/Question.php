@@ -47,8 +47,8 @@ class Question extends Database {
         $this->message = 'Pregunta modificada';
     }
 
-    public function delete($email = '') {
-        $this->query = "DELETE FROM question WHERE email = '$email'";
+    public function delete($id = '') {
+        $this->query = "DELETE FROM question WHERE id = '$id'";
         $this->dml();
         $this->message = 'Pregunta eliminada';
     }

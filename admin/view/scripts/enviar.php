@@ -1,14 +1,23 @@
 <?php
 
 use en2portr3s\admin\library\PHPMailer;
+use en2portr3s\admin\model\Question;
+
 
  $nombre = htmlspecialchars($_POST["nombre"]);
     $email = htmlspecialchars($_POST["email"]);
     $asunto =htmlspecialchars( $_POST["asunto"]);
     $mensaje = $_POST["mensaje"];
     $adjunto = $_FILES["adjunto"];
+    $select = $_POST["respuesta"];
     
-    
+    if($select == 'eliminar'){
+        
+        $id = $_POST['id'];
+        $question = new Question();
+         $question->delete($id);
+       echo $question->message;
+    }else{
     $mail = new PHPMailer();
 
 //indico a la clase que use SMTP
@@ -58,19 +67,8 @@ if ($mail->Send()) {
     
     
 }
-/*
-spl_autoload_register(function ($qualified_class_name) {
-    $class_name_position = strripos($qualified_class_name, '\\') + 1;
-    $class_name = substr($qualified_class_name, $class_name_position);
-    $namespaces = str_replace(array(__NAMESPACE__ . '\\', $class_name), '', $qualified_class_name);
-    $route = str_replace('\\', '/', $namespaces);
-
-   echo $route . $class_name . ".php" . '<br />';
-    require '../../'.$route . $class_name . ".php";
-});
-*/
-
-
+    }
+    
 function __autoload($qClassName) {
     $global_space = "en2portr3s\\admin";
    $lastNsPos = strripos($qClassName, '\\');
