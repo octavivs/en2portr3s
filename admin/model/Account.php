@@ -16,15 +16,20 @@ class Account extends Database {
     }
 
     public function get($username = '') {
-        if ($username != '') {
+        if ($username === '') {
+            $this->query = "SELECT * FROM account";
+        } else {
             $this->query = "SELECT * FROM account WHERE username = '$username'";
-            $this->dql();
         }
-        if (count($this->rows) === 1) {
+        $this->dql();
+        $matches = count($this->rows);
+        if ($matches === 0) {
+            $this->message = 'Usuario no encontrado';
+        } else if ($matches === 1) {
             $this->synchronize($this->rows[0]);
             $this->message = 'Usuario encontrado';
         } else {
-            $this->message = 'Usuario no encontrado';
+            return $this->rows;
         }
     }
 
