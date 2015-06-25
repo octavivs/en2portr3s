@@ -1,8 +1,18 @@
+--
+-- Database: 'en2portr3s'
+--
+
 CREATE DATABASE IF NOT EXISTS en2portr3s
 DEFAULT CHARACTER SET utf8
 COLLATE utf8_general_ci;
 
 USE en2portr3s;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'person'
+--
 
 CREATE TABLE IF NOT EXISTS person (
     id INT(10) NOT NULL AUTO_INCREMENT,
@@ -15,6 +25,12 @@ CREATE TABLE IF NOT EXISTS person (
 
     PRIMARY KEY (id)
 );
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'account'
+--
 
 CREATE TABLE IF NOT EXISTS account (
     id INT(10) NOT NULL AUTO_INCREMENT,
@@ -33,6 +49,12 @@ CREATE TABLE IF NOT EXISTS account (
     ON UPDATE CASCADE
 );
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'question'
+--
+
 CREATE TABLE IF NOT EXISTS question (
     id INT(10) NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(36) NOT NULL,
@@ -45,6 +67,12 @@ CREATE TABLE IF NOT EXISTS question (
     PRIMARY KEY (id)
 );
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'suggestion'
+--
+
 CREATE TABLE IF NOT EXISTS suggestion (
     id INT(10) NOT NULL AUTO_INCREMENT,
     content VARCHAR(800) NOT NULL,
@@ -54,6 +82,12 @@ CREATE TABLE IF NOT EXISTS suggestion (
     PRIMARY KEY (id)
 );
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'content'
+--
+
 CREATE TABLE IF NOT EXISTS content (
     id INT(10) NOT NULL AUTO_INCREMENT,
     mime VARCHAR(16) NOT NULL,
@@ -61,6 +95,12 @@ CREATE TABLE IF NOT EXISTS content (
 
     PRIMARY KEY (id)
 );
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'image'
+--
 
 CREATE TABLE IF NOT EXISTS image (
     id INT(10) NOT NULL AUTO_INCREMENT,
@@ -75,6 +115,12 @@ CREATE TABLE IF NOT EXISTS image (
     REFERENCES content(id)
     ON UPDATE CASCADE
 );
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'text_entry'
+--
 
 CREATE TABLE IF NOT EXISTS text_entry (
     id INT(10) NOT NULL AUTO_INCREMENT,
