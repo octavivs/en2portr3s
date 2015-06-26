@@ -9,7 +9,14 @@
 
 <div class="row"><!-- About -->
     <hr>
-    <div class="large-12 columns" data-id="1"></div>
+    <div class="large-12 columns">
+        <h4>Acerca de nosotros</h4>
+        <p>
+            Somos una empresa dedicada a brindar soluciones gráficas, asesorando y educando a nuestros clientes
+            sobre las buenas prácticas publicitarias. Nuestro servicio está enfocado en brindar una solución integral,
+            enfocándonos en escuchar al cliente y proponer soluciones cumpliendo con las necesidades que requieren.
+        </p>
+    </div>
 </div><!-- End of About -->
 
 <div class="row"><!-- Clients -->

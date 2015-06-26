@@ -26,9 +26,6 @@ function initialize() {
     getMonths();
     getDays();
     getYears();
-    var data = [];
-    data = $("div").data("id");
-    alert(data);
     $("input#SignUp").click(clearMessages);
     $("input#SignUp").click(signUp);
     $("input#Comment").click(clearMessages);
@@ -109,7 +106,7 @@ function saveSuggestion() {
     }
 
     if (state === "ok") {
-         clearDataFields();
+        clearDataFields();
         $.post("view/scripts/saveSuggestion.php", {
             buzon: buzon
         }, function (data) {
