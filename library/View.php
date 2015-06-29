@@ -27,7 +27,8 @@ class View extends Response {
             extract($vars);
             ob_start();
             require "view/$template.tpl.php";
-            $tpl_content = ob_get_clean();
+            $tpl_content = ob_get_contents();
+            ob_end_clean();
             require "view/layout.tpl.php";
         });
     }

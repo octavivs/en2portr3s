@@ -13,14 +13,10 @@ class Request {
 
     public function __construct($received_url) {
         $this->url = $received_url;
-        $segments = explode('/', $this->getUrl());
+        $segments = explode('/', $this->url);
         $this->resolveController($segments);
         $this->resolveAction($segments);
         $this->resolveParams($segments);
-    }
-
-    public function getUrl() {
-        return $this->url;
     }
 
     public function resolveController(&$segments) {
@@ -41,20 +37,8 @@ class Request {
         $this->params = $segments;
     }
 
-    public function getController() {
-        return $this->controller;
-    }
-
-    public function getAction() {
-        return $this->action;
-    }
-
-    public function getParams() {
-        return $this->params;
-    }
-
     public function getControllerClassName() {
-        return Inflector::camelCase($this->getController()) . 'Controller';
+        return Inflector::studlyCaps($this->controller) . 'Controller';
     }
 
     public function getControllerFileName() {
@@ -62,14 +46,13 @@ class Request {
     }
 
     public function getActionMethodName() {
-        return Inflector::camelCase($this->getAction()) . 'Action';
+        return Inflector::camelCase($this->action) . 'Action';
     }
 
     public function execute() {
         $controller_class_name = $this->getControllerClassName();
         $controller_file_name = $this->getControllerFileName();
         $action_method_name = $this->getActionMethodName();
-        $params = $this->getParams();
         if (!file_exists($controller_file_name)) {
             $controller_class_name = 'IncidenceController';
             $controller_file_name = 'controller/IncidenceController.php';
@@ -78,7 +61,7 @@ class Request {
         $namespaces = "\\en2portr3s\\controller\\";
         $qualified_controller_name = $namespaces . $controller_class_name;
         $controller = new $qualified_controller_name();
-        $response = call_user_func_array([$controller, $action_method_name], $params);
+        $response = call_user_func_array([$controller, $action_method_name], $this->params);
         $this->executeResponse($response);
     }
 
