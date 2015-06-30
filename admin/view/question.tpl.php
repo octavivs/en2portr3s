@@ -20,7 +20,7 @@ $datos = $question->get();
                 </tr>
                 <?php
                 foreach ($datos as $dato) {
-                    echo "<tr><form action='requestion' method='POST'>" . PHP_EOL;
+                    echo "<tr><form action='resquestion' method='POST'>" . PHP_EOL;
                     echo "<td><input type='text' id='id2' name='id' value='" . $dato['id'] . "'  /></td>" . PHP_EOL;
                     echo "<td><input type='text' name='first_name' value='" . $dato['first_name'] . "'  /></td>" . PHP_EOL;
                     echo "<td><input type='text' name='last_name' value='" . $dato['last_name'] . "'  /></td>" . PHP_EOL;
