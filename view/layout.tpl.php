@@ -18,6 +18,7 @@
         <!-- Override default settings in framework -->
         <link rel="stylesheet" type="text/css" href="view/css/app.css" />
 
+        <!-- Used to do compatible the website with more browsers -->
         <script type="text/javascript" src="view/scripts/vendor/modernizr.js"></script>
     </head>
     <body>
@@ -48,7 +49,7 @@
                             </ul>
                             <div class="top-bar-section">
                                 <ul class="right">
-                                    <li><a href="inicio">Inicio</a></li>
+                                    <li><a href="./">Inicio</a></li>
                                     <li><a href="servicios">Servicios</a></li>
                                     <li><a href="conocenos">Conócenos</a></li>
                                     <li><a href="contacto">Contacto</a></li>

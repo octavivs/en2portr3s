@@ -22,8 +22,7 @@
 <div class="row"><!-- Clients -->
     <hr>
     <div class="large-12 columns">
-        <h4>Algunos de nuestros clientes</h4>
-        <br />
+        <h4>Algunos de nuestros clientes</h4><br />
         <ul class="clearing-thumbs small-block-grid-4 medium-block-grid-6 large-block-grid-6" data-clearing>
             <li>
                 <a href="view/img/intel_logo.png">

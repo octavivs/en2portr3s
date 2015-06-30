@@ -1,3 +1,3 @@
-<div id="content" align='center'>
-    <img src="view/imagenes/PaginaNo.png" />
+<div>
+    <img src="view/img/PaginaNo.png" />
 </div>

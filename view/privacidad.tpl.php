@@ -1,11 +1,9 @@
-
 <h2>Política de privacidad</h2>
 <p>
     Cuando usa los servicios de nosotros, nos confía su información. Esta
     Política de privacidad está destinada a ayudarlo a entender qué datos
     recopilamos, por qué los recopilamos y qué hacemos con ellos. Esto es
     importante; esperamos que se tome su tiempo para leerlo con cuidado.
-    
 </p>
 <p class="ul">En nuestra Política de Privacidad se explica:</p>
 <ul>
