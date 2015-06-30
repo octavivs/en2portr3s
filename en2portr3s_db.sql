@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS account (
     id INT(10) NOT NULL AUTO_INCREMENT,
     username VARCHAR(36) NOT NULL,
     pass VARCHAR(32) NOT NULL,
-    kind VARCHAR(24) NOT NULL,
+    kind VARCHAR(24) DEFAULT 'normal',
     since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     person_id INT(10) NOT NULL,
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS question (
     last_name VARCHAR(64) NOT NULL,
     email VARCHAR(64) NOT NULL,
     content VARCHAR(800) NOT NULL,
-    status varchar (20) not null,
+    status VARCHAR(20) DEFAULT 'Pendiente',
     since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY (id)
@@ -76,8 +76,23 @@ CREATE TABLE IF NOT EXISTS question (
 CREATE TABLE IF NOT EXISTS suggestion (
     id INT(10) NOT NULL AUTO_INCREMENT,
     content VARCHAR(800) NOT NULL,
-    status varchar (20) not null,
+    status VARCHAR(20) DEFAULT 'Pendiente',
     since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (id)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'page'
+--
+
+CREATE TABLE IF NOT EXISTS page (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    label VARCHAR(16) NOT NULL,
+    since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
     PRIMARY KEY (id)
 );
@@ -91,9 +106,16 @@ CREATE TABLE IF NOT EXISTS suggestion (
 CREATE TABLE IF NOT EXISTS content (
     id INT(10) NOT NULL AUTO_INCREMENT,
     mime VARCHAR(16) NOT NULL,
-    page VARCHAR(48) NOT NULL,
+    page_id INT(10) NOT NULL,
+    since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    INDEX (page_id),
+
+    FOREIGN KEY (page_id)
+    REFERENCES page(id)
+    ON UPDATE CASCADE
 );
 
 -- --------------------------------------------------------
@@ -106,6 +128,8 @@ CREATE TABLE IF NOT EXISTS image (
     id INT(10) NOT NULL AUTO_INCREMENT,
     url VARCHAR(255) NOT NULL,
     alt VARCHAR(128) NOT NULL,
+    since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     content_id INT(10) NOT NULL,
 
     PRIMARY KEY (id),
@@ -124,8 +148,10 @@ CREATE TABLE IF NOT EXISTS image (
 
 CREATE TABLE IF NOT EXISTS text_entry (
     id INT(10) NOT NULL AUTO_INCREMENT,
-    body VARCHAR(21831) NOT NULL,
+    body VARCHAR(21820) NOT NULL,
     lang_code VARCHAR(10) NOT NULL,
+    since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     content_id INT(10) NOT NULL,
 
     PRIMARY KEY (id),
