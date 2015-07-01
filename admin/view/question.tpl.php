@@ -8,7 +8,7 @@ $datos = $question->get();
 <div id="tab">
     <div class="row collapse">
         <div class="large-12 columns">
-            <table border="5px">
+            <table>
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>

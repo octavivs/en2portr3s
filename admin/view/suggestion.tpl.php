@@ -7,7 +7,7 @@ $datos = $suggestion->get();
 ?>
 <div class="row">
     <div class="large-12 columns">
-        <table class="responsive" border="5px" >
+        <table class="responsive">
             <tr>
                 <th>id</th>
                 <th>mensaje</th>

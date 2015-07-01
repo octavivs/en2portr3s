@@ -3,20 +3,18 @@
 use en2portr3s\admin\model\Account;
 
 $account = new Account();
-
 $datos = $account->get();
 ?>
 <div id="tab">
     <div class="row collapse">
         <div class="large-12 columns">
-            <table class="responsive" border="5px">
+            <table class="responsive">
                 <tr>
                     <th>Id</th>
                     <th>Usuario</th>
                     <th>Contraseña</th>
                     <th>kind</th>
                     <th>since</th>
-
                 </tr>
                 <?php
                 foreach ($datos as $dato) {
@@ -34,5 +32,4 @@ $datos = $account->get();
             </table>
         </div>
     </div>
-</div>    
-
+</div>

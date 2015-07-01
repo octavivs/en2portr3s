@@ -52,7 +52,7 @@ class Account extends Database {
         }
     }
 
-    public function edit($register_data = []) {
+    public function edit($register_data) {
         $this->synchronize($register_data);
         $this->query = "
             UPDATE account
@@ -66,7 +66,7 @@ class Account extends Database {
         $this->message = 'Usuario modificado';
     }
 
-    public function delete($username = '') {
+    public function delete($username) {
         $this->query = "
             DELETE FROM account
             WHERE username = '$username'

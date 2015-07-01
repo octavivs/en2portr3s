@@ -8,19 +8,27 @@ class Suggestion extends Database {
     private $content;
     private $status;
     private $since;
-    private $buzon;
 
     function __construct() {
         $this->db_name = "en2portr3s";
     }
 
     public function get($id = '') {
-        $result = $this->query = "SELECT * FROM suggestion";
-        while ($filas = $result->fetch_assoc()) {
-            $this->buzon[] = $filas;
+        if ($id === '') {
+            $this->query = "SELECT * FROM suggestion";
+        } else {
+            $this->query = "SELECT * FROM suggestion WHERE id = '$id'";
         }
         $this->dql();
-        return $this->buzon;
+        $matches = count($this->rows);
+        if ($matches === 0) {
+            $this->message = 'Sugerencia no registrada';
+        } else if ($matches === 1) {
+            $this->synchronize($this->rows[0]);
+            $this->message = 'Sugerencia encontrada';
+        } else {
+            return $this->rows;
+        }
     }
 
     public function set($user_data) {
@@ -33,24 +41,21 @@ class Suggestion extends Database {
         $this->message = 'Sugerencia guardada correctamente';
     }
 
-    public function edit($user_data = []) {
+    public function edit($user_data) {
         $this->synchronize($user_data);
         $this->query = "
             UPDATE suggestion
             SET content = '$this->content',
-            WHERE buzon = '$this->buzon'
+            WHERE id = '$this->id'
         ";
         $this->dml();
         $this->message = 'Sugerencia modificada';
     }
 
-    /*
-     * Falta moduficar esta parte para eliminar el mensaje de la tabla buzon.
-     */
-    public function delete($content = '') {
+    public function delete($id) {
         $this->query = "
             DELETE FROM suggestion
-            WHERE id = '$content'
+            WHERE id = '$id'
         ";
         $this->dml();
         $this->message = 'Sugerencia eliminada';
