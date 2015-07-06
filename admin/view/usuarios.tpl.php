@@ -1,6 +1,6 @@
 <?php
 
-use en2portr3s\admin\model\Account;
+use en2portr3s\model\Account;
 
 $account = new Account();
 $list = $account->get();
@@ -11,10 +11,10 @@ $list = $account->get();
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Kind</th>
-                    <th>Since</th>
+                    <th>Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Tipo</th>
+                    <th>Registro</th>
                 </tr>
             </thead>
             <tbody>

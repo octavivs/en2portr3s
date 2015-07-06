@@ -1,3 +1,3 @@
 <div id="content" align='center'>
-    <img src="view/imagenes/PaginaNo.png" />
+    <h1>No se encontró la página solicitada</h1>
 </div>

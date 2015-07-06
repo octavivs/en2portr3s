@@ -3,7 +3,7 @@
 namespace en2portr3s\model;
 
 class Person extends Database {
-    
+
     private $id;
     private $first_name;
     private $last_name;
@@ -12,20 +12,28 @@ class Person extends Database {
     private $address;
     private $birthdate;
 
-    function __construct() {
+    function __construct($user_data = []) {
         $this->db_name = "en2portr3s";
+        if ($user_data !== []) {
+            $this->set($user_data);
+        }
     }
 
     public function get($email = '') {
-        if ($email != '') {
+        if ($email === '') {
+            $this->query = "SELECT * FROM person";
+        } else {
             $this->query = "SELECT * FROM person WHERE email = '$email'";
-            $this->dql();
         }
-        if (count($this->rows) === 1) {
+        $this->dql();
+        $matches = count($this->rows);
+        if ($matches === 0) {
+            $this->message = 'Persona no encontrada';
+        } else if ($matches === 1) {
             $this->synchronize($this->rows[0]);
             $this->message = 'Persona encontrada';
         } else {
-            $this->message = 'Persona no encontrada';
+            return $this->rows;
         }
     }
 
@@ -48,7 +56,7 @@ class Person extends Database {
         }
     }
 
-    public function edit($user_data = []) {
+    public function edit($user_data) {
         $this->synchronize($user_data);
         $this->query = "
             UPDATE person
@@ -64,7 +72,7 @@ class Person extends Database {
         $this->message = 'Información personal modificada';
     }
 
-    public function delete($email = '') {
+    public function delete($email) {
         $this->query = "
             DELETE FROM person
             WHERE email = '$email'
@@ -73,10 +81,7 @@ class Person extends Database {
         $this->message = 'Información personal eliminada';
     }
 
-    public function getId($email = '') {
-        if ($email !== '') {
-            $this->get($email);
-        }
+    public function getId() {
         return $this->id;
     }
 

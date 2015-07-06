@@ -1,6 +1,6 @@
 <?php
 
-use en2portr3s\admin\model\Suggestion;
+use en2portr3s\model\Suggestion;
 
 $suggestion = new Suggestion();
 $datos = $suggestion->get();
@@ -9,21 +9,18 @@ $datos = $suggestion->get();
     <div class="large-12 columns">
         <table class="responsive">
             <tr>
-                <th>id</th>
-                <th>mensaje</th>
-                <th>fecha</th>
-                <th>eliminar</th>
+                <th>ID</th>
+                <th>Mensaje</th>
+                <th>Fecha</th>
+                <th>Eliminar</th>
             </tr>
             <?php
             foreach ($datos as $dato) {
                 echo "<tr>" . PHP_EOL;
                 echo "<td ><input type='text' id='id' name='id' value='" . $dato['id'] . "'  /></td>" . PHP_EOL;
-                //echo "<td>" . $dato['id'] . "</td>" . PHP_EOL;
                 echo "<td >" . $dato['content'] . "</td>" . PHP_EOL;
-
-                // echo "<td>" . $dato['since'] . "</td>" . PHP_EOL;
                 echo "<td  ><input type='text' name='since' value='" . $dato['since'] . "'  /></td>" . PHP_EOL;
-                echo "<td ><input type='button' id='eliminar' value='Eliminar' /></td></tr>" . PHP_EOL;
+                echo "<td ><input type='button' class='button tiny' id='eliminar' value='Eliminar' /></td></tr>" . PHP_EOL;
                 echo "</tr>" . PHP_EOL;
             }
             ?>

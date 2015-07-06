@@ -1,8 +1,8 @@
 <?php
 
-namespace en2portr3s\admin\model;
+namespace en2portr3s\model;
 
-class Page {
+class Page extends Database {
 
     private $id;
     private $label;

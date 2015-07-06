@@ -2,8 +2,10 @@
     <h3>Crear una cuenta</h3>
     <p>
         Usa cualquier dirección de correo electrónico como nombre de
-        usuario de tu nueva cuenta. Recomiendamos que la contraseña
-        sea diferente a la del correo electrónico.
+        usuario de tu nueva cuenta. Se Recomienda que la contraseña
+        sea diferente a la del correo electrónico, por seguridad la
+        contraseña debería contener letras mayuscula, letras minusculas
+        y caracteres especiales (cualquiera de los siguientes @#$%).
     </p>
     <form>
         <div class="row">

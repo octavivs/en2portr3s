@@ -33,13 +33,15 @@ function initialize() {
     $("input#Buzon").click(clearMessages);
     $("input#Buzon").click(saveSuggestion);
     $("input#Reset").click(clearMessages);
-    /*
-     $("#services .button").hover(function() {
-     $(this).siblings("img").removeClass("hidden-for-small");
-     }, function() {
-     $(this).siblings("img").addClass("hidden-for-small");
-     });
-     */
+    $("#services .button").click(showHideImage);
+}
+
+function showHideImage() {
+    if ($(this).siblings("img").hasClass("hidden-for-small")) {
+        $(this).siblings("img").removeClass("hidden-for-small");
+    } else {
+        $(this).siblings("img").addClass("hidden-for-small");
+    }
 }
 
 function saveQuestion() {
@@ -83,7 +85,7 @@ function saveQuestion() {
 
     if (state === "ok") {
         clearDataFields();
-        $.post("view/scripts/saveQuestion.php", {
+        $.post("contacto/saveQuestion", {
             first_name: firstName,
             last_name: lastName,
             email: email,
@@ -107,7 +109,7 @@ function saveSuggestion() {
 
     if (state === "ok") {
         clearDataFields();
-        $.post("view/scripts/saveSuggestion.php", {
+        $.post("contacto/saveSuggestion", {
             buzon: buzon
         }, function (data) {
             alert(data);
@@ -209,9 +211,10 @@ function signUp() {
 
     if (state === "ok") {
         clearDataFields();
-        $.post("view/scripts/register.php", {
+        $.post("registro/save", {
             first_name: firstName,
             last_name: lastName,
+            email: userName,
             username: userName,
             pass: password,
             address: address,

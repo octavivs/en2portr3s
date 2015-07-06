@@ -11,8 +11,11 @@ class Account extends Database {
     private $since;
     private $person_id;
 
-    function __construct() {
+    function __construct($register_data = []) {
         $this->db_name = "en2portr3s";
+        if ($register_data !== []) {
+            $this->set($register_data);
+        }
     }
 
     public function get($username = '') {

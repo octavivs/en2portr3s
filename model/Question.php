@@ -12,25 +12,33 @@ class Question extends Database {
     private $status;
     private $since;
 
-    function __construct() {
+    function __construct($question_data = []) {
         $this->db_name = "en2portr3s";
+        if ($question_data !== []) {
+            $this->set($question_data);
+        }
     }
 
-    public function get($email = '') {
-        if ($email != '') {
-            $this->query = "SELECT * FROM question WHERE email = '$email'";
-            $this->dql();
+    public function get($id = '') {
+        if ($id === '') {
+            $this->query = "SELECT * FROM question";
+        } else {
+            $this->query = "SELECT * FROM question WHERE id = '$id'";
         }
-        if (count($this->rows) === 1) {
+        $this->dql();
+        $matches = count($this->rows);
+        if ($matches === 0) {
+            $this->message = 'Pregunta no encontrada';
+        } else if ($matches === 1) {
             $this->synchronize($this->rows[0]);
             $this->message = 'Pregunta encontrada';
         } else {
-            $this->message = 'Pregunta no encontrada';
+            return $this->rows;
         }
     }
 
-    public function set($user_data) {
-        $this->synchronize($user_data);
+    public function set($question_data) {
+        $this->synchronize($question_data);
         $this->query = "
             INSERT INTO question (first_name, last_name, email, content, status)
             VALUES ('$this->first_name', '$this->last_name', '$this->email', '$this->content', '$this->status')
@@ -39,8 +47,8 @@ class Question extends Database {
         $this->message = 'Pregunta guardada correctamente';
     }
 
-    public function edit($user_data = []) {
-        $this->synchronize($user_data);
+    public function edit($question_data) {
+        $this->synchronize($question_data);
         $this->query = "
             UPDATE question
             SET first_name = '$this->nombre',
@@ -54,8 +62,8 @@ class Question extends Database {
         $this->message = 'Pregunta modificada';
     }
 
-    public function delete($email = '') {
-        $this->query = "DELETE FROM question WHERE email = '$email'";
+    public function delete($id) {
+        $this->query = "DELETE FROM question WHERE id = '$id'";
         $this->dml();
         $this->message = 'Pregunta eliminada';
     }

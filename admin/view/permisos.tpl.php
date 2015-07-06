@@ -1,6 +1,6 @@
 <?php
 
-use en2portr3s\admin\model\Account;
+use en2portr3s\model\Account;
 
 $account = new Account();
 $datos = $account->get();
@@ -10,11 +10,11 @@ $datos = $account->get();
         <div class="large-12 columns">
             <table class="responsive">
                 <tr>
-                    <th>Id</th>
+                    <th>ID</th>
                     <th>Usuario</th>
                     <th>Contraseña</th>
-                    <th>kind</th>
-                    <th>since</th>
+                    <th>Tipo</th>
+                    <th>Registro</th>
                 </tr>
                 <?php
                 foreach ($datos as $dato) {
@@ -24,7 +24,7 @@ $datos = $account->get();
                     echo "<td><input type='text' name='pass' value='" . $dato['pass'] . "'  /></td>" . PHP_EOL;
                     echo "<td><input type='text' name='kind' value='" . $dato['kind'] . "'  /></td>" . PHP_EOL;
                     echo "<td><input type='text' name='since' value='" . $dato['since'] . "'  /></td>" . PHP_EOL;
-                    echo "<td><input type='submit' value='responder' /></td>" . PHP_EOL;
+                    echo "<td><input type='submit' class='button tiny' value='Editar' /></td>" . PHP_EOL;
                     //echo "<td><input type='button' id='elimimnar2' value='eliminar' /></td>" . PHP_EOL;
                     echo "</form></tr>" . PHP_EOL;
                 }

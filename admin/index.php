@@ -3,7 +3,7 @@
 namespace en2portr3s\admin;
 
 use en2portr3s\admin\library\Request;
-use en2portr3s\admin\model\Account;
+use en2portr3s\model\Account;
 
 spl_autoload_register(function ($qualified_class_name) {
     $vendor_name = "en2portr3s";
@@ -60,7 +60,7 @@ if (isset($_POST['uid']) && isset($_POST['pwd'])) {
             <!-- Override default settings in framework -->
             <link rel="stylesheet" type="text/css" href="view/css/app.css" />
 
-            <script type="text/javascript" src="view/scripts/vendor/modernizr.js"></script>
+            <script type="text/javascript" src="view/js/vendor/modernizr.js"></script>
         </head>
         <body>
             <div class="large-4 medium-8 small-11 small-centered columns">
@@ -91,13 +91,13 @@ if (isset($_POST['uid']) && isset($_POST['pwd'])) {
                 </div>
             </div>
 
-            <script type="text/javascript" src="view/scripts/vendor/jquery.js"></script>
-            <script type="text/javascript" src="view/scripts/vendor/fastclick.js"></script>
-            <script type="text/javascript" src="view/scripts/vendor/foundation.js"></script>
+            <script type="text/javascript" src="view/js/vendor/jquery.js"></script>
+            <script type="text/javascript" src="view/js/vendor/fastclick.js"></script>
+            <script type="text/javascript" src="view/js/vendor/foundation.js"></script>
             <script>
                 $(document).foundation();
             </script>
-            <script type="text/javascript" src="view/scripts/app.js"></script>
+            <script type="text/javascript" src="view/js/app.js"></script>
         </body>
     </html>
     <?php
@@ -130,7 +130,7 @@ if (!$account->isAdmin($uid, $pwd)) {
             <!-- Override default settings in framework -->
             <link rel="stylesheet" type="text/css" href="view/css/app.css" />
 
-            <script type="text/javascript" src="view/scripts/vendor/modernizr.js"></script>
+            <script type="text/javascript" src="view/js/vendor/modernizr.js"></script>
         </head>
         <body>
             <div class="large-4 medium-8 small-11 small-centered columns">
@@ -144,13 +144,13 @@ if (!$account->isAdmin($uid, $pwd)) {
                 </div>
             </div>
 
-            <script type="text/javascript" src="view/scripts/vendor/jquery.js"></script>
-            <script type="text/javascript" src="view/scripts/vendor/fastclick.js"></script>
-            <script type="text/javascript" src="view/scripts/vendor/foundation.js"></script>
+            <script type="text/javascript" src="view/js/vendor/jquery.js"></script>
+            <script type="text/javascript" src="view/js/vendor/fastclick.js"></script>
+            <script type="text/javascript" src="view/js/vendor/foundation.js"></script>
             <script>
                 $(document).foundation();
             </script>
-            <script type="text/javascript" src="view/scripts/app.js"></script>
+            <script type="text/javascript" src="view/js/app.js"></script>
         </body>
     </html>
     <?php
@@ -158,7 +158,7 @@ if (!$account->isAdmin($uid, $pwd)) {
 }
 
 $received_url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
-$url = empty($received_url) ? "panel" : $received_url;
+$url = empty($received_url) ? "contenido" : $received_url;
 
 $request = new Request($url);
 $request->execute();

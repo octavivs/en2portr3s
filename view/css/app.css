@@ -36,7 +36,7 @@ span.required {
     }
 }
 
-/*  Daniel servicios y conocenos */
+/* Servicios y Conocenos */
 #services {
     text-align: center;
 }
@@ -61,24 +61,6 @@ span.required {
 @media only screen and (max-width: 40em) {
     #services .button:hover {
         cursor: pointer;
-    }
-
-    #services .button:hover + img {
-        display: inline-block;
-        position: static !important;
-        height: auto;
-        width: auto;
-        overflow: visible;
-        clip: auto;
-    }
-
-    #services img:hover {
-        display: inline-block;
-        position: static !important;
-        height: auto;
-        width: auto;
-        overflow: visible;
-        clip: auto;
     }
 }
 

@@ -19,7 +19,7 @@
         <link rel="stylesheet" type="text/css" href="view/css/app.css" />
 
         <!-- Used to do compatible the website with more browsers -->
-        <script type="text/javascript" src="view/scripts/vendor/modernizr.js"></script>
+        <script type="text/javascript" src="view/js/vendor/modernizr.js"></script>
     </head>
     <body>
         <div id="top"><!-- top -->
@@ -90,12 +90,12 @@
             </footer>
         </div><!-- End of bottom -->
 
-        <script type="text/javascript" src="view/scripts/vendor/jquery.js"></script>
-        <script type="text/javascript" src="view/scripts/vendor/fastclick.js"></script>
-        <script type="text/javascript" src="view/scripts/vendor/foundation.js"></script>
+        <script type="text/javascript" src="view/js/vendor/jquery.js"></script>
+        <script type="text/javascript" src="view/js/vendor/fastclick.js"></script>
+        <script type="text/javascript" src="view/js/vendor/foundation.js"></script>
         <script>
             $(document).foundation();
         </script>
-        <script type="text/javascript" src="view/scripts/app.js"></script>
+        <script type="text/javascript" src="view/js/app.js"></script>
     </body>
 </html>

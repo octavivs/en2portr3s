@@ -23,7 +23,8 @@ CREATE TABLE IF NOT EXISTS person (
     address VARCHAR(255) NOT NULL,
     birthdate TIMESTAMP NOT NULL,
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    UNIQUE KEY (email)
 );
 
 -- --------------------------------------------------------

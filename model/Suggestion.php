@@ -9,8 +9,11 @@ class Suggestion extends Database {
     private $status;
     private $since;
 
-    function __construct() {
+    function __construct($suggestion_data = []) {
         $this->db_name = "en2portr3s";
+        if ($suggestion_data !== []) {
+            $this->set($suggestion_data);
+        }
     }
 
     public function get($id = '') {
@@ -31,8 +34,8 @@ class Suggestion extends Database {
         }
     }
 
-    public function set($user_data) {
-        $this->synchronize($user_data);
+    public function set($suggestion_data) {
+        $this->synchronize($suggestion_data);
         $this->query = "
             INSERT INTO suggestion (content, status)
             VALUES ('$this->content', '$this->status')
@@ -41,8 +44,8 @@ class Suggestion extends Database {
         $this->message = 'Sugerencia guardada correctamente';
     }
 
-    public function edit($user_data) {
-        $this->synchronize($user_data);
+    public function edit($suggestion_data) {
+        $this->synchronize($suggestion_data);
         $this->query = "
             UPDATE suggestion
             SET content = '$this->content',

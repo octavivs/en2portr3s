@@ -6,7 +6,7 @@ class Request {
 
     protected $url;
     protected $controller;
-    protected $default_controller = 'panel';
+    protected $default_controller = 'contenido';
     protected $action;
     protected $default_action = 'index';
     protected $params = [];
@@ -55,7 +55,6 @@ class Request {
         $action_method_name = $this->getActionMethodName();
         if (!file_exists($controller_file_name)) {
             $controller_class_name = 'IncidenceController';
-            $controller_file_name = 'controller/IncidenceController.php';
             $action_method_name = 'indexAction';
         }
         $namespaces = "\\en2portr3s\\admin\\controller\\";

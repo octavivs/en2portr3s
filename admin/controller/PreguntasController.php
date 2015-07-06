@@ -4,10 +4,10 @@ namespace en2portr3s\admin\controller;
 
 use en2portr3s\admin\library\View;
 
-class PanelController {
+class PreguntasController {
 
     public function indexAction() {
-        return new View('panel');
+        return new View('preguntas');
     }
 
 }

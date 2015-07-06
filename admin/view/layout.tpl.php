@@ -19,7 +19,7 @@
         <!-- Override default settings in framework -->
         <link rel="stylesheet" type="text/css" href="view/css/app.css" />
 
-        <script type="text/javascript" src="view/scripts/vendor/modernizr.js"></script>
+        <script type="text/javascript" src="view/js/vendor/modernizr.js"></script>
     </head>
     <body>
         <div id="top"><!-- top -->
@@ -37,11 +37,11 @@
                 <section class="top-bar-section">
                     <!-- Right Nav Section -->
                     <ul class="right">
-                        <li><a href="#">Contenido</a></li>
-                        <li><a href="users">Usuarios</a></li>
+                        <li><a href="./">Contenido</a></li>
+                        <li><a href="usuarios">Usuarios</a></li>
                         <li><a href="permisos">Permisos</a></li>
-                        <li><a href="question">Preguntas</a></li>
-                        <li><a href="suggestion">Sugerencias</a></li>
+                        <li><a href="preguntas">Preguntas</a></li>
+                        <li><a href="sugerencias">Sugerencias</a></li>
                         <li class="active"><a href="../" id="exit">Salir</a></li>
                     </ul>
                 </section>
@@ -56,13 +56,13 @@
             </div>
         </div><!-- End of content -->
 
-        <script type="text/javascript" src="view/scripts/vendor/jquery.js"></script>
-        <script type="text/javascript" src="view/scripts/vendor/fastclick.js"></script>
-        <script type="text/javascript" src="view/scripts/vendor/foundation.js"></script>
-        <script type="text/javascript" src="view/scripts/vendor/responsive-tables.js"></script>
+        <script type="text/javascript" src="view/js/vendor/jquery.js"></script>
+        <script type="text/javascript" src="view/js/vendor/fastclick.js"></script>
+        <script type="text/javascript" src="view/js/vendor/foundation.js"></script>
+        <script type="text/javascript" src="view/js/vendor/responsive-tables.js"></script>
         <script>
             $(document).foundation();
         </script>
-        <script type="text/javascript" src="view/scripts/app.js"></script>
+        <script type="text/javascript" src="view/js/app.js"></script>
     </body>
 </html>
