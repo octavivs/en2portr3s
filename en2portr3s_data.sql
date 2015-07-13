@@ -95,3 +95,37 @@ INSERT INTO page (id, label, since, modified) VALUES
 (3, 'Conócenos', '2015-06-30 18:17:05', '2015-06-30 18:17:05'),
 (4, 'Contacto', '2015-06-30 18:17:05', '2015-06-30 18:17:05'),
 (5, 'Registro', '2015-06-30 18:17:05', '2015-06-30 18:17:05');
+
+-- --------------------------------------------------------
+
+--
+-- Dumping data for table 'content'
+--
+
+INSERT INTO `content`(`id`, `kind`, `page_id`) VALUES 
+(1, 'image', 1),
+(2, 'image', 1),
+(3, 'text', 1),
+(4, 'text', 1),
+(5, 'image', 1),
+(6, 'image', 1),
+(7, 'image', 1),
+(8, 'image', 1),
+(9, 'image', 1),
+(10, 'image', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Dumping data for table 'image'
+--
+
+INSERT INTO `image`(`id`, `url`, `alt`, `content_id`) VALUES
+(1, 'view/img/navidad_banner.png', '¡Feliz navidad!', 1),
+(2, 'view/img/en2portr3s_banner.png', 'Llamanos', 2),
+(3, 'view/img/intel_logo.png', 'Intel', 5),
+(4, 'view/img/dell_logo.png', 'DELL', 6),
+(5, 'view/img/nvidia_logo.png', 'NVidia', 7),
+(6, 'view/img/amd_logo.png', 'AMD', 8),
+(7, 'view/img/autodesk_logo.png', 'Autodesk', 9),
+(8, 'view/img/adobe_logo.png', 'Adobe', 10);

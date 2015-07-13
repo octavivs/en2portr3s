@@ -26,32 +26,32 @@
         <ul class="clearing-thumbs small-block-grid-4 medium-block-grid-6 large-block-grid-6" data-clearing>
             <li>
                 <a href="view/img/intel_logo.png">
-                    <img data-caption="caption here..." src="view/img/intel_logo.png" alt="" />
+                    <img data-caption="Intel" src="view/img/intel_logo.png" alt="" />
                 </a>
             </li>
             <li>
                 <a href="view/img/dell_logo.png">
-                    <img data-caption="caption 2 here..." src="view/img/dell_logo.png" alt="" />
+                    <img data-caption="DELL" src="view/img/dell_logo.png" alt="" />
                 </a>
             </li>
             <li>
                 <a href="view/img/nvidia_logo.png">
-                    <img data-caption="caption 3 here..." src="view/img/nvidia_logo.png" alt="" />
+                    <img data-caption="NVidia" src="view/img/nvidia_logo.png" alt="" />
                 </a>
             </li>
             <li>
                 <a href="view/img/amd_logo.png">
-                    <img data-caption="caption 4 here..." src="view/img/amd_logo.png" alt="" />
+                    <img data-caption="AMD" src="view/img/amd_logo.png" alt="" />
                 </a>
             </li>
             <li>
                 <a href="view/img/autodesk_logo.png">
-                    <img data-caption="caption 5 here..." src="view/img/autodesk_logo.png" alt="" />
+                    <img data-caption="Autodesk" src="view/img/autodesk_logo.png" alt="" />
                 </a>
             </li>
             <li>
                 <a href="view/img/adobe_logo.png">
-                    <img data-caption="caption 6 here..." src="view/img/adobe_logo.png" alt="" />
+                    <img data-caption="Adobe" src="view/img/adobe_logo.png" alt="" />
                 </a>
             </li>
         </ul>
