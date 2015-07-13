@@ -12,8 +12,10 @@ function finish() {
 }
 
 function eliminar() {
-    var id = $("#id").val();
+  	var id =$(this).attr('data-id');
     $.post("sugerencias/delete", {id: id}, function (data) {
         alert(data);
+       location.href="sugerencias";
     });
+     
 }

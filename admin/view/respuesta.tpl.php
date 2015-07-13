@@ -2,11 +2,16 @@
 
 $first_name = filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_STRING);
 $mail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+$mensaje = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
 ?>
 
 <h3>Email de Contacto</h3>
 <form action="respuesta/send" method="post" enctype="multipart/form-data">
     <table border="0">
+        <tr>
+            <td>mensaje del cliente:</td>
+            <td><input name="nombre" value='<?= $mensaje ?>' type="text" id="nombre" /></td>
+        </tr>
         <tr>
             <td>Nombre del destinatario:</td>
             <td><input name="nombre" value='<?= $first_name ?>' type="text" id="nombre" /></td>
@@ -29,7 +34,7 @@ $mail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         </tr>
         <tr>
             <td><input type="submit" value="Enviar" /></td>
-            <td><input type="button" id="regresar" value="regresar" /></td>
+           <!-- <td><input type="button" id="regresar" value="regresar" /></td>-->
         </tr>
     </table>
     <input type="hidden" name="phpmailer" />

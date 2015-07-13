@@ -16,7 +16,8 @@ class SugerenciasController {
 
         $suggestion = new Suggestion();
         $suggestion->delete($id);
-
+        
+        echo $id;
         return $suggestion->message;
     }
 
