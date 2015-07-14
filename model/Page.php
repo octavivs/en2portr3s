@@ -2,6 +2,8 @@
 
 namespace en2portr3s\model;
 
+use en2portr3s\model\Content;
+
 class Page extends Database {
 
     private $id;
@@ -28,6 +30,16 @@ class Page extends Database {
             $this->message = 'Página web encontrada';
         }
         return $this->rows;
+    }
+
+    public function getContent($id = '') {
+        $content = new Content();
+        $content->searchParam('page_id');
+        if ($id === '') {
+            return $content->get();
+        } else {
+            return $content->get($id);
+        }
     }
 
     public function set($page_data) {

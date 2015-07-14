@@ -65,7 +65,7 @@
         <div id="page-content"><!-- content -->
             <div class="row">
                 <div class="large-12 columns">
-                    <?= $tpl_content; ?>
+                    {tpl_content}
                 </div>
             </div>
         </div><!-- End of content -->

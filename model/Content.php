@@ -4,19 +4,21 @@ namespace en2portr3s\model;
 
 class Content extends Database {
 
+    private $key;
     private $id;
     private $kind;
     private $page_id;
 
     function __construct() {
         $this->db_name = "en2portr3s";
+        $this->key = 'id';
     }
 
-    public function get($id = '') {
-        if ($id === '') {
+    public function get($key = '') {
+        if ($key === '') {
             $this->query = "SELECT * FROM content";
         } else {
-            $this->query = "SELECT * FROM content WHERE id = '$id'";
+            $this->query = 'SELECT * FROM content WHERE ' . $this->key . " = '$key'";
         }
         $this->dql();
         $matches = count($this->rows);
@@ -27,6 +29,10 @@ class Content extends Database {
             $this->message = 'Contenido encontrado';
         }
         return $this->rows;
+    }
+
+    public function searchParam($key) {
+        $this->key = $key;
     }
 
     public function set($content_data) {

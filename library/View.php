@@ -13,7 +13,11 @@ class View extends Response {
     }
 
     public function getTemplate() {
-        return $this->template;
+        $layout = file_get_contents('view/layout.tpl.php');
+        $file = 'view/'. $this->template . '.tpl.php';
+        $content = file_get_contents($file);
+        $template = str_replace('{tpl_content}', $content, $layout);
+        return $template;
     }
 
     public function getVars() {
@@ -25,11 +29,7 @@ class View extends Response {
         $vars = $this->getVars();
         call_user_func(function () use ($template, $vars) {
             extract($vars);
-            ob_start();
-            require "view/$template.tpl.php";
-            $tpl_content = ob_get_contents();
-            ob_end_clean();
-            require "view/layout.tpl.php";
+            echo $template;
         });
     }
 
