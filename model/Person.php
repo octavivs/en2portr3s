@@ -32,9 +32,8 @@ class Person extends Database {
         } else if ($matches === 1) {
             $this->synchronize($this->rows[0]);
             $this->message = 'Persona encontrada';
-        } else {
-            return $this->rows;
         }
+        return $this->rows;
     }
 
     public function set($user_data) {

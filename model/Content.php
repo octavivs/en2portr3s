@@ -25,9 +25,8 @@ class Content extends Database {
         } else if ($matches === 1) {
             $this->synchronize($this->rows[0]);
             $this->message = 'Contenido encontrado';
-        } else {
-            return $this->rows;
         }
+        return $this->rows;
     }
 
     public function set($content_data) {

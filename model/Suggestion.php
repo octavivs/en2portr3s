@@ -29,9 +29,8 @@ class Suggestion extends Database {
         } else if ($matches === 1) {
             $this->synchronize($this->rows[0]);
             $this->message = 'Sugerencia encontrada';
-        } else {
-            return $this->rows;
         }
+        return $this->rows;
     }
 
     public function set($suggestion_data) {

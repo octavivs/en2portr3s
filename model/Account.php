@@ -31,9 +31,8 @@ class Account extends Database {
         } else if ($matches === 1) {
             $this->synchronize($this->rows[0]);
             $this->message = 'Usuario encontrado';
-        } else {
-            return $this->rows;
         }
+        return $this->rows;
     }
 
     public function set($register_data) {

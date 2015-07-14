@@ -26,9 +26,8 @@ class Page extends Database {
         } else if ($matches === 1) {
             $this->synchronize($this->rows[0]);
             $this->message = 'Página web encontrada';
-        } else {
-            return $this->rows;
         }
+        return $this->rows;
     }
 
     public function set($page_data) {
