@@ -102,7 +102,7 @@ INSERT INTO page (id, label, since, modified) VALUES
 -- Dumping data for table 'content'
 --
 
-INSERT INTO `content`(`id`, `kind`, `page_id`) VALUES 
+INSERT INTO content(id, kind, page_id) VALUES
 (1, 'image', 1),
 (2, 'image', 1),
 (3, 'text', 1),
@@ -120,7 +120,7 @@ INSERT INTO `content`(`id`, `kind`, `page_id`) VALUES
 -- Dumping data for table 'image'
 --
 
-INSERT INTO `image`(`id`, `url`, `alt`, `content_id`) VALUES
+INSERT INTO image(id, url, alt, content_id) VALUES
 (1, 'view/img/navidad_banner.png', '¡Feliz navidad!', 1),
 (2, 'view/img/en2portr3s_banner.png', 'Llamanos', 2),
 (3, 'view/img/intel_logo.png', 'Intel', 5),
