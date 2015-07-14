@@ -5,8 +5,7 @@ use en2portr3s\model\Account;
 $account = new Account();
 $list = $account->get();
 ?>
-<div class="row">
-    <div class="large-12 columns">
+
         <table class="responsive">
             <thead>
                 <tr>
@@ -31,5 +30,5 @@ $list = $account->get();
                 ?>
             </tbody>
         </table>
-    </div>
-</div>
+ 
+
