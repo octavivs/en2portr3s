@@ -10,4 +10,5 @@ class PreguntasController {
         return new View('preguntas');
     }
 
+    
 }

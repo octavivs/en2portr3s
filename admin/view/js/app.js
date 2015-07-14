@@ -3,6 +3,7 @@ $(document).ready(initialize);
 function initialize() {
     $("#exit").click(finish);
     $("input#eliminar").click(eliminar);
+    $("input#actualizar").click(actualizar);
 }
 
 function finish() {
@@ -18,4 +19,16 @@ function eliminar() {
        location.href="sugerencias";
     });
      
+}
+
+function actualizar(){
+    var id = $(this).attr('data-id');
+    var username = $("#username").val();
+    var pass = $("#pass").val();
+    var kind= $("#kind").val();
+        
+    $.post("permisos/actualizar",{id:id, username:username, pass: pass, kind:kind}, function(data){
+        alert(data);
+        location.href="permisos";
+    });
 }
