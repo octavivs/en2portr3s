@@ -13,7 +13,12 @@ body {
 
 table {
     width: 100%;
-    border: 5px;
+}
+
+table, th, td {
+    border-style: solid;
+    border-width: thin;
+    border-color: darkgray;
 }
 
 /************************/

@@ -6,7 +6,7 @@ $mensaje = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
 ?>
 <h3>Email de Contacto</h3>
 <form action="respuesta/send" method="post" enctype="multipart/form-data">
-    <table border="0">
+    <table class="responsive">
         <tr>
             <td>mensaje del cliente:</td>
             <td><input name="nombre" value='<?= $mensaje ?>' type="text" id="nombre" /></td>
