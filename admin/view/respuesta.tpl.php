@@ -1,15 +1,15 @@
 <?php
 
 $first_name = filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_STRING);
-$mail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-$mensaje = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
+$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+$content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
 ?>
 <h3>Email de Contacto</h3>
 <form action="respuesta/send" method="post" enctype="multipart/form-data">
     <table class="responsive">
         <tr>
             <td>mensaje del cliente:</td>
-            <td><input name="nombre" value='<?= $mensaje ?>' type="text" id="nombre" /></td>
+            <td><input name="nombre" value='<?= $content ?>' type="text" id="nombre" /></td>
         </tr>
         <tr>
             <td>Nombre del destinatario:</td>
@@ -17,7 +17,7 @@ $mensaje = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
         </tr>
         <tr>
             <td>Email del destinatario:</td>
-            <td><input name="email"  value='<?= $mail ?>' type="text" id="email" /></td>
+            <td><input name="email"  value='<?= $email ?>' type="text" id="email" /></td>
         </tr>
         <tr>
             <td>Asunto:</td>

@@ -17,17 +17,17 @@ $datos = $question->get();
     </tr>
     <?php
     foreach ($datos as $dato) {
-        echo "<tr><form action='respuesta' method='POST'>" . PHP_EOL;
-        echo "<td><input type='text' id='id2' name='id' value='" . $dato['id'] . "'  /></td>" . PHP_EOL;
-        echo "<td><input type='text' name='first_name' value='" . $dato['first_name'] . "'  /></td>" . PHP_EOL;
-        echo "<td><input type='text' name='last_name' value='" . $dato['last_name'] . "'  /></td>" . PHP_EOL;
-        echo "<td><input type='text' name='email' value='" . $dato['email'] . "'  /></td>" . PHP_EOL;
-        echo "<td ><input type='text' name='content' value='" . $dato['content'] . "'  /></td>" . PHP_EOL;
-        // echo "<td><input type='text' name='status' value='" . $dato['status'] . "'  /></td>" . PHP_EOL;
-        echo "<td><input type='text' name='since' value='" . $dato['since'] . "'  /></td>" . PHP_EOL;
-        echo "<td><input type='submit' class='button tiny' value='Responder' /></td>" . PHP_EOL;
-        //echo "<td><input type='button' id='elimimnar2' value='eliminar' /></td>" . PHP_EOL;
-        echo "</form></tr>" . PHP_EOL;
+        ?>
+        <tr>
+            <td><?= $dato['id'] ?></td>
+            <td id="fname_<?= $dato['id'] ?>"><?= $dato['first_name'] ?></td>
+            <td id="lname_<?= $dato['id'] ?>"><?= $dato['last_name'] ?></td>
+            <td id="email_<?= $dato['id'] ?>"><?= $dato['email'] ?></td>
+            <td id="content_<?= $dato['id'] ?>"><?= $dato['content'] ?></td>
+            <td><?= $dato['since'] ?></td>
+            <td><input type='button' class='button tiny' data-id="<?= $dato['id'] ?>" id="Reply" value='Responder' /></td>
+        </tr>
+        <?php
     }
     ?>
 </table>

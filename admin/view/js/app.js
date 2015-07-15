@@ -4,6 +4,7 @@ function initialize() {
     $("#exit").click(finish);
     $("input#eliminar").click(eliminar);
     $("input#actualizar").click(actualizar);
+    $("input#Reply").click(responder);
 }
 
 function finish() {
@@ -28,4 +29,20 @@ function actualizar() {
         alert(data);
         location.href = "permisos";
     });
+}
+
+function responder() {
+    var id = $(this).attr('data-id');
+    var fname = $("#fname_" + id).html();
+    var email = $("#email_" + id).html();
+    var content = $("#content_" + id).html();
+
+    alert(fname + ' ' + email);
+
+    // Falta investigar como hacer que $.post ademas de mandar la información también redirija a la página.
+    /*
+     $.post("respuesta", {first_name: fname, email: email, content: content}, function() {
+     location.href = "respuesta";
+     });
+     */
 }
