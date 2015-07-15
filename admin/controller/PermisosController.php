@@ -6,21 +6,27 @@ use en2portr3s\admin\library\View;
 
 class PermisosController {
 
+    private $update_args = array(
+        'id' => FILTER_SANITIZE_NUMBER_INT,
+        'username' => array(
+            'filter' => FILTER_SANITIZE_STRING,
+            'flags' => FILTER_FLAG_STRIP_LOW,
+        ),
+        'pass' => FILTER_SANITIZE_STRING,
+        'kind' => FILTER_SANITIZE_STRING
+    );
+
     public function indexAction() {
         return new View('permisos');
     }
-    
-     public function actualizarAction() {
-    
-         $user_data = [
-             $id => filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT),
-             $username => filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING),
-             $pass => filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING),
-             $kind => filter_input(INPUT_POST, 'kind',FILTER_SANITIZE_STRING)
-             ];
+
+    public function updateAction() {
+        $user_data = filter_input_array(INPUT_POST, $this->update_args);
+
         $account = new Account();
         $account->edit($user_data);
-        
-       return $account->message;
+
+        return $account->message;
     }
+
 }

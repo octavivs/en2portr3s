@@ -27,7 +27,7 @@ class RespuestaController {
     public function sendAction() {
         $replyData = filter_input_array(INPUT_POST, $this->reply_args);
         $adjunto = $_FILES["adjunto"];
-        
+
         $mail = new PHPMailer();
 
         // Se indica la clase que use SMTP.
@@ -35,6 +35,7 @@ class RespuestaController {
 
         // Permite el modo debug para ver mensajes de las cosas que van ocurriendo.
         // $mail->SMTPDebug = 2;
+
         // Se Debe de hacer autenticación SMTP.
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = "ssl";

@@ -4,7 +4,6 @@ $first_name = filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_STRING);
 $mail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $mensaje = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
 ?>
-
 <h3>Email de Contacto</h3>
 <form action="respuesta/send" method="post" enctype="multipart/form-data">
     <table border="0">
