@@ -12,8 +12,7 @@ class PermisosController {
             'filter' => FILTER_SANITIZE_STRING,
             'flags' => FILTER_FLAG_STRIP_LOW,
         ),
-        'pass' => FILTER_SANITIZE_STRING,
-        'kind' => FILTER_SANITIZE_STRING
+         'kind' => FILTER_SANITIZE_STRING
     );
 
     public function indexAction() {

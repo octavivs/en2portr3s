@@ -16,7 +16,7 @@ $datos = $suggestion->get();
     foreach ($datos as $dato) {
         ?>
         <tr>
-            <td id="id" ><?=$dato['id']?></td>
+            <td  ><?=$dato['id']?></td>
             <td><?=$dato['content']?></td>
             <td><?=$dato['since']?></td>
             <td><input type='button' class='button tiny' data-id='<?=$dato['id']?>' id='eliminar' value='Eliminar' /></td>

@@ -9,22 +9,24 @@ $list = $account->get();
     <thead>
         <tr>
             <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
             <th>Usuario</th>
-            <th>Contraseña</th>
-            <th>Tipo</th>
-            <th>Registro</th>
+            <th>tipo</th>
         </tr>
     </thead>
     <tbody>
         <?php
         foreach ($list as $user) {
-            echo '<tr>'
-            . '<td>' . $user['id'] . '</td>'
-            . '<td>' . $user['username'] . '</td>'
-            . '<td>' . $user['pass'] . '</td>'
-            . '<td>' . $user['kind'] . '</td>'
-            . '<td>' . $user['since'] . '</td>'
-            . '</tr>';
+            ?>
+           <tr>
+            <td><?= $user['id']?> </td>
+            <td><?= $user['first_name']?> </td>
+            <td><?= $user['last_name']?> </td>
+            <td><?= $user['username']?> </td>
+            <td><?= $user['kind']?></td>
+            </tr>
+            <?php
         }
         ?>
     </tbody>

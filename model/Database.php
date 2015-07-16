@@ -66,13 +66,12 @@ abstract class Database {
         $this->connect();
         $result = $this->connection->query($this->query);
         while ($this->rows[] = $result->fetch_assoc()) {
-            
         }
         $result->close();
         $this->disonnect();
         array_pop($this->rows);
     }
-
+    
     /**
      * Escapa caracteres para su posterior utilización en alguna consulta.
      */
