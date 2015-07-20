@@ -25,7 +25,7 @@ class Question extends Database {
         } else {
             $this->query = "SELECT * FROM question WHERE id = '$id'";
         }
-        $this->dql();
+        $this->retrieve();
         $matches = count($this->rows);
         if ($matches === 0) {
             $this->message = 'Pregunta no encontrada';
@@ -42,7 +42,7 @@ class Question extends Database {
             INSERT INTO question (first_name, last_name, email, content, status)
             VALUES ('$this->first_name', '$this->last_name', '$this->email', '$this->content', '$this->status')
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Pregunta guardada correctamente';
     }
 
@@ -57,13 +57,13 @@ class Question extends Database {
                 status = '$this->status'
             WHERE email = '$this->email'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Pregunta modificada';
     }
 
     public function delete($id) {
         $this->query = "DELETE FROM question WHERE id = '$id'";
-        $this->dml();
+        $this->modify();
         $this->message = 'Pregunta eliminada';
     }
 

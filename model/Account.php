@@ -20,11 +20,11 @@ class Account extends Database {
 
     public function get($username = '') {
         if ($username === '') {
-            $this->query = "SELECT * FROM  account";
+            $this->query = "SELECT * FROM account";
         } else {
             $this->query = "SELECT * FROM account WHERE username = '$username'";
         }
-        $this->dql();
+        $this->retrieve();
         $matches = count($this->rows);
         if ($matches === 0) {
             $this->message = 'Usuario no encontrado';
@@ -44,7 +44,7 @@ class Account extends Database {
                     INSERT INTO account(username, pass, kind, person_id)
                     VALUES('$this->username', '$this->pass', '$this->kind', '$this->person_id')
                 ";
-                $this->dml();
+                $this->modify();
                 $this->message = 'Registro exitoso';
             } else {
                 $this->message = 'El usuario ya existe';
@@ -64,7 +64,7 @@ class Account extends Database {
                 person_id='$this->person_id'
             WHERE username = '$this->username'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Usuario modificado';
     }
 
@@ -73,7 +73,7 @@ class Account extends Database {
             DELETE FROM account
             WHERE username = '$username'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Usuario eliminado';
     }
 

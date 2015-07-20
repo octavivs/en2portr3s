@@ -22,7 +22,7 @@ class Suggestion extends Database {
         } else {
             $this->query = "SELECT * FROM suggestion WHERE id = '$id'";
         }
-        $this->dql();
+        $this->retrieve();
         $matches = count($this->rows);
         if ($matches === 0) {
             $this->message = 'Sugerencia no registrada';
@@ -39,7 +39,7 @@ class Suggestion extends Database {
             INSERT INTO suggestion (content, status)
             VALUES ('$this->content', '$this->status')
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Sugerencia guardada correctamente';
     }
 
@@ -50,7 +50,7 @@ class Suggestion extends Database {
             SET content = '$this->content',
             WHERE id = '$this->id'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Sugerencia modificada';
     }
 
@@ -59,7 +59,7 @@ class Suggestion extends Database {
             DELETE FROM suggestion
             WHERE id = '$id'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Sugerencia eliminada';
     }
 

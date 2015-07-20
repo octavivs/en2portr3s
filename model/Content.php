@@ -20,7 +20,7 @@ class Content extends Database {
         } else {
             $this->query = 'SELECT * FROM content WHERE ' . $this->key . " = '$key'";
         }
-        $this->dql();
+        $this->retrieve();
         $matches = count($this->rows);
         if ($matches === 0) {
             $this->message = 'Contenido no registrado';
@@ -44,7 +44,7 @@ class Content extends Database {
                     INSERT INTO content(kind)
                     VALUES('$this->kind')
                 ";
-                $this->dml();
+                $this->modify();
                 $this->message = 'Registro exitoso';
             } else {
                 $this->message = 'Ese contenido ya está registrado';
@@ -61,7 +61,7 @@ class Content extends Database {
             SET kind='$this->kind'
             WHERE id = '$this->id'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Contenido modificado';
     }
 
@@ -70,7 +70,7 @@ class Content extends Database {
             DELETE FROM content
             WHERE id = '$id'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Contenido eliminado';
     }
 

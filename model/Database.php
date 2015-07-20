@@ -10,7 +10,7 @@ abstract class Database {
     private static $db_enc = 'utf8';
     protected $db_name = 'default';
     protected $query;
-    protected $rows = array();
+    protected $rows = [];
     private $connection;
     public $message = 'Hecho';
 
@@ -46,37 +46,45 @@ abstract class Database {
     /**
      * Desconectar la base de datos
      */
-    private function disonnect() {
+    private function disconnect() {
         $this->connection->close();
     }
 
     /**
      * Ejecutar una consulta del tipo INSERT, DELETE, UPDATE
      */
-    protected function dml() {
+    protected function modify() {
         $this->connect();
         $this->connection->query($this->query);
-        $this->disonnect();
+        $this->disconnect();
     }
 
     /**
      * Traer resultados de una consulta del tipo SELECT
      */
-    protected function dql() {
+    protected function retrieve() {
         $this->connect();
         $result = $this->connection->query($this->query);
-        while ($this->rows[] = $result->fetch_assoc()) {
-        }
-        $result->close();
-        $this->disonnect();
-        array_pop($this->rows);
+        $this->rows = $result->fetch_all(MYSQLI_ASSOC);
+        $result->free();
+        $this->disconnect();
     }
-    
+
     /**
      * Escapa caracteres para su posterior utilización en alguna consulta.
      */
-    protected function safe($data) {
-        $this->connection->real_escape_string($data);
+    protected function escape($data) {
+        if (is_string($data)) {
+            return $this->connection->real_escape_string($data);
+        } else if (is_array($data)) {
+            $encoded = [];
+            foreach ($data as $item) {
+                $encoded[] = $this->connection->real_escape_string($item);
+            }
+            return $encoded;
+        } else {
+            return false;
+        }
     }
 
 }

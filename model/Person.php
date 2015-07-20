@@ -25,7 +25,7 @@ class Person extends Database {
         } else {
             $this->query = "SELECT * FROM person WHERE email = '$email'";
         }
-        $this->dql();
+        $this->retrieve();
         $matches = count($this->rows);
         if ($matches === 0) {
             $this->message = 'Persona no encontrada';
@@ -45,7 +45,7 @@ class Person extends Database {
                     INSERT INTO person(first_name, last_name, email, phone, address, birthdate)
                     VALUES('$this->first_name', '$this->last_name', '$this->email', '$this->phone', '$this->address','$this->birthdate')
                 ";
-                $this->dml();
+                $this->modify();
                 $this->message = 'Persona agregada exitosamente';
             } else {
                 $this->message = 'La persona ya existe';
@@ -67,7 +67,7 @@ class Person extends Database {
                 birthdate='$this->birthdate'
             WHERE email = '$this->email'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Información personal modificada';
     }
 
@@ -76,7 +76,7 @@ class Person extends Database {
             DELETE FROM person
             WHERE email = '$email'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Información personal eliminada';
     }
 

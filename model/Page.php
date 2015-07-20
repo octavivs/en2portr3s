@@ -21,7 +21,7 @@ class Page extends Database {
         } else {
             $this->query = "SELECT * FROM page WHERE id = '$id'";
         }
-        $this->dql();
+        $this->retrieve();
         $matches = count($this->rows);
         if ($matches === 0) {
             $this->message = 'Página web no registrada';
@@ -51,7 +51,7 @@ class Page extends Database {
                     INSERT INTO page(label)
                     VALUES('$this->label')
                 ";
-                $this->dml();
+                $this->modify();
                 $this->message = 'Registro exitoso';
             } else {
                 $this->message = 'La página ya está registrada';
@@ -68,7 +68,7 @@ class Page extends Database {
             SET label='$this->label'
             WHERE id = '$this->id'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Página modificada';
     }
 
@@ -77,7 +77,7 @@ class Page extends Database {
             DELETE FROM page
             WHERE id = '$id'
         ";
-        $this->dml();
+        $this->modify();
         $this->message = 'Página eliminada';
     }
 
