@@ -43,6 +43,7 @@ class RegistroController {
         if ($person->message === 'Persona agregada exitosamente') {
             $register_data = filter_input_array(INPUT_POST, $this->register_args);
             $register_data['kind'] = 'normal';
+            $person->get($register_data['username']);
             $register_data['person_id'] = $person->getId();
 
             $register = new Account($register_data);
