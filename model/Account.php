@@ -8,6 +8,7 @@ class Account extends Database {
     private $username;
     private $pass;
     private $kind;
+    private $status;
     private $since;
     private $person_id;
 
@@ -41,10 +42,11 @@ class Account extends Database {
             if ($register_data['username'] != $this->username) {
                 $this->synchronize($register_data);
                 $this->query = "
-                    INSERT INTO account(username, pass, kind, person_id)
-                    VALUES('$this->username', '$this->pass', '$this->kind', '$this->person_id')
+                    INSERT INTO account(username, pass, person_id)
+                    VALUES('$this->username', '$this->pass', '$this->person_id')
                 ";
                 $this->modify();
+                $this->get($this->username);
                 $this->message = 'Registro exitoso';
             } else {
                 $this->message = 'El usuario ya existe';
@@ -58,10 +60,11 @@ class Account extends Database {
         $this->synchronize($register_data);
         $this->query = "
             UPDATE account
-            SET username='$this->username',
-                pass='$this->pass',
-                kind='$this->kind',
-                person_id='$this->person_id'
+            SET username = '$this->username',
+                pass = '$this->pass',
+                kind = '$this->kind',
+                staus = '$this->status',
+                person_id = '$this->person_id'
             WHERE username = '$this->username'
         ";
         $this->modify();

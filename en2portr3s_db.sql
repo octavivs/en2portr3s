@@ -20,7 +20,6 @@ CREATE TABLE IF NOT EXISTS person (
     last_name VARCHAR(64) NOT NULL,
     email VARCHAR(64) NOT NULL,
     phone VARCHAR(16) NOT NULL,
-    address VARCHAR(255) NOT NULL,
     birthdate TIMESTAMP NOT NULL,
 
     PRIMARY KEY (id),
@@ -38,6 +37,7 @@ CREATE TABLE IF NOT EXISTS account (
     username VARCHAR(36) NOT NULL,
     pass VARCHAR(32) NOT NULL,
     kind VARCHAR(24) DEFAULT 'normal',
+    status VARCHAR(24) DEFAULT 'activo',
     since TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     person_id INT(10) NOT NULL,
 

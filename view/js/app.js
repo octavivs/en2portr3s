@@ -124,8 +124,6 @@ function signUp() {
     var userName = $("#UserName").val();
     var password = $("#Password").val();
     var rePassword = $("#RePassword").val();
-    var address = $("#Address").val();
-    var city = $("#City").val();
     var telephone = $("#Telephone").val();
     var birthMonth = $("#BirthMonth").val();
     var birthDay = $("#BirthDay").val();
@@ -171,22 +169,6 @@ function signUp() {
         state = required;
     }
 
-    if (isEmpty(address)) {
-        $(message(required)).insertAfter("#Address");
-        state = required;
-    } else if (!isText(address)) {
-        $(message(invalid)).insertAfter("#Address");
-        state = invalid;
-    }
-
-    if (isEmpty(city)) {
-        $(message(required)).insertAfter("#City");
-        state = required;
-    } else if (!isName(city)) {
-        $(message(invalid)).insertAfter("#City");
-        state = invalid;
-    }
-
     if (isEmpty(telephone)) {
         $(message(required)).insertAfter("#Telephone");
         state = required;
@@ -217,9 +199,7 @@ function signUp() {
             email: userName,
             username: userName,
             pass: password,
-            address: address,
             phone: telephone,
-            city: city,
             birthdate: birthDate
         }, function (data) {
             alert(data);

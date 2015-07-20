@@ -19,7 +19,6 @@ class RegistroController {
         ),
         'email' => FILTER_SANITIZE_EMAIL,
         'phone' => FILTER_SANITIZE_NUMBER_INT,
-        'address' => FILTER_SANITIZE_STRING,
         'birthdate' => FILTER_SANITIZE_STRING,
     );
     private $register_args = array(
@@ -42,8 +41,6 @@ class RegistroController {
 
         if ($person->message === 'Persona agregada exitosamente') {
             $register_data = filter_input_array(INPUT_POST, $this->register_args);
-            $register_data['kind'] = 'normal';
-            $person->get($register_data['username']);
             $register_data['person_id'] = $person->getId();
 
             $register = new Account($register_data);

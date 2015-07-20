@@ -9,7 +9,6 @@ class Person extends Database {
     private $last_name;
     private $email;
     private $phone;
-    private $address;
     private $birthdate;
 
     function __construct($user_data = []) {
@@ -42,10 +41,11 @@ class Person extends Database {
             if ($user_data['email'] != $this->email) {
                 $this->synchronize($user_data);
                 $this->query = "
-                    INSERT INTO person(first_name, last_name, email, phone, address, birthdate)
-                    VALUES('$this->first_name', '$this->last_name', '$this->email', '$this->phone', '$this->address','$this->birthdate')
+                    INSERT INTO person(first_name, last_name, email, phone, birthdate)
+                    VALUES('$this->first_name', '$this->last_name', '$this->email', '$this->phone', '$this->birthdate')
                 ";
                 $this->modify();
+                $this->get($this->email);
                 $this->message = 'Persona agregada exitosamente';
             } else {
                 $this->message = 'La persona ya existe';
@@ -63,7 +63,6 @@ class Person extends Database {
                 last_name='$this->last_name',
                 email='$this->email',
                 phone='$this->phone',
-                address='$this->address',
                 birthdate='$this->birthdate'
             WHERE email = '$this->email'
         ";

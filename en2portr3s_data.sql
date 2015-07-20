@@ -2,17 +2,17 @@
 -- Dumping data for table 'person'
 --
 
-INSERT INTO person (id, first_name, last_name, email, phone, address, birthdate) VALUES
-(1, 'José Octavio', 'Sánchez Contreras', 'josco1982@hotmail.com', '7215289', 'Poniente 9 # 309', '1982-03-22 06:00:00'),
-(2, 'Juan Daniel', 'Gutiérrez Torres', 'guti_dani2@hotmail.com', '2725939023', 'Calle Pípila S/N Barrio Novillero', '1994-02-16 06:00:00'),
-(3, 'Kevin Uriel', 'Domínguez Riquelme', '6778@utcv.edu.mx', '2717409620', 'Rincón del Bosque Calle 42', '1995-04-01 06:00:00'),
-(4, 'Luis Felipe', 'Crescencio Castro', 'felipin@mail.com', '7256734', 'Circunvalación', '1996-07-15 05:00:00'),
-(5, 'María José', 'Romero Castillo', 'maryjose@mail.com', '7248096', 'Cuautlapan', '1997-10-16 05:00:00'),
-(6, 'Armando', 'Sánchez González', 'ar47s@hotmail.com', '2725939023', 'avenida independencia puebla', '1994-02-15 06:00:00'),
-(7, 'Josue', 'Castillo Jurado', 'josue_cast@gmail.com', '987654321', 'Norte 8 # 456', '1987-06-09 05:00:00'),
-(8, 'Genaro', 'Gutiérrez Hernández', 'gen1@gmail.com', '7852456852', 'callle dos sin numero', '1991-06-28 05:00:00'),
-(9, 'Karina', 'García Chelius', 'kagachel@live.com', '543216789', 'Oriente 6 # 218', '1997-08-14 05:00:00'),
-(10, 'Miranda', 'Romero Hernández', 'miranda@yahoo.com.mx', '987612345', 'Poniente 13 # 184', '1994-10-16 05:00:00');
+INSERT INTO person (id, first_name, last_name, email, phone, birthdate) VALUES
+(1, 'José Octavio', 'Sánchez Contreras', 'josco1982@hotmail.com', '7215289', '1982-03-22 06:00:00'),
+(2, 'Juan Daniel', 'Gutiérrez Torres', 'guti_dani2@hotmail.com', '2725939023', '1994-02-16 06:00:00'),
+(3, 'Kevin Uriel', 'Domínguez Riquelme', '6778@utcv.edu.mx', '2717409620', '1995-04-01 06:00:00'),
+(4, 'Luis Felipe', 'Crescencio Castro', 'felipin@mail.com', '7256734', '1996-07-15 05:00:00'),
+(5, 'María José', 'Romero Castillo', 'maryjose@mail.com', '7248096', '1997-10-16 05:00:00'),
+(6, 'Armando', 'Sánchez González', 'ar47s@hotmail.com', '2725939023', '1994-02-15 06:00:00'),
+(7, 'Josue', 'Castillo Jurado', 'josue_cast@gmail.com', '987654321', '1987-06-09 05:00:00'),
+(8, 'Genaro', 'Gutiérrez Hernández', 'gen1@gmail.com', '7852456852', '1991-06-28 05:00:00'),
+(9, 'Karina', 'García Chelius', 'kagachel@live.com', '543216789', '1997-08-14 05:00:00'),
+(10, 'Miranda', 'Romero Hernández', 'miranda@yahoo.com.mx', '987612345', '1994-10-16 05:00:00');
 
 -- --------------------------------------------------------
 
@@ -20,17 +20,17 @@ INSERT INTO person (id, first_name, last_name, email, phone, address, birthdate)
 -- Dumping data for table 'account'
 --
 
-INSERT INTO account (id, username, pass, kind, since, person_id) VALUES
-(1, 'josco1982@hotmail.com', 'erika', 'admin', '2015-06-04 15:05:44', 1),
-(2, 'guti_dani2@hotmail.com', '6968daniel', 'admin', '2015-06-08 15:45:56', 2),
-(3, '6778@utcv.edu.mx', 'laquesea', 'admin', '2015-06-08 15:52:43', 3),
-(4, 'felipin@mail.com', 'IamBatman', 'normal', '2015-06-08 16:41:33', 4),
-(5, 'maryjose@mail.com', 'IamPretty', 'normal', '2015-06-09 03:02:15', 5),
-(6, 'ar47s@hotmail.com', 'militar23', 'normal', '2015-06-30 18:45:39', 6),
-(7, 'josue_cast@gmail.com', 'J0sueCA87', 'normal', '2015-06-30 18:47:12', 7),
-(8, 'gen1@gmail.com', 'gena2309', 'normal', '2015-06-30 18:47:37', 8),
-(9, 'kagachel@live.com', 'K@rinaGaChe', 'normal', '2015-06-30 18:50:41', 9),
-(10, 'miranda@yahoo.com.mx', 'Mir@ndaRoH', 'normal', '2015-06-30 18:54:35', 10);
+INSERT INTO account (id, username, pass, kind, status, since, person_id) VALUES
+(1, 'josco1982@hotmail.com', 'erika', 'admin', 'activo', '2015-06-04 15:05:44', 1),
+(2, 'guti_dani2@hotmail.com', '6968daniel', 'admin', 'activo', '2015-06-08 15:45:56', 2),
+(3, '6778@utcv.edu.mx', 'laquesea', 'admin', 'activo', '2015-06-08 15:52:43', 3),
+(4, 'felipin@mail.com', 'IamBatman', 'normal', 'activo', '2015-06-08 16:41:33', 4),
+(5, 'maryjose@mail.com', 'IamPretty', 'normal', 'activo', '2015-06-09 03:02:15', 5),
+(6, 'ar47s@hotmail.com', 'militar23', 'normal', 'activo', '2015-06-30 18:45:39', 6),
+(7, 'josue_cast@gmail.com', 'J0sueCA87', 'normal', 'activo', '2015-06-30 18:47:12', 7),
+(8, 'gen1@gmail.com', 'gena2309', 'normal', 'activo', '2015-06-30 18:47:37', 8),
+(9, 'kagachel@live.com', 'K@rinaGaChe', 'normal', 'activo', '2015-06-30 18:50:41', 9),
+(10, 'miranda@yahoo.com.mx', 'Mir@ndaRoH', 'normal', 'activo', '2015-06-30 18:54:35', 10);
 
 -- --------------------------------------------------------
 

@@ -30,19 +30,12 @@
                 <input type="password" class="data-field" id="RePassword" />
             </div>
         </div>
-        <label for="Address">Dirección</label>
-        <input type="text" class="data-field" id="Address" />
         <div class="row">
             <div class="medium-6 columns">
                 <label for="Telephone">Teléfono:</label>
                 <input type="tel" class="data-field" id="Telephone" />
             </div>
-            <div class="medium-6 columns">
-                <label for="City">Ciudad:</label>
-                <input type="text" class="data-field" id="City" />
-            </div>
         </div>
-
         <label>Fecha de nacimiento:</label>
         <div class="row">
             <div class="medium-4 columns">
