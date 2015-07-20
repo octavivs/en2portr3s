@@ -38,6 +38,7 @@ function initialize() {
 
 function showHideImage() {
     if ($(this).siblings("img").hasClass("hidden-for-small")) {
+        $("#services img").addClass("hidden-for-small");
         $(this).siblings("img").removeClass("hidden-for-small");
     } else {
         $(this).siblings("img").addClass("hidden-for-small");
