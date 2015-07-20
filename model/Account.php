@@ -20,7 +20,7 @@ class Account extends Database {
 
     public function get($username = '') {
         if ($username === '') {
-            $this->query = "SELECT * FROM  vwUsuarios";
+            $this->query = "SELECT * FROM  account";
         } else {
             $this->query = "SELECT * FROM account WHERE username = '$username'";
         }
