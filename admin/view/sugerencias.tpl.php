@@ -10,7 +10,7 @@ $datos = $suggestion->get();
         <th>ID</th>
         <th>Mensaje</th>
         <th>Fecha</th>
-        <th></th>
+        <th>Eliminar</th>
     </tr>
     <?php
     foreach ($datos as $dato) {

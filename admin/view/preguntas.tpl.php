@@ -5,6 +5,8 @@ use en2portr3s\model\Question;
 $question = new Question();
 $datos = $question->get();
 ?>
+
+
 <table class="responsive">
     <tr>
         <th>ID</th>
@@ -28,6 +30,6 @@ $datos = $question->get();
             <td><input type='button' class='button tiny' data-id="<?= $dato['id'] ?>" id="Reply" value='Responder' /></td>
         </tr>
         <?php
-    }
+   }
     ?>
 </table>
