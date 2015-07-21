@@ -35,13 +35,13 @@ class Page extends Database {
         return $this->rows;
     }
 
-    public function getContent($id = '') {
+    public function getContent() {
         $content = new Content();
         $content->searchParam('page_id');
-        if ($id === '') {
+        if ($this->id === '') {
             return $content->get();
         } else {
-            return $content->get($id);
+            return $content->get($this->id);
         }
     }
 

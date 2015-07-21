@@ -21,6 +21,15 @@ table, th, td {
     border-color: darkgray;
 }
 
+#manager .tabs-content > .content {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#manager ul.accordion {
+    margin-left: 0px;
+}
+
 /************************/
 /*        Header        */
 /************************/

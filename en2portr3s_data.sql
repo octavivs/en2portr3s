@@ -112,7 +112,35 @@ INSERT INTO content(id, kind, page_id) VALUES
 (7, 'image', 1),
 (8, 'image', 1),
 (9, 'image', 1),
-(10, 'image', 1);
+(10, 'image', 1),
+(11, 'text', 2),
+(12, 'image', 2),
+(13, 'text', 2),
+(14, 'image', 2),
+(15, 'text', 2),
+(16, 'image', 2),
+(17, 'text', 2),
+(18, 'image', 2),
+(19, 'text', 2),
+(20, 'image', 2),
+(21, 'text', 2),
+(22, 'image', 2),
+(23, 'text', 2),
+(24, 'image', 2),
+(25, 'text', 2),
+(26, 'image', 2),
+(27, 'text', 2),
+(28, 'image', 2),
+(29, 'text', 2),
+(30, 'image', 2),
+(31, 'text', 2),
+(32, 'image', 2),
+(33, 'text', 2),
+(34, 'image', 2),
+(35, 'text', 2),
+(36, 'image', 2),
+(37, 'text', 2),
+(38, 'image', 2),
 
 -- --------------------------------------------------------
 
@@ -129,3 +157,13 @@ INSERT INTO image(id, url, alt, content_id) VALUES
 (6, 'view/img/amd_logo.png', 'AMD', 8),
 (7, 'view/img/autodesk_logo.png', 'Autodesk', 9),
 (8, 'view/img/adobe_logo.png', 'Adobe', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Dumping data for table 'text_entry'
+--
+
+INSERT INTO text_entry(id, body, lang_code, content_id) VALUES
+(1, 'text_entry_1', 'es', 3),
+(2, 'text_entry_2', 'es', 3),

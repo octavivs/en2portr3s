@@ -7,7 +7,7 @@ $list = $page->get();
 $first_item = array_shift($list);
 $firt_id = $first_item['label'];
 ?>
-<div>
+<div id="manager">
     <ul class="tabs" data-tab>
         <li class="tab-title active">
             <a href="#<?= $firt_id ?>"><?= $firt_id ?></a>
@@ -23,14 +23,96 @@ $firt_id = $first_item['label'];
     </ul>
     <div class="tabs-content">
         <div class='content active' id='<?= $firt_id ?>'>
-            <p>This is the <?= $firt_id ?> panel of the basic tab example.</p>
+            <?php
+            ${$firt_id} = new Page($firt_id);
+            $content_list = ${$firt_id}->getContent();
+            ?>
+            <ul class="accordion" data-accordion>
+                <?php
+                foreach ($content_list as $content) {
+                    ?>
+                    <li class="accordion-navigation">
+                        <a href="#Content_id_<?= $content['id'] ?>">Content_id_<?= $content['id'] ?></a>
+                        <div id="Content_id_<?= $content['id'] ?>" class="content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <?php
+                                        foreach ($content as $column => $value) {
+                                            //$column_length = 100 / count($content);
+                                            //echo "<th width = '$column_length%'>$column</th>";
+                                            echo "<th>$column</th>";
+                                        }
+                                        ?>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <?php
+                                        foreach ($content as $column => $value) {
+                                            //$column_length = 100 / count($content);
+                                            //echo "<td width = '$column_length%'>$value</td>";
+                                            echo "<td>$value</td>";
+                                        }
+                                        ?>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <?php
+                }
+                ?>
+            </ul>
         </div>
         <?php
         foreach ($list as $item) {
             $id = $item['label'];
-            echo "<div class='content' id='$id'>";
-            echo "<p>This is the $id panel of the basic tab example.</p>";
-            echo "</div>";
+            ?>
+            <div class='content' id='<?= $id ?>'>
+                <?php
+                ${$id} = new Page($id);
+                $content_list = ${$id}->getContent();
+                ?>
+                <ul class="accordion" data-accordion>
+                    <?php
+                    foreach ($content_list as $content) {
+                        ?>
+                        <li class="accordion-navigation">
+                            <a href="#Content_id_<?= $content['id'] ?>">Content_id_<?= $content['id'] ?></a>
+                            <div id="Content_id_<?= $content['id'] ?>" class="content">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <?php
+                                            foreach ($content as $column => $value) {
+                                                //$column_length = 100 / count($content);
+                                                //echo "<th width = '$column_length%'>$column</th>";
+                                                echo "<th>$column</th>";
+                                            }
+                                            ?>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <?php
+                                            foreach ($content as $column => $value) {
+                                                //$column_length = 100 / count($content);
+                                                //echo "<td width = '$column_length%'>$value</td>";
+                                                echo "<td>$value</td>";
+                                            }
+                                            ?>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <?php
+                    }
+                    ?>
+                </ul>
+            </div>
+            <?php
         }
         ?>
     </div>
