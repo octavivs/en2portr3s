@@ -11,15 +11,18 @@ class Page extends Database {
     private $since;
     private $modified;
 
-    function __construct() {
+    function __construct($label = '') {
         $this->db_name = "en2portr3s";
+        if ($label !== '') {
+            $this->set($label);
+        }
     }
 
-    public function get($id = '') {
-        if ($id === '') {
+    public function get($label = '') {
+        if ($label === '') {
             $this->query = "SELECT * FROM page";
         } else {
-            $this->query = "SELECT * FROM page WHERE id = '$id'";
+            $this->query = "SELECT * FROM page WHERE label = '$label'";
         }
         $this->retrieve();
         $matches = count($this->rows);
@@ -42,16 +45,17 @@ class Page extends Database {
         }
     }
 
-    public function set($page_data) {
-        if (array_key_exists('id', $page_data)) {
-            $this->get($page_data['id']);
-            if ($page_data['id'] != $this->id) {
-                $this->synchronize($page_data);
+    public function set($label) {
+        if ($label !== '') {
+            $this->get($label);
+            if (empty($this->label)) {
+                $this->label = $label;
                 $this->query = "
                     INSERT INTO page(label)
                     VALUES('$this->label')
                 ";
                 $this->modify();
+                $this->get($label);
                 $this->message = 'Registro exitoso';
             } else {
                 $this->message = 'La página ya está registrada';
@@ -62,25 +66,46 @@ class Page extends Database {
     }
 
     public function edit($page_data) {
-        $this->synchronize($page_data);
-        $this->query = "
-            UPDATE page
-            SET label='$this->label'
-            WHERE id = '$this->id'
-        ";
-        $this->modify();
-        $this->message = 'Página modificada';
+        if (array_key_exists('id', $page_data)) {
+            $this->get($page_data['id']);
+            if (!empty($this->id)) {
+                $this->synchronize($page_data);
+                $this->query = "
+                    UPDATE page
+                    SET label='$this->label'
+                    WHERE id = '$this->id'
+                ";
+                $this->modify();
+                $this->message = 'Página modificada';
+            } else {
+                $this->message = 'La página no está registrada';
+            }
+        } else {
+            $this->message = 'No se ha modificado la página';
+        }
     }
 
-    public function delete($id) {
-        $this->query = "
-            DELETE FROM page
-            WHERE id = '$id'
-        ";
-        $this->modify();
-        $this->message = 'Página eliminada';
+    public function delete($label) {
+        if ($label !== '') {
+            $this->get($label);
+            if (!empty($this->label)) {
+                $this->query = "
+                    DELETE FROM page
+                    WHERE id = '$this->id'
+                ";
+                $this->modify();
+                $this->message = 'Página eliminada';
+            } else {
+                $this->message = 'La página no está registrada';
+            }
+        } else {
+            $this->message = 'No se ha eliminado la página';
+        }
     }
 
+    /**
+     * Sincroniza los datos de la clase con la tabla en la base de datos.
+     */
     private function synchronize($data) {
         foreach ($data as $propiedad => $valor) {
             $this->$propiedad = $valor;
