@@ -37,12 +37,8 @@ function responder() {
     var email = $("#email_" + id).html();
     var content = $("#content_" + id).html();
 
-    alert(fname + ' ' + email);
+    //alert(fname + content + email);
 
-    // Falta investigar como hacer que $.post ademas de mandar la información también redirija a la página.
-    /*
-     $.post("respuesta", {first_name: fname, email: email, content: content}, function() {
-     location.href = "respuesta";
-     });
-     */
+    $.redirect('respuesta', {'first_name': fname, 'email': email, 'content': content});
+
 }

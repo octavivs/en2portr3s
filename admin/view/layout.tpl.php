@@ -60,6 +60,7 @@
         <script type="text/javascript" src="view/js/vendor/fastclick.js"></script>
         <script type="text/javascript" src="view/js/vendor/foundation.js"></script>
         <script type="text/javascript" src="view/js/vendor/responsive-tables.js"></script>
+        <script type="text/javascript" src="view/js/vendor/jqueryredirect.js"></script>
         <script>
             $(document).foundation();
         </script>

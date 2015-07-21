@@ -13,7 +13,7 @@ $datos = $question->get();
         <th>Email</th>
         <th>Mensaje</th>
         <th>Fecha</th>
-        <th></th>
+        <th>Responder</th>
     </tr>
     <?php
     foreach ($datos as $dato) {
