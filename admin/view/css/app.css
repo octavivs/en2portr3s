@@ -19,7 +19,10 @@ table, th, td {
     border-style: solid;
     border-width: thin;
     border-color: darkgray;
+    
 }
+th {     background: #ddd;
+    }
 
 /************************/
 /*        Header        */
