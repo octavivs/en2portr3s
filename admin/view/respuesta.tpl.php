@@ -32,10 +32,10 @@ $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
             <td>Mensaje:</td>
             <td><textarea name="mensaje" cols="50" rows="10" id="mensaje"></textarea></td>
         </tr>
-        <tr>
-            <td><input type="submit" value="Enviar" /></td>
+         </table>
+            <input type="submit"  class="button" tiny value="Enviar" />
            <!-- <td><input type="button" id="regresar" value="regresar" /></td>-->
-        </tr>
-    </table>
+      
+   
     <input type="hidden" name="phpmailer" />
 </form>
