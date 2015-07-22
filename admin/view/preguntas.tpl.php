@@ -6,6 +6,11 @@ $question = new Question();
 $datos = $question->get();
 ?>
 
+
+
+
+
+
 <ul class="tabs" data-tab>
     <li class="tab-title active"><a href="#panel1">mensajes pendientes</a></li>
     <li class="tab-title"><a href="#panel2">mensajes revisados</a></li>
@@ -57,7 +62,7 @@ $datos = $question->get();
             </tr>
             <?php
             foreach ($datos as $dato) {
-                if ($dato['status'] === 'revisado') {
+                if ($dato['status'] === 'Revisado') {
                     ?>
                     <tr>
                         <td><?= $dato['id'] ?></td>
