@@ -66,7 +66,7 @@ $datos = $question->get();
                         <td id="email_<?= $dato['id'] ?>"><?= $dato['email'] ?></td>
                         <td id="content_<?= $dato['id'] ?>"><?= $dato['content'] ?></td>
                         <td><?= $dato['since'] ?></td>
-                        <td><input type='button' class='button tiny' data-id="<?= $dato['id'] ?>" id="Reply" value='Eliminar' /></td>
+                        <td><input type='button' class='button tiny' data-id="<?= $dato['id'] ?>" id="eli" value='Eliminar' /></td>
                     </tr>
                     <?php
                 }
