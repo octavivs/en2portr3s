@@ -7,7 +7,7 @@ $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
 ?>
 <h3>Email de Contacto</h3>
 <form action="respuesta/send" method="post" enctype="multipart/form-data">
-    <table class="responsive">
+   
         <tr>
             <td>mensaje del cliente:</td>
             <td><input name="nombre" value='<?= $content ?>' type="text" id="nombre" /></td>
@@ -32,9 +32,9 @@ $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
             <td>Mensaje:</td>
             <td><textarea name="mensaje" cols="50" rows="10" id="mensaje"></textarea></td>
         </tr>
-         </table>
-            <input type="submit"  class="button" tiny value="Enviar" />
-           <!-- <td><input type="button" id="regresar" value="regresar" /></td>-->
+         
+            <input type="submit"  class="button tiny" value="Enviar" />
+           <input type="button"  class="button tiny" id="regresar"  value="cancelar "/>
       
    
     <input type="hidden" name="phpmailer" />

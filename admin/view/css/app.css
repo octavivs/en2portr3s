@@ -33,6 +33,15 @@ th {     background: #ddd;
     margin-left: 0px;
 }
 
+#question_admin ul.accordion {
+    margin-left: 0px;
+}
+
+@media only screen and (max-width: 40em) {
+    #question_admin .button {
+        margin: 0px;
+    }
+}
 /************************/
 /*        Header        */
 /************************/
