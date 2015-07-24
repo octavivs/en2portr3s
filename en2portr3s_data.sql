@@ -140,7 +140,7 @@ INSERT INTO content(id, kind, page_id) VALUES
 (35, 'text', 2),
 (36, 'image', 2),
 (37, 'text', 2),
-(38, 'image', 2),
+(38, 'image', 2);
 
 -- --------------------------------------------------------
 
@@ -166,4 +166,4 @@ INSERT INTO image(id, url, alt, content_id) VALUES
 
 INSERT INTO text_entry(id, body, lang_code, content_id) VALUES
 (1, 'text_entry_1', 'es', 3),
-(2, 'text_entry_2', 'es', 3),
+(2, 'text_entry_2', 'es', 3);
