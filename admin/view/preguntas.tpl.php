@@ -36,34 +36,27 @@ $datos = $question->get();
         </div>
         <div class="content" id="revisados">
             <p>En esta parte se imprimen los mensajes revisados y se podran eliminar.</p>
-            <table class="responsive">
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Email</th>
-                    <th>Mensaje</th>
-                    <th>Fecha</th>
-                    <th>Responder</th>
-                </tr>
+            <ul class="accordion" data-accordion>
                 <?php
                 foreach ($datos as $dato) {
+                    $date = DateTime::createFromFormat('Y-m-d H:i:s', $dato['since']);
                     if ($dato['status'] === 'Revisado') {
                         ?>
-                        <tr>
-                            <td><?= $dato['id'] ?></td>
-                            <td id="fname_<?= $dato['id'] ?>"><?= $dato['first_name'] ?></td>
-                            <td id="lname_<?= $dato['id'] ?>"><?= $dato['last_name'] ?></td>
-                            <td id="email_<?= $dato['id'] ?>"><?= $dato['email'] ?></td>
-                            <td id="content_<?= $dato['id'] ?>"><?= $dato['content'] ?></td>
-                            <td><?= $dato['since'] ?></td>
-                            <td><input type='button' class='button tiny' data-id="<?= $dato['id'] ?>" id="eli" value='Eliminar' /></td>
-                        </tr>
+                        <li class="accordion-navigation">
+                            <a href="#question_id_<?= $dato['id'] ?>">
+                                <?= $dato['first_name'] ?> (<?= $date->format('d/M/Y') ?>)
+                            </a>
+                            <div id="question_id_<?= $dato['id'] ?>" class="content">
+                                <p><?= $dato['content'] ?></p>
+                                <input type='button' class='button tiny' data-id="<?= $dato['id'] ?>" id="eli" value='Eliminar' />
+                            </div>
+                        </li>
                         <?php
                     }
                 }
                 ?>
-            </table>
+            </ul>
+           
         </div>
     </div>
 </div>
