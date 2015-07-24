@@ -5,23 +5,24 @@ use en2portr3s\model\Suggestion;
 $suggestion = new Suggestion();
 $datos = $suggestion->get();
 ?>
-<table class="responsive">
-    <tr>
-        <th>ID</th>
-        <th>Mensaje</th>
-        <th>Fecha</th>
-        <th>Eliminar</th>
-    </tr>
+
+<ul class="accordion" data-accordion>
+    <h3> sugerencias</h3> 
     <?php
     foreach ($datos as $dato) {
+
+        $date = DateTime::createFromFormat('Y-m-d H:i:s', $dato['since']);
         ?>
-        <tr>
-            <td  ><?= $dato['id'] ?></td>
-            <td><?= $dato['content'] ?></td>
-            <td><?= $dato['since'] ?></td>
-            <td><input type='button' class='button tiny' data-id='<?= $dato['id'] ?>' id='eliminar' value='Eliminar' /></td>
-        </tr>
+        <li class="accordion-navigation">
+            <a href="#question_id_<?= $dato['id'] ?>">
+              Sugerencia N°<?= $dato['id'] ?> (<?= $date->format('d/M/Y') ?>)
+            </a>
+            <div id="question_id_<?= $dato['id'] ?>" class="content">
+                <p><?= $dato['content'] ?></p>
+                <input type='button' class='button tiny' data-id='<?= $dato['id'] ?>' id='eliminar' value='Eliminar' />
+            </div>
+        </li>
         <?php
     }
     ?>
-</table>
+</ul>
