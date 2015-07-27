@@ -3,16 +3,13 @@
 namespace en2portr3s\admin\controller;
 
 use en2portr3s\admin\library\View;
+use en2portr3s\model\Account;
 
 class PermisosController {
 
     private $update_args = array(
         'id' => FILTER_SANITIZE_NUMBER_INT,
-        'username' => array(
-            'filter' => FILTER_SANITIZE_STRING,
-            'flags' => FILTER_FLAG_STRIP_LOW,
-        ),
-         'kind' => FILTER_SANITIZE_STRING
+        'kind' => FILTER_SANITIZE_STRING
     );
 
     public function indexAction() {
@@ -20,12 +17,13 @@ class PermisosController {
     }
 
     public function updateAction() {
-        $user_data = filter_input_array(INPUT_POST, $this->update_args);
+        $register_data = filter_input_array(INPUT_POST, $this->update_args);
 
         $account = new Account();
-        $account->edit($user_data);
+        $account->edit($register_data);
 
         return $account->message;
+      
     }
 
 }
