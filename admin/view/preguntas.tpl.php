@@ -13,7 +13,7 @@ $datos = $question->select();
     <div class="tabs-content">
         <div class="content active" id="pendientes">
             <p> En esta parte se imprimen los mensajes pendientes.</p>
-            <ul class="accordion" data-accordion>
+            <ul class="accordion" data-accordion >
                 <?php
                 foreach ($datos as $dato) {
                     $date = DateTime::createFromFormat('Y-m-d H:i:s', $dato['since']);

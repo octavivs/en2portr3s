@@ -6,7 +6,7 @@ $account = new Account();
 $datos = $account->select();
 ?>
 <ul class="accordion" data-accordion>
-    <h3> Registro </h3> 
+    <h3> Permisos </h3> 
     <?php
     foreach ($datos as $dato) {
 
@@ -19,7 +19,7 @@ $datos = $account->select();
             <div id="regis_id_<?= $dato['id'] ?>" class="content">
                 <?= $date->format('d/M/Y')?>
                 <input type='text' id='kind' name='kind' value='<?= $dato['kind'] ?>'  />
-                <input type='button' class='button tiny' data-id='<?= $dato['id'] ?>' id='actualizar' value='Actualizar' />
+                <input type='button' class='button tiny' data-username=' <?= $dato['username'] ?>' id='actualizar' value='Actualizar' />
             </div>
         </li>
         <?php
