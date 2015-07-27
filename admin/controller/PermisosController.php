@@ -20,10 +20,10 @@ class PermisosController {
         $register_data = filter_input_array(INPUT_POST, $this->update_args);
 
         $account = new Account();
-        $account->update($user_data);
-
+        $account->update( $register_data);
+         var_dump($register_data);
         return $account->message;
-      
+       
     }
 
 }
