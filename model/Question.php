@@ -15,15 +15,14 @@ class Question extends Database {
     function __construct($question_data = []) {
         $this->db_name = "en2portr3s";
         if ($question_data !== []) {
-            $this->set($question_data);
+            $this->insert($question_data);
         }
     }
 
-    public function get($id = '') {
-        if ($id === '') {
-            $this->query = "SELECT * FROM question";
-        } else {
-            $this->query = "SELECT * FROM question WHERE id = '$id'";
+    public function select($id = '') {
+        $this->query = "SELECT * FROM question";
+        if ($id !== '') {
+            $this->query .= " WHERE id = '$id' ";
         }
         $this->retrieve();
         $matches = count($this->rows);
@@ -36,7 +35,7 @@ class Question extends Database {
         return $this->rows;
     }
 
-    public function set($question_data) {
+    public function insert($question_data) {
         $this->synchronize($question_data);
         $this->query = "
             INSERT INTO question (first_name, last_name, email, content, status)
@@ -46,7 +45,7 @@ class Question extends Database {
         $this->message = 'Pregunta guardada correctamente';
     }
 
-    public function edit($question_data) {
+    public function update($question_data) {
         $this->synchronize($question_data);
         $this->query = "
             UPDATE question

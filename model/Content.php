@@ -14,7 +14,7 @@ class Content extends Database {
         $this->key = 'id';
     }
 
-    public function get($key = '') {
+    public function select($key = '') {
         $this->getImages($key);
         $images_array = $this->rows;
         $this->getText($key);
@@ -72,9 +72,9 @@ class Content extends Database {
         $this->key = $key;
     }
 
-    public function set($content_data) {
+    public function insert($content_data) {
         if (array_key_exists('id', $content_data)) {
-            $this->get($content_data['id']);
+            $this->select($content_data['id']);
             if ($content_data['id'] != $this->id) {
                 $this->synchronize($content_data);
                 $this->query = "
@@ -91,7 +91,7 @@ class Content extends Database {
         }
     }
 
-    public function edit($content_data) {
+    public function update($content_data) {
         $this->synchronize($content_data);
         $this->query = "
             UPDATE content

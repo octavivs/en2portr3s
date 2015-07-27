@@ -23,7 +23,7 @@ class PermisosController {
         $user_data = filter_input_array(INPUT_POST, $this->update_args);
 
         $account = new Account();
-        $account->edit($user_data);
+        $account->update($user_data);
 
         return $account->message;
     }

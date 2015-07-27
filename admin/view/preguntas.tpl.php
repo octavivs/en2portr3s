@@ -3,7 +3,7 @@
 use en2portr3s\model\Question;
 
 $question = new Question();
-$datos = $question->get();
+$datos = $question->select();
 ?>
 <div id="question_admin">
     <ul class="tabs" data-tab>

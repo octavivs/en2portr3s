@@ -3,7 +3,7 @@
 use en2portr3s\model\Page;
 
 $page = new Page();
-$list = $page->get();
+$list = $page->select();
 $first_item = array_shift($list);
 $firt_id = $first_item['label'];
 ?>

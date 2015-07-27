@@ -17,17 +17,17 @@ abstract class Database {
     /**
      * Método abstracto para recuperar datos de la base de datos
      */
-    abstract protected function get($data);
+    abstract protected function select($data);
 
     /**
      * Método abstracto para ingresar datos a la base de datos
      */
-    abstract protected function set($data);
+    abstract protected function insert($data);
 
     /**
      * Método abstracto para modificar datos en la base de datos
      */
-    abstract protected function edit($data);
+    abstract protected function update($data);
 
     /**
      * Método abstracto para eliminar datos de la base de datos

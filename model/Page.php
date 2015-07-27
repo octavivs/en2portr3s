@@ -14,15 +14,14 @@ class Page extends Database {
     function __construct($label = '') {
         $this->db_name = "en2portr3s";
         if ($label !== '') {
-            $this->set($label);
+            $this->insert($label);
         }
     }
 
-    public function get($label = '') {
-        if ($label === '') {
-            $this->query = "SELECT * FROM page";
-        } else {
-            $this->query = "SELECT * FROM page WHERE label = '$label'";
+    public function select($label = '') {
+        $this->query = "SELECT * FROM page";
+        if ($label !== '') {
+            $this->query .= " WHERE label = '$label' ";
         }
         $this->retrieve();
         $matches = count($this->rows);
@@ -39,15 +38,15 @@ class Page extends Database {
         $content = new Content();
         $content->searchParam('page_id');
         if ($this->id === '') {
-            return $content->get();
+            return $content->select();
         } else {
-            return $content->get($this->id);
+            return $content->select($this->id);
         }
     }
 
-    public function set($label) {
+    public function insert($label) {
         if ($label !== '') {
-            $this->get($label);
+            $this->select($label);
             if (empty($this->label)) {
                 $this->label = $label;
                 $this->query = "
@@ -55,7 +54,7 @@ class Page extends Database {
                     VALUES('$this->label')
                 ";
                 $this->modify();
-                $this->get($label);
+                $this->select($label);
                 $this->message = 'Registro exitoso';
             } else {
                 $this->message = 'La página ya está registrada';
@@ -65,9 +64,9 @@ class Page extends Database {
         }
     }
 
-    public function edit($page_data) {
+    public function update($page_data) {
         if (array_key_exists('id', $page_data)) {
-            $this->get($page_data['id']);
+            $this->select($page_data['id']);
             if (!empty($this->id)) {
                 $this->synchronize($page_data);
                 $this->query = "
@@ -87,7 +86,7 @@ class Page extends Database {
 
     public function delete($label) {
         if ($label !== '') {
-            $this->get($label);
+            $this->select($label);
             if (!empty($this->label)) {
                 $this->query = "
                     DELETE FROM page

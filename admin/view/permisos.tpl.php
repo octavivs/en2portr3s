@@ -3,7 +3,7 @@
 use en2portr3s\model\Account;
 
 $account = new Account();
-$datos = $account->get();
+$datos = $account->select();
 ?>
 <table class="responsive">
     <tr>

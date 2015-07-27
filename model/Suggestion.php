@@ -12,15 +12,14 @@ class Suggestion extends Database {
     function __construct($suggestion_data = []) {
         $this->db_name = "en2portr3s";
         if ($suggestion_data !== []) {
-            $this->set($suggestion_data);
+            $this->insert($suggestion_data);
         }
     }
 
-    public function get($id = '') {
-        if ($id === '') {
-            $this->query = "SELECT * FROM suggestion";
-        } else {
-            $this->query = "SELECT * FROM suggestion WHERE id = '$id'";
+    public function select($id = '') {
+        $this->query = "SELECT * FROM suggestion";
+        if ($id !== '') {
+            $this->query .= " WHERE id = '$id' ";
         }
         $this->retrieve();
         $matches = count($this->rows);
@@ -33,7 +32,7 @@ class Suggestion extends Database {
         return $this->rows;
     }
 
-    public function set($suggestion_data) {
+    public function insert($suggestion_data) {
         $this->synchronize($suggestion_data);
         $this->query = "
             INSERT INTO suggestion (content, status)
@@ -43,7 +42,7 @@ class Suggestion extends Database {
         $this->message = 'Sugerencia guardada correctamente';
     }
 
-    public function edit($suggestion_data) {
+    public function update($suggestion_data) {
         $this->synchronize($suggestion_data);
         $this->query = "
             UPDATE suggestion

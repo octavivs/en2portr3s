@@ -15,15 +15,14 @@ class Account extends Database {
     function __construct($register_data = []) {
         $this->db_name = "en2portr3s";
         if ($register_data !== []) {
-            $this->set($register_data);
+            $this->insert($register_data);
         }
     }
 
-    public function get($username = '') {
-        if ($username === '') {
-            $this->query = "SELECT * FROM account";
-        } else {
-            $this->query = "SELECT * FROM account WHERE username = '$username'";
+    public function select($username = '') {
+        $this->query = "SELECT * FROM account";
+        if ($username !== '') {
+            $this->query .= " WHERE username = '$username' ";
         }
         $this->retrieve();
         $matches = count($this->rows);
@@ -36,17 +35,17 @@ class Account extends Database {
         return $this->rows;
     }
 
-    public function set($register_data) {
+    public function insert($register_data) {
         if (array_key_exists('username', $register_data)) {
-            $this->get($register_data['username']);
-            if ($register_data['username'] != $this->username) {
+            $this->select($register_data['username']);
+            if (empty($this->username)) {
                 $this->synchronize($register_data);
                 $this->query = "
                     INSERT INTO account(username, pass, person_id)
                     VALUES('$this->username', '$this->pass', '$this->person_id')
                 ";
                 $this->modify();
-                $this->get($this->username);
+                $this->select($this->username);
                 $this->message = 'Registro exitoso';
             } else {
                 $this->message = 'El usuario ya existe';
@@ -56,36 +55,54 @@ class Account extends Database {
         }
     }
 
-    public function edit($register_data) {
-        $this->synchronize($register_data);
-        $this->query = "
-            UPDATE account
-            SET username = '$this->username',
-                pass = '$this->pass',
-                kind = '$this->kind',
-                staus = '$this->status',
-                person_id = '$this->person_id'
-            WHERE username = '$this->username'
-        ";
-        $this->modify();
-        $this->message = 'Usuario modificado';
+    public function update($register_data) {
+        if (array_key_exists('username', $register_data)) {
+            $this->select($register_data['username']);
+            if (!empty($this->username)) {
+                $this->synchronize($register_data);
+                $this->query = "
+                    UPDATE account
+                    SET username = '$this->username',
+                        pass = '$this->pass',
+                        kind = '$this->kind',
+                        status = '$this->status',
+                    WHERE username = '$this->username'
+                ";
+                $this->modify();
+                $this->message = 'Usuario modificado';
+            } else {
+                $this->message = 'El usuario no existe';
+            }
+        } else {
+            $this->message = 'No se ha modificado la información del usuario';
+        }
     }
 
     public function delete($username) {
-        $this->query = "
-            DELETE FROM account
-            WHERE username = '$username'
-        ";
-        $this->modify();
-        $this->message = 'Usuario eliminado';
+        $this->select($username);
+        if (!empty($this->username)) {
+            $this->query = "
+                DELETE FROM account
+                WHERE username = '$username'
+            ";
+            $this->modify();
+            $this->message = 'Usuario eliminado';
+        } else {
+            $this->message = 'El usuario no existe';
+        }
+    }
+
+    public function isRegistered($username, $password) {
+        $this->select($username);
+        $first_step = $this->username === $username;
+        $second_step = $this->pass === $password;
+        return $first_step && $second_step;
     }
 
     public function isAdmin($username, $password) {
-        $this->get($username);
-        $first_step = $this->username === $username;
-        $second_step = $this->pass === $password;
-        $third_step = $this->kind === 'admin';
-        return $first_step && $second_step && $third_step;
+        $first_step = $this->isRegistered($username, $password);
+        $second_step = $this->kind === 'admin';
+        return $first_step && $second_step;
     }
 
     /**

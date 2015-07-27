@@ -3,7 +3,7 @@
 use en2portr3s\model\Suggestion;
 
 $suggestion = new Suggestion();
-$datos = $suggestion->get();
+$datos = $suggestion->select();
 ?>
 
 <ul class="accordion" data-accordion>

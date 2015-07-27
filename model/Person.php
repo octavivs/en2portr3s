@@ -14,15 +14,14 @@ class Person extends Database {
     function __construct($user_data = []) {
         $this->db_name = "en2portr3s";
         if ($user_data !== []) {
-            $this->set($user_data);
+            $this->insert($user_data);
         }
     }
 
-    public function get($email = '') {
-        if ($email === '') {
-            $this->query = "SELECT * FROM person";
-        } else {
-            $this->query = "SELECT * FROM person WHERE email = '$email'";
+    public function select($email = '') {
+        $this->query = "SELECT * FROM person";
+        if ($email !== '') {
+            $this->query .= " WHERE email = '$email' ";
         }
         $this->retrieve();
         $matches = count($this->rows);
@@ -35,9 +34,9 @@ class Person extends Database {
         return $this->rows;
     }
 
-    public function set($user_data) {
+    public function insert($user_data) {
         if (array_key_exists('email', $user_data)) {
-            $this->get($user_data['email']);
+            $this->select($user_data['email']);
             if ($user_data['email'] != $this->email) {
                 $this->synchronize($user_data);
                 $this->query = "
@@ -45,7 +44,7 @@ class Person extends Database {
                     VALUES('$this->first_name', '$this->last_name', '$this->email', '$this->phone', '$this->birthdate')
                 ";
                 $this->modify();
-                $this->get($this->email);
+                $this->select($this->email);
                 $this->message = 'Persona agregada exitosamente';
             } else {
                 $this->message = 'La persona ya existe';
@@ -55,7 +54,7 @@ class Person extends Database {
         }
     }
 
-    public function edit($user_data) {
+    public function update($user_data) {
         $this->synchronize($user_data);
         $this->query = "
             UPDATE person
