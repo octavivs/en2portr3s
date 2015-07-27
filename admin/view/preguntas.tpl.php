@@ -5,6 +5,7 @@ use en2portr3s\model\Question;
 $question = new Question();
 $datos = $question->select();
 ?>
+
 <div id="question_admin">
     <ul class="tabs" data-tab>
         <li class="tab-title active"><a href="#pendientes">Pendientes</a></li>

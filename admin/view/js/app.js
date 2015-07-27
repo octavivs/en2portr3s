@@ -33,7 +33,7 @@ function actualizar() {
 
     $.post("permisos/update", {username:username, kind: kind}, function (data) {
         alert(data);
-     
+        location.href = "permisos";
     });
 }
 

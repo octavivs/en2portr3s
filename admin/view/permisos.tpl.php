@@ -5,6 +5,7 @@ use en2portr3s\model\Account;
 $account = new Account();
 $datos = $account->select();
 ?>
+
 <ul class="accordion" data-accordion>
     <h3> Permisos </h3> 
     <?php
