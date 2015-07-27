@@ -34,31 +34,18 @@ $firt_id = $first_item['label'];
                     <li class="accordion-navigation">
                         <a href="#Content_id_<?= $content['id'] ?>">Content_id_<?= $content['id'] ?></a>
                         <div id="Content_id_<?= $content['id'] ?>" class="content">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <?php
-                                        foreach ($content as $column => $value) {
-                                            //$column_length = 100 / count($content);
-                                            //echo "<th width = '$column_length%'>$column</th>";
-                                            echo "<th>$column</th>";
-                                        }
-                                        ?>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <?php
-                                        foreach ($content as $column => $value) {
-                                            //$column_length = 100 / count($content);
-                                            //echo "<td width = '$column_length%'>$value</td>";
-                                            echo "<td>$value</td>";
-                                        }
-                                        ?>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <?php
+                            foreach ($content as $name => $value) {
+                                ?>
+                                <div class="row">
+                                    <div class="small-3 medium-1 columns"><label><?= $name ?>: </label></div>
+                                    <div class="small-9 medium-11 columns"><input type="text" value="<?= $value ?>" readonly /></div>
+                                </div>
+                                <?php
+                            }
+                            ?>
                         </div>
+                        
                     </li>
                     <?php
                 }
@@ -81,30 +68,16 @@ $firt_id = $first_item['label'];
                         <li class="accordion-navigation">
                             <a href="#Content_id_<?= $content['id'] ?>">Content_id_<?= $content['id'] ?></a>
                             <div id="Content_id_<?= $content['id'] ?>" class="content">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <?php
-                                            foreach ($content as $column => $value) {
-                                                //$column_length = 100 / count($content);
-                                                //echo "<th width = '$column_length%'>$column</th>";
-                                                echo "<th>$column</th>";
-                                            }
-                                            ?>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <?php
-                                            foreach ($content as $column => $value) {
-                                                //$column_length = 100 / count($content);
-                                                //echo "<td width = '$column_length%'>$value</td>";
-                                                echo "<td>$value</td>";
-                                            }
-                                            ?>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <?php
+                            foreach ($content as $name => $value) {
+                                ?>
+                                <div class="row">
+                                    <div class="small-3 medium-1 columns"><label><?= $name ?>: </label></div>
+                                    <div class="small-9 medium-11 columns"><input type="text" value="<?= $value ?>" readonly /></div>
+                                </div>
+                                <?php
+                            }
+                            ?>
                             </div>
                         </li>
                         <?php
