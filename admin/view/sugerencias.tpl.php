@@ -15,9 +15,10 @@ $datos = $suggestion->select();
         ?>
         <li class="accordion-navigation">
             <a href="#question_id_<?= $dato['id'] ?>">
-              Sugerencia N°<?= $dato['id'] ?> (<?= $date->format('d/M/Y') ?>)
+              Sugerencia N°<?= $dato['id'] ?> 
             </a>
             <div id="question_id_<?= $dato['id'] ?>" class="content">
+                <?= $date->format('d/M/Y') ?>
                 <p><?= $dato['content'] ?></p>
                 <input type='button' class='button tiny' data-id='<?= $dato['id'] ?>' id='eliminar' value='Eliminar' />
             </div>
