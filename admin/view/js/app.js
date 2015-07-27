@@ -29,11 +29,9 @@ function eli() {
 }
 function actualizar() {
     var id = $(this).attr('data-id');
-    var username = $("#username").val();
-    var pass = $("#pass").val();
     var kind = $("#kind").val();
 
-    $.post("permisos/update", {id: id, username: username, pass: pass, kind: kind}, function (data) {
+    $.post("permisos/update", {id: id, kind: kind}, function (data) {
         alert(data);
         location.href = "permisos";
     });
