@@ -15,18 +15,55 @@ class Content extends Database {
     }
 
     public function get($key = '') {
-        if ($key === '') {
-            $this->query = "SELECT * FROM content";
-        } else {
-            $this->query = 'SELECT * FROM content WHERE ' . $this->key . " = '$key'";
-        }
-        $this->retrieve();
+        $this->getImages($key);
+        $images_array = $this->rows;
+        $this->getText($key);
+        $this->rows = array_merge($this->rows, $images_array);
+        array_multisort($this->rows);
         $matches = count($this->rows);
         if ($matches === 0) {
             $this->message = 'Contenido no registrado';
         } else if ($matches === 1) {
             $this->synchronize($this->rows[0]);
             $this->message = 'Contenido encontrado';
+        }
+        return $this->rows;
+    }
+
+    public function getImages($key = '') {
+        $this->query = "
+            SELECT content.id, image.url, image.alt, image.since, image.modified
+            FROM content JOIN image ON content.id = image.content_id
+        ";
+        if ($key !== '') {
+            $this->query .= " WHERE content.$this->key = '$key' ";
+        }
+        $this->retrieve();
+        $matches = count($this->rows);
+        if ($matches === 0) {
+            $this->message = 'Imagen no registrada';
+        } else if ($matches === 1) {
+            $this->synchronize($this->rows[0]);
+            $this->message = 'Imagen encontrada';
+        }
+        return $this->rows;
+    }
+
+    public function getText($key = '') {
+        $this->query = "
+            SELECT content.id, text_entry.body, text_entry.lang_code, text_entry.since, text_entry.modified
+            FROM content JOIN text_entry ON content.id = text_entry.content_id
+        ";
+        if ($key !== '') {
+            $this->query .= " WHERE content.$this->key = '$key' ";
+        }
+        $this->retrieve();
+        $matches = count($this->rows);
+        if ($matches === 0) {
+            $this->message = 'Imagen no registrada';
+        } else if ($matches === 1) {
+            $this->synchronize($this->rows[0]);
+            $this->message = 'Imagen encontrada';
         }
         return $this->rows;
     }

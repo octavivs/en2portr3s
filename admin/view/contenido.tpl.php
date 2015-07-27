@@ -38,14 +38,13 @@ $firt_id = $first_item['label'];
                             foreach ($content as $name => $value) {
                                 ?>
                                 <div class="row">
-                                    <div class="small-3 medium-1 columns"><label><?= $name ?>: </label></div>
+                                    <div class="small-3 medium-1 columns"><label><?= ucfirst($name) ?>: </label></div>
                                     <div class="small-9 medium-11 columns"><input type="text" value="<?= $value ?>" readonly /></div>
                                 </div>
                                 <?php
                             }
                             ?>
                         </div>
-                        
                     </li>
                     <?php
                 }
@@ -69,15 +68,15 @@ $firt_id = $first_item['label'];
                             <a href="#Content_id_<?= $content['id'] ?>">Content_id_<?= $content['id'] ?></a>
                             <div id="Content_id_<?= $content['id'] ?>" class="content">
                                 <?php
-                            foreach ($content as $name => $value) {
+                                foreach ($content as $name => $value) {
+                                    ?>
+                                    <div class="row">
+                                        <div class="small-3 medium-1 columns"><label><?= ucfirst($name) ?>: </label></div>
+                                        <div class="small-9 medium-11 columns"><input type="text" value="<?= $value ?>" readonly /></div>
+                                    </div>
+                                    <?php
+                                }
                                 ?>
-                                <div class="row">
-                                    <div class="small-3 medium-1 columns"><label><?= $name ?>: </label></div>
-                                    <div class="small-9 medium-11 columns"><input type="text" value="<?= $value ?>" readonly /></div>
-                                </div>
-                                <?php
-                            }
-                            ?>
                             </div>
                         </li>
                         <?php
