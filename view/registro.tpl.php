@@ -1,42 +1,36 @@
 <section>
-    <h3>Crear una cuenta</h3>
-    <p>
-        Usa cualquier dirección de correo electrónico como nombre de
-        usuario de tu nueva cuenta. Se Recomienda que la contraseña
-        sea diferente a la del correo electrónico, por seguridad la
-        contraseña debería contener letras mayuscula, letras minusculas
-        y caracteres especiales (cualquiera de los siguientes @#$%).
-    </p>
+    <h3>{tpl_content_70_body}</h3>
+    <p>{tpl_content_71_body}</p>
     <form>
         <div class="row">
             <div class="medium-6 columns">
-                <label for="FirstName">Nombre</label>
+                <label for="FirstName">{tpl_content_72_body}</label>
                 <input type="text" class="data-field" id="FirstName" autofocus />
             </div>
             <div class="medium-6 columns">
-                <label for="LastName">Apellidos</label>
+                <label for="LastName">{tpl_content_73_body}</label>
                 <input type="text" class="data-field" id="LastName" />
             </div>
         </div>
-        <label for="UserName">Nombre de usuario</label>
+        <label for="UserName">{tpl_content_74_body}</label>
         <input type="email" class="data-field" id="UserName" placeholder="alguien@example.com" />
         <div class="row">
             <div class="medium-6 columns">
-                <label for="Password">Contraseña</label>
+                <label for="Password">{tpl_content_75_body}</label>
                 <input type="password" class="data-field" id="Password" />
             </div>
             <div class="medium-6 columns">
-                <label for="RePassword">Vuelve a escribir la contraseña</label>
+                <label for="RePassword">{tpl_content_76_body}</label>
                 <input type="password" class="data-field" id="RePassword" />
             </div>
         </div>
         <div class="row">
             <div class="medium-6 columns">
-                <label for="Telephone">Teléfono:</label>
+                <label for="Telephone">{tpl_content_77_body}</label>
                 <input type="tel" class="data-field" id="Telephone" />
             </div>
         </div>
-        <label>Fecha de nacimiento:</label>
+        <label>{tpl_content_78_body}</label>
         <div class="row">
             <div class="medium-4 columns">
                 <select class="data-field" id="BirthDay"></select>
@@ -48,7 +42,7 @@
                 <select class="data-field" id="BirthYear"></select>
             </div>
         </div>
-        <input type="button" class="button small" id="SignUp" value="Registrarse" />
-        <input type="reset" class="button small" id="Reset" value="Limpiar registro" />
+        <input type="button" class="button small" id="SignUp" value="{tpl_content_79_body}" />
+        <input type="reset" class="button small" id="Reset" value="{tpl_content_80_body}" />
     </form>
 </section>

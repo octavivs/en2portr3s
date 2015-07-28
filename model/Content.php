@@ -32,7 +32,7 @@ class Content extends Database {
 
     public function getImages($key = '') {
         $this->query = "
-            SELECT content.id, image.url, image.alt, image.since, image.modified
+            SELECT content.id, content.kind, image.url, image.alt, image.since, image.modified
             FROM content JOIN image ON content.id = image.content_id
         ";
         if ($key !== '') {
@@ -51,7 +51,7 @@ class Content extends Database {
 
     public function getText($key = '') {
         $this->query = "
-            SELECT content.id, text_entry.body, text_entry.lang_code, text_entry.since, text_entry.modified
+            SELECT content.id, content.kind, text_entry.body, text_entry.lang_code, text_entry.since, text_entry.modified
             FROM content JOIN text_entry ON content.id = text_entry.content_id
         ";
         if ($key !== '') {
