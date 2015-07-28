@@ -2,71 +2,57 @@
 
     <div class="row">
         <div class="large-4 columns">
-            <h3>Quienes somos</h3>
-            <p>
-                Somos una empresa dedicada a brindar soluciones gráficas, asesorando y educando a nuestros clientes
-                sobre las buenas practicas publicitarias. Nuestro servicio está enfocado en brindar una solución integral,
-                enfocándonos en escuchar al cliente y proponer soluciones cumpliendo con las necesidades que requieren.
-            </p>
+            <h3>{tpl_content_40_body}</h3>
+            <p>{tpl_content_41_body}</p>
         </div>
 
         <div class="large-4  columns">
-            <h3>Misión</h3>
-            <p>
-                Desarrollar soluciones gráficas, creativas, versátiles, oportunas y profesionales en el ámbito del diseño
-                gráfico con personal capacitado,  innovado en base a nuestros conocimientos y métodos para realizar proyectos
-                únicos funcionales y satisfactorios.
-            </p>
+            <h3>{tpl_content_42_body}</h3>
+            <p>{tpl_content_43_body}</p>
         </div>
     </div>
 
     <div class="row">
         <div class="large-4 columns push-4">
-            <h3>Visión</h3>
-            <p>
-                Consolidar el liderazgo de en dosportr3s mediante el crecimiento con nuestros clientes brindando compromiso
-                y pasión por el servicio, la creatividad y la innovación.
-            </p>
+            <h3>{tpl_content_44_body}</h3>
+            <p>{tpl_content_45_body}</p>
         </div>
     </div>
 
     <div class="row">
         <div class="large-4 columns">
-            <h3>Valores</h3>
-            <p>
-                Nuestros valores son las cualidades que nos distinguen y nos orienta, apoyando nuestra misión y sustenta
-                nuestra visión. Los valores de nuestra cultura corporativa son:
-            </p>
+            <h3>{tpl_content_46_body}</h3>
+            <p>{tpl_content_47_body}</p>
         </div>
 
         <div class="large-4 columns">
-            <h4>Creatividad</h4>
-            <p>Innovación en nuestros desarrollos para marcar la diferencia.</p>
+            <h4>{tpl_content_48_body}</h4>
+            <p>{tpl_content_49_body}</p>
         </div>
     </div>
 
     <div class="row">
         <div class="large-4 push-4 columns">
-            <h4>Excelencia</h4>
-            <p>Calidad de trabajo y cumplimiento con estándares.</p>
+            <h4>{tpl_content_50_body}</h4>
+            <p>{tpl_content_51_body}</p>
         </div>
     </div>
 
     <div class="row">
         <div class="large-4 columns">
-            <h4>Integridad</h4>
-            <p>Ética y coherencia en nuestro trabajo y servicio.</p>
+            <h4>{tpl_content_52_body}</h4>
+            <p>{tpl_content_53_body}</p>
         </div>	
         <div class="large-4 columns">
-            <h4>Compromiso</h4>
-            <p>Atención y seguimiento personalizado a los proyectos.</p>
+            <h4>{tpl_content_54_body}</h4>
+            <p>{tpl_content_55_body}</p>
         </div>
     </div>
 
     <div class="row">
         <div class="large-4 push-4 columns">
-            <h4>Responsabilidad</h4>
-            <p>Satisfacción total de nuestros clientes.</p>
+            <h4>{tpl_content_56_body}</h4>
+            <p>{tpl_content_57_body}</p>
         </div>
     </div>
 </div>
