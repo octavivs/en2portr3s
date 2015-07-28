@@ -69,7 +69,7 @@
                 </div>
             </div>
         </div><!-- End of content -->
-        <div class="msg_box" style="right:50px">
+        <div class="msg_box" style="right:10px">
             <div class="msg_head"> En2portr3s  <!--<div class="close">x</div>--></div>
             <div class="msg_wrap">
                 <div class="msg_body">
