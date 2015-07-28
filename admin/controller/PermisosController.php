@@ -8,7 +8,7 @@ use en2portr3s\model\Account;
 class PermisosController {
 
     private $update_args = array(
-        'id' => FILTER_SANITIZE_NUMBER_INT,
+        'username' => FILTER_SANITIZE_STRING,
         'kind' => FILTER_SANITIZE_STRING
     );
 
@@ -20,10 +20,9 @@ class PermisosController {
         $register_data = filter_input_array(INPUT_POST, $this->update_args);
 
         $account = new Account();
-        $account->update($user_data);
+        $account->update($register_data);
 
         return $account->message;
-      
     }
 
 }

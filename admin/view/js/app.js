@@ -28,14 +28,15 @@ function eli() {
     });
 }
 function actualizar() {
-    var id = $(this).attr('data-id');
+    var username = $(this).attr('data-username');
     var kind = $("#kind").val();
 
-    $.post("permisos/update", {id: id, kind: kind}, function (data) {
+    $.post("permisos/update", {username:username, kind: kind}, function (data) {
         alert(data);
         location.href = "permisos";
     });
 }
+
 
 function responder() {
     var id = $(this).attr('data-id');

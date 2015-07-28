@@ -5,6 +5,7 @@ use en2portr3s\model\Question;
 $question = new Question();
 $datos = $question->select();
 ?>
+
 <div id="question_admin">
     <ul class="tabs" data-tab>
         <li class="tab-title active"><a href="#pendientes">Pendientes</a></li>
@@ -13,7 +14,7 @@ $datos = $question->select();
     <div class="tabs-content">
         <div class="content active" id="pendientes">
             <p> En esta parte se imprimen los mensajes pendientes.</p>
-            <ul class="accordion" data-accordion>
+            <ul class="accordion" data-accordion >
                 <?php
                 foreach ($datos as $dato) {
                     $date = DateTime::createFromFormat('Y-m-d H:i:s', $dato['since']);
