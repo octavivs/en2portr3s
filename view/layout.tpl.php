@@ -69,7 +69,21 @@
                 </div>
             </div>
         </div><!-- End of content -->
+        <div class="msg_box" style="right:50px">
+            <div class="msg_head"> En2portr3s  <!--<div class="close">x</div>--></div>
+            <div class="msg_wrap">
+                <div class="msg_body">
 
+                    <div class="msg_a"> ! hola en que puedo servirte !	</div>
+                    <div class="msg_b">imprimir mensaje del usuario:)</div>
+                    <div class="msg_a">mensaje admin </div>	
+                    <div class="msg_push"></div>
+                </div>
+                <div class="msg_footer"> <input type = "text" class="msg_input" rows="2" id = "" maxlength = "255"/></div>
+                 <!--<div class="msg_footer"><textarea class="msg_input" rows="2"></textarea></div>
+                -->
+            </div>
+        </div>
         <div id="bottom"><!-- bottom -->
             <footer class="row">
                 <div class="medium-4 push-8 columns">
