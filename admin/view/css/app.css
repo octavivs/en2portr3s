@@ -1,3 +1,7 @@
+/*************************/
+/*        General        */
+/*************************/
+
 body {
     background: #F0F0F3;
 }
@@ -19,10 +23,11 @@ table, th, td {
     border-style: solid;
     border-width: thin;
     border-color: darkgray;
-    
 }
-th {     background: #ddd;
-    }
+
+th {
+    background: #ddd;
+}
 
 #manager .tabs-content > .content {
     padding-top: 0px;
@@ -40,6 +45,13 @@ th {     background: #ddd;
     color: #6D7781;
 }
 
+#manager input[type="file"] {
+    display: block;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
 #manager label {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -47,12 +59,6 @@ th {     background: #ddd;
 
 ul.accordion {
     margin-left: 0px;
-}
-
-@media only screen and (max-width: 40em) {
-    #question_admin .button {
-        margin: 0px;
-    }
 }
 
 /************************/

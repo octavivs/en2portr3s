@@ -8,6 +8,7 @@ $first_item = array_shift($list);
 $firt_id = $first_item['label'];
 ?>
 <div id="manager">
+    <input type="file" id="upload" size="chars">
     <ul class="tabs" data-tab>
         <li class="tab-title active">
             <a href="#<?= $firt_id ?>"><?= $firt_id ?></a>
@@ -35,11 +36,22 @@ $firt_id = $first_item['label'];
                         <a href="#Content_id_<?= $content['id'] ?>">Content_id_<?= $content['id'] ?></a>
                         <div id="Content_id_<?= $content['id'] ?>" class="content">
                             <?php
+                            $id;
+                            $kind;
                             foreach ($content as $name => $value) {
+                                if ($name === 'id') {
+                                    $id = $value;
+                                } else if ($name === 'kind') {
+                                    $kind = $value;
+                                }
                                 ?>
                                 <div class="row">
-                                    <div class="small-3 medium-1 columns"><label><?= ucfirst($name) ?>: </label></div>
-                                    <div class="small-9 medium-11 columns"><input type="text" value="<?= $value ?>" readonly /></div>
+                                    <div class="small-3 medium-1 columns">
+                                        <label><?= ucfirst($name) ?>: </label>
+                                    </div>
+                                    <div class="small-9 medium-11 columns">
+                                        <input type="text" data-id="<?= $id ?>" data-kind="<?= $kind ?>" data-name="<?= $name ?>" value="<?= $value ?>" readonly />
+                                    </div>
                                 </div>
                                 <?php
                             }
@@ -68,11 +80,22 @@ $firt_id = $first_item['label'];
                             <a href="#Content_id_<?= $content['id'] ?>">Content_id_<?= $content['id'] ?></a>
                             <div id="Content_id_<?= $content['id'] ?>" class="content">
                                 <?php
+                                $id;
+                                $kind;
                                 foreach ($content as $name => $value) {
+                                    if ($name === 'id') {
+                                        $id = $value;
+                                    } else if ($name === 'kind') {
+                                        $kind = $value;
+                                    }
                                     ?>
                                     <div class="row">
-                                        <div class="small-3 medium-1 columns"><label><?= ucfirst($name) ?>: </label></div>
-                                        <div class="small-9 medium-11 columns"><input type="text" value="<?= $value ?>" readonly /></div>
+                                        <div class="small-3 medium-1 columns">
+                                            <label><?= ucfirst($name) ?>: </label>
+                                        </div>
+                                        <div class="small-9 medium-11 columns">
+                                            <input type="text" data-id="<?= $id ?>" data-kind="<?= $kind ?>" data-name="<?= $name ?>" value="<?= $value ?>" readonly />
+                                        </div>
                                     </div>
                                     <?php
                                 }

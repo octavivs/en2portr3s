@@ -8,6 +8,12 @@ class Content extends Database {
     private $id;
     private $kind;
     private $page_id;
+    private $url;
+    private $alt;
+    private $body;
+    private $lang_code;
+    private $since;
+    private $modified;
 
     function __construct() {
         $this->db_name = "en2portr3s";
@@ -92,12 +98,21 @@ class Content extends Database {
     }
 
     public function update($content_data) {
+        $this->select($content_data['id']);
         $this->synchronize($content_data);
-        $this->query = "
-            UPDATE content
-            SET kind='$this->kind'
-            WHERE id = '$this->id'
-        ";
+        if ($this->kind === 'text') {
+            $this->query = "
+                UPDATE text_entry
+                SET body = '$this->body', lang_code = '$this->lang_code'
+                WHERE content_id = '$this->id'
+            ";
+        } else if ($this->kind === 'image') {
+            $this->query = "
+                UPDATE iamge
+                SET url = '$this->url', alt = '$this->alt'
+                WHERE content_id = '$this->id'
+            ";
+        }
         $this->modify();
         $this->message = 'Contenido modificado';
     }
