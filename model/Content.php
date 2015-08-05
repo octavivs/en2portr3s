@@ -21,10 +21,9 @@ class Content extends Database {
     }
 
     public function select($key = '') {
-        $this->getImages($key);
-        $images_array = $this->rows;
-        $this->getText($key);
-        $this->rows = array_merge($this->rows, $images_array);
+        $images_array = $this->getImages($key);
+        $text_array = $this->getText($key);
+        $this->rows = array_merge($text_array, $images_array);
         array_multisort($this->rows);
         $matches = count($this->rows);
         if ($matches === 0) {
@@ -52,7 +51,9 @@ class Content extends Database {
             $this->synchronize($this->rows[0]);
             $this->message = 'Imagen encontrada';
         }
-        return $this->rows;
+        $image = $this->rows;
+        $this->rows = [];
+        return $image;
     }
 
     public function getText($key = '') {
@@ -71,7 +72,9 @@ class Content extends Database {
             $this->synchronize($this->rows[0]);
             $this->message = 'Imagen encontrada';
         }
-        return $this->rows;
+        $text = $this->rows;
+        $this->rows = [];
+        return $text;
     }
 
     public function searchParam($key) {
@@ -108,7 +111,7 @@ class Content extends Database {
             ";
         } else if ($this->kind === 'image') {
             $this->query = "
-                UPDATE iamge
+                UPDATE image
                 SET url = '$this->url', alt = '$this->alt'
                 WHERE content_id = '$this->id'
             ";
