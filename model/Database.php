@@ -65,7 +65,9 @@ abstract class Database {
     protected function retrieve() {
         $this->connect();
         $result = $this->connection->query($this->query);
-        $this->rows = $result->fetch_all(MYSQLI_ASSOC);
+        foreach ($result as $row) {
+            $this->rows[] = $row;
+        }
         $result->free();
         $this->disconnect();
     }
