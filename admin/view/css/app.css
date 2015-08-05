@@ -15,6 +15,13 @@ body {
     margin-bottom: 1.4%;
 }
 
+#image_upload_form {
+    display: block;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
 table {
     width: 100%;
 }
@@ -43,13 +50,6 @@ th {
     box-shadow: none;
     outline: none;
     color: #6D7781;
-}
-
-#manager input[type="file"] {
-    display: block;
-    visibility: hidden;
-    width: 0;
-    height: 0;
 }
 
 #manager label {

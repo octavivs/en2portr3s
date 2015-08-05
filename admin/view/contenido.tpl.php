@@ -8,7 +8,10 @@ $first_item = array_shift($list);
 $firt_id = $first_item['label'];
 ?>
 <div id="manager">
-    <input type="file" id="upload" size="chars">
+    <form id="image_upload_form" enctype="multipart/form-data" method="post">
+        <input type="file" id="image" /><br />
+        <h3 id="status"></h3>
+    </form>
     <ul class="tabs" data-tab>
         <li class="tab-title active">
             <a href="#<?= $firt_id ?>"><?= $firt_id ?></a>

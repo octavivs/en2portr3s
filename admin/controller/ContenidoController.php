@@ -42,4 +42,20 @@ class ContenidoController {
         return $content->message;
     }
 
+    public function uploadAction() {
+        if (isset($_FILES["image"]) && $_FILES["image"]["error"] == UPLOAD_ERR_OK) {
+            $file_name = $_FILES["image"]["name"];
+            $temporal_file_location = $_FILES["image"]["tmp_name"];
+            $upload_route = '../view/img/';
+
+            if (move_uploaded_file($temporal_file_location, $upload_route . $file_name)) {
+                return $upload_route . $file_name;
+            } else {
+                return 'Error';
+            }
+        } else {
+            return 'Error';
+        }
+    }
+
 }
