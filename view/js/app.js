@@ -34,6 +34,20 @@ function initialize() {
     $("input#Buzon").click(saveSuggestion);
     $("input#Reset").click(clearMessages);
     $("#services .button").click(showHideImage);
+    $('.msg_head').click(showHideChat);
+    $('input.msg_input').keypress(function (event) {
+        if (event.keyCode === 13) {
+            var msg = $(this).val();
+            $(this).val('');
+            if (msg !== '')
+                $('<div class="msg_b">' + msg + '</div>').insertBefore('.msg_push');
+            $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
+        }
+    });
+}
+
+function showHideChat() {
+    $('.msg_wrap').slideToggle('slow');
 }
 
 function showHideImage() {
@@ -284,36 +298,3 @@ function getYears() {
     }
     $("select#BirthYear").html(years);
 }
-
-$(document).ready(function () {
-
-    $('.chat_head').click(function () {
-        $('.chat_body').slideToggle('slow');
-    });
-    $('.msg_head').click(function () {
-        $('.msg_wrap').slideToggle('slow');
-    });
-
-    // $('.close').click(function () {
-    //   $('.msg_box').hide();
-    //});
-
-    $('.user').click(function () {
-
-        $('.msg_wrap').show();
-        $('.msg_box').show();
-    });
-
-    $('input').keypress(
-    function(e){
-        if (e.keyCode == 13) {
-            var msg = $(this).val();
-			$(this).val('');
-			if(msg!='')
-			$('<div class="msg_b">'+msg+'</div>').insertBefore('.msg_push');
-			$('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
-        }
-    });
-	
-
-});

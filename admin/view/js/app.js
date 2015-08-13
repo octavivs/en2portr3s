@@ -4,7 +4,7 @@ function initialize() {
     $("#exit").click(finish);
     $("input#eliminar").click(eliminar);
     $("input#eli").click(eli);
-    $("input#actualizar").click(actualizar);
+    $("#permissions input").change(actualizar);
     $("input#Reply").click(responder);
     $("input#regresar").click(regresar);
     $("input[data-name='url']").click(updateContent);
@@ -33,6 +33,7 @@ function completeHandler(event) {
 }
 
 function progressHandler(event) {
+    var percent = (event.loaded / event.total) * 100;
     $("#status").html(Math.round(percent) + "% uploaded... please wait");
 }
 
@@ -122,7 +123,7 @@ function eli() {
 
 function actualizar() {
     var username = $(this).attr('data-username');
-    var kind = $("#kind").val();
+    var kind = $(this).val();
     $.post("permisos/update", {username: username, kind: kind}, function (data) {
         alert(data);
         location.href = "permisos";
@@ -130,7 +131,6 @@ function actualizar() {
 }
 
 function responder() {
-    var id = $(this).attr('data-id');
     var fname = $(this).attr('data-fname');
     var email = $(this).attr('data-email');
     var content = $(this).attr('data-content');

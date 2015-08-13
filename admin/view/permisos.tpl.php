@@ -3,27 +3,31 @@
 use en2portr3s\model\Account;
 
 $account = new Account();
-$datos = $account->select();
+$list = $account->getFullInfo();
 ?>
-
-<ul class="accordion" data-accordion>
-    <h3> Permisos </h3> 
-    <?php
-    foreach ($datos as $dato) {
-
-        $date = DateTime::createFromFormat('Y-m-d H:i:s', $dato['since']);
-        ?>
-        <li class="accordion-navigation">
-            <a href="#regis_id_<?= $dato['id'] ?>">
-                <?= $dato['username'] ?>
-            </a>
-            <div id="regis_id_<?= $dato['id'] ?>" class="content">
-                <?= $date->format('d/M/Y')?>
-                <input type='text' id='kind' name='kind' value='<?= $dato['kind'] ?>'  />
-                <input type='button' class='button tiny' data-username=' <?= $dato['username'] ?>' id='actualizar' value='Actualizar' />
-            </div>
-        </li>
+<div id="permissions">
+    <ul class="accordion" data-accordion>
+        <h3>Permisos</h3>
         <?php
-    }
-    ?>
-</ul>
+        foreach ($list as $data) {
+            ?>
+            <li class="accordion-navigation">
+                <a href="#regis_id_<?= $data['id'] ?>">
+                    <?= $data['first_name'] ?> <?= $data['last_name'] ?>
+                </a>
+                <div id="regis_id_<?= $data['id'] ?>" class="content">
+                    <div class="row">
+                        <div class="small-3 medium-1 columns">
+                            <label>Tipo: </label>
+                        </div>
+                        <div class="small-9 medium-11 columns">
+                            <input type='text' data-username='<?= $data['username'] ?>' value='<?= $data['kind'] ?>' />
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <?php
+        }
+        ?>
+    </ul>
+</div>

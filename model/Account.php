@@ -11,6 +11,8 @@ class Account extends Database {
     private $status;
     private $since;
     private $person_id;
+    private $first_name;
+    private $last_name;
 
     function __construct($register_data = []) {
         $this->db_name = "en2portr3s";
@@ -23,6 +25,25 @@ class Account extends Database {
         $this->query = "SELECT * FROM account";
         if ($username !== '') {
             $this->query .= " WHERE username = '$username' ";
+        }
+        $this->retrieve();
+        $matches = count($this->rows);
+        if ($matches === 0) {
+            $this->message = 'Usuario no encontrado';
+        } else if ($matches === 1) {
+            $this->synchronize($this->rows[0]);
+            $this->message = 'Usuario encontrado';
+        }
+        return $this->rows;
+    }
+
+    function getFullInfo($username = '') {
+        $this->query = "
+            SELECT account.id, person.first_name, person.last_name, account.username, account.kind, account.since
+            FROM person JOIN account ON person.id = account.person_id
+        ";
+        if ($username !== '') {
+            $this->query .= " WHERE account.username = '$username' ";
         }
         $this->retrieve();
         $matches = count($this->rows);
@@ -56,26 +77,18 @@ class Account extends Database {
     }
 
     public function update($register_data) {
-        if (array_key_exists('username', $register_data)) {
-            $this->select($register_data['username']);
-            if (!empty($this->username)) {
-                $this->synchronize($register_data);
-                $this->query = "
-                    UPDATE account
-                    SET username = '$this->username',
-                        pass = '$this->pass',
-                        kind = '$this->kind',
-                        status = '$this->status',
-                    WHERE username = '$this->username'
-                ";
-                $this->modify();
-                $this->message = 'Usuario modificado';
-            } else {
-                $this->message = 'El usuario no existe';
-            }
-        } else {
-            $this->message = 'No se ha modificado la información del usuario';
-        }
+        $this->select($register_data['username']);
+        $this->synchronize($register_data);
+        $this->query = "
+            UPDATE account
+            SET username = '$this->username',
+                pass = '$this->pass',
+                kind = '$this->kind',
+                status = '$this->status'
+            WHERE username = '$this->username'
+        ";
+        $this->modify();
+        $this->message = 'Usuario modificado';
     }
 
     public function delete($username) {

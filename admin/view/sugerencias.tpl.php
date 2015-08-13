@@ -3,24 +3,21 @@
 use en2portr3s\model\Suggestion;
 
 $suggestion = new Suggestion();
-$datos = $suggestion->select();
+$list = $suggestion->select();
 ?>
-
 <ul class="accordion" data-accordion>
-    <h3> sugerencias</h3> 
+    <h3>Sugerencias</h3>
     <?php
-    foreach ($datos as $dato) {
-
-        $date = DateTime::createFromFormat('Y-m-d H:i:s', $dato['since']);
+    foreach ($list as $data) {
+        $date = DateTime::createFromFormat('Y-m-d H:i:s', $data['since']);
         ?>
         <li class="accordion-navigation">
-            <a href="#question_id_<?= $dato['id'] ?>">
-              Sugerencia N°<?= $dato['id'] ?> 
+            <a href="#question_id_<?= $data['id'] ?>">
+                <?= $date->format('d/M/Y H:i:s') ?>
             </a>
-            <div id="question_id_<?= $dato['id'] ?>" class="content">
-                <?= $date->format('d/M/Y') ?>
-                <p><?= $dato['content'] ?></p>
-                <input type='button' class='button tiny' data-id='<?= $dato['id'] ?>' id='eliminar' value='Eliminar' />
+            <div id="question_id_<?= $data['id'] ?>" class="content">
+                <p><?= $data['content'] ?></p>
+                <input type='button' class='button tiny' data-id='<?= $data['id'] ?>' id='eliminar' value='Eliminar' />
             </div>
         </li>
         <?php

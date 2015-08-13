@@ -22,26 +22,14 @@ body {
     height: 0;
 }
 
-table {
-    width: 100%;
-}
-
-table, th, td {
-    border-style: solid;
-    border-width: thin;
-    border-color: darkgray;
-}
-
-th {
-    background: #ddd;
-}
-
-#manager .tabs-content > .content {
+.tabs-content > .content {
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
-#manager input[type="text"] {
+#manager input[type="text"],
+#users input[type="text"],
+#permissions input[type="text"] {
     background: transparent;
     border-style: hidden;
     border: 0;
@@ -52,7 +40,9 @@ th {
     color: #6D7781;
 }
 
-#manager label {
+#manager label,
+#users label,
+#permissions label {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }

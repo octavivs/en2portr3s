@@ -14,7 +14,6 @@
         <!-- Foundation framework, used to do responsive the website -->
         <link rel="stylesheet" type="text/css" href="view/css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="view/css/foundation.css" />
-        <link rel="stylesheet" type="text/css" href="view/css/responsive-tables.css" />
 
         <!-- Override default settings in framework -->
         <link rel="stylesheet" type="text/css" href="view/css/app.css" />
@@ -59,7 +58,6 @@
         <script type="text/javascript" src="view/js/vendor/jquery.js"></script>
         <script type="text/javascript" src="view/js/vendor/fastclick.js"></script>
         <script type="text/javascript" src="view/js/vendor/foundation.js"></script>
-        <script type="text/javascript" src="view/js/vendor/responsive-tables.js"></script>
         <script type="text/javascript" src="view/js/vendor/jqueryredirect.js"></script>
         <script>
             $(document).foundation();
