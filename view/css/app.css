@@ -3,8 +3,14 @@
 /*************************/
 
 #page-content {
-    margin-top: 2.4%;
     margin-bottom: 1.4%;
+}
+
+@font-face {
+    font-family: Aero;
+    src: url("aero.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 p {
@@ -115,40 +121,56 @@ span.required {
 /*        Header        */
 /************************/
 
-#top {
+#top_upper, #top_middle, #top_lower {
     max-width: 100%;
-    background: #000;
 }
 
-#top img.logo {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+#top_upper {
+    background-image: url("../img/top_upper.png");
 }
 
-#top nav.top-bar {
-    background: #000;
+#top_upper img.logo {
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+#top_upper ul.inline-list h3 {
+    font-family: Aero;
+    color: #fff;
+    text-shadow: 1px 1px #a1a1a1;
+}
+
+#top_middle {
+    background-image: url("../img/top_middle.png");
+}
+
+#top_middle .row {
+    max-width: 100%;
+}
+
+#top_middle nav.top-bar {
+    background: transparent;
+}
+
+#top_lower {
+    background-image: url("../img/top_lower.png");
+    height: 10px;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
-    background: #000;
+    background-image: url("../img/top_middle.png");
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-    background: #000;
+    background-image: url("../img/top_middle.png");
+    color: #ffcc66;
+    text-shadow: #a16e08;
 }
 
-#login-form {
-    margin-top: 1rem;
-}
-
-#login-id,
-#login-pass, 
-#login-btn {
-    margin-bottom: 0.5rem;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    border-width: 1px;
-    font-size: 0.8125rem;
-    height: auto;
+.top-bar-section ul li > a {
+    font-family: Aero;
+    font-size: 1rem;
+    text-shadow: 1px 1px #a1a1a1;
 }
 
 @media only screen and (max-width: 40em) {

@@ -22,7 +22,8 @@
         <script type="text/javascript" src="view/js/vendor/modernizr.js"></script>
     </head>
     <body>
-        <div id="top"><!-- top -->
+        <!-- top -->
+        <div id="top_upper">
             <div class="row">
                 <div class="large-3 medium-3 columns">
                     <header>
@@ -30,37 +31,39 @@
                     </header>
                 </div>
                 <div class="large-9 medium-9 columns">
-                    <div class="row">
-                        <div class="medium-12 columns" id="login-form">
-                            <ul class="inline-list right">
-                                <li><input type="email" class="data-field" id="login-id" placeholder="ejemplo@mail.com" /></li>
-                                <li><input type="password" class="data-field" id="login-pass" placeholder="Contraseña" /></li>
-                                <li><input type="button" class="button" id="login-btn" value="Login" /></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <nav class="top-bar" data-topbar>
-                            <ul class="title-area">
-                                <li class="name"></li>
-                                <li class="toggle-topbar menu-icon">
-                                    <a href="#"><span>Menu</span></a>
-                                </li>
-                            </ul>
-                            <div class="top-bar-section">
-                                <ul class="right">
-                                    <li><a href="./">Inicio</a></li>
-                                    <li><a href="servicios">Servicios</a></li>
-                                    <li><a href="conocenos">Conócenos</a></li>
-                                    <li><a href="contacto">Contacto</a></li>
-                                    <li><a href="registro">Registro</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
+                    <ul class="inline-list">
+                        <li><h3>Diseño gráfico</h3></li>
+                        <li><h3>Publicidad</h3></li>
+                    </ul>
                 </div>
             </div>
-        </div><!-- End of top -->
+        </div>
+        <div id="top_middle">
+            <div class=" row">
+                <div>
+                    <nav class="top-bar" data-topbar>
+                        <ul class="title-area">
+                            <li class="name"></li>
+                            <li class="toggle-topbar menu-icon">
+                                <a href="#"><span>Menu</span></a>
+                            </li>
+                        </ul>
+                        <div class="top-bar-section">
+                            <ul class="right">
+                                <li><a href="./">Inicio</a></li>
+                                <li><a href="servicios">Servicios</a></li>
+                                <li><a href="conocenos">Conócenos</a></li>
+                                <li><a href="contacto">Contacto</a></li>
+                                <li><a href="registro">Registro</a></li>
+                                <li><a href="login">Login</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div id="top_lower"></div>
+        <!-- End of top -->
 
         <div id="page-content"><!-- content -->
             <div class="row">
