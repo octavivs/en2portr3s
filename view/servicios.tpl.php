@@ -7,11 +7,6 @@ div.large-12{
     margin-bottom:0px;
 }
 
-h1{
-  color: #f7f7f7;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8); 
-}
-
 .row{
   max-width: 100%
 }
