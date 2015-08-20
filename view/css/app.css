@@ -43,31 +43,71 @@ span.required {
 }
 
 /* Servicios y Conocenos */
-#services {
-    text-align: center;
+div#page-content{
+  display: inherit;
 }
 
-
-
-
-#services .button,
-#services .button:hover {
-    border-radius: 40px;
-    cursor: default;
+#creatividad{
+  width: 100%;
+  height: 600px;
 }
 
-#services h4 {
-    border-radius: 40px;
-    background-color: #0c4ec8;
-    color: white;
-    font-style: italic;
-}
+#secciones {
+  position: relative; }
 
-@media only screen and (max-width: 40em) {
-    #services .button:hover {
-        cursor: pointer;
+.fullScreen {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-attachment: fixed; }
+
+#google_canvas {
+  width: 100%;
+  height: 400px;
+  border: solid 5px #eee;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8); }
+
+.half {
+  display: inline-block;
+  margin-right: -4px;
+  width: 33.33%;
+  vertical-align: top; }
+
+.halfRooms {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 0; }
+  .halfRooms img {
+    -webkit-filter: grayscale(1) blur(2px);
+    transition: all 0.4s;
+    height: 497px;
+    width: 100%; }
+    .halfRooms img:hover {
+      -webkit-filter: grayscale(0.2) blur(0px); }
+
+
+@media (max-width: 960px) {
+
+  .fullScreen {
+    min-height: 100%;
+    height: auto; }
+
+  #go_up {
+    display: none; }
+  
+  .half {
+    display: block;
+    width: 100%;
+    top: 0px; }
+  }
+
+@media (max-width: 600px) {
+    .fullScreen:nth-of-type(1) {
+      background-size: auto 100%;
     }
-}
+  }
 
 #about {
     background:  url(http://s.cdpn.io/79/cloud_tl.png) no-repeat fixed left top,
