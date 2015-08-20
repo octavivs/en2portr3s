@@ -47,6 +47,9 @@ span.required {
     text-align: center;
 }
 
+
+
+
 #services .button,
 #services .button:hover {
     border-radius: 40px;
@@ -58,10 +61,6 @@ span.required {
     background-color: #0c4ec8;
     color: white;
     font-style: italic;
-}
-
-#services img {
-    border-radius: 40px;
 }
 
 @media only screen and (max-width: 40em) {
@@ -132,6 +131,7 @@ span.required {
 #top_upper .row {
     max-width: 100%;
 }
+
 
 #top_upper img.logo {
     margin-top: 0.7rem;

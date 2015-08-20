@@ -23,19 +23,29 @@
     </head>
     <body>
         <!-- top -->
+
         <div id="top_upper">
             <div class="row">
+               <!-- <div class="large-1 medium-1 columns" >
+                    <img src="view/img/izquierda.png" alt="" class="izquierda" />
+                </div>  
+-->
                 <div class="large-3 medium-3 columns">
                     <header>
                         <img src="view/img/logo.png" alt="" class="logo" />
                     </header>
                 </div>
-                <div class="large-9 medium-9 columns">
+
+
+                <div class="large-5 medium-5 columns">
                     <ul class="inline-list">
                         <li><h3>Diseño gráfico</h3></li>
                         <li><h3>Publicidad</h3></li>
                     </ul>
                 </div>
+   <!--             <div class="large-1 medium-1 columns ">
+                    <img src="view/img/derecha.png" alt="" class="derecha" />
+                </div> --> 
             </div>
         </div>
         <div id="top_middle">
@@ -87,7 +97,7 @@
                 </div>
             </div>
         </div><!-- end of chat -->
-
+        <div id="top_lower"></div>
         <div id="bottom"><!-- bottom -->
             <footer class="row">
                 <div class="medium-4 push-8 columns">
