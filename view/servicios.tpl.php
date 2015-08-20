@@ -20,21 +20,23 @@ h1{
 <section id="secciones" class="fullScreen">
     
     <div class="half halfRooms">
-        <img src="view/img/LONA SERVICIOS.png">
+        <a href="lonaimpresa"> <img src="view/img/LONA SERVICIOS.png"> </a> 
     </div>
     <div class="half halfRooms">
-        <img src="view/img/VINIL SERVICIOS.png">
+       <a href="vinil"> <img src="view/img/VINIL SERVICIOS.png"> </a> 
+       
     </div>
     <div class="half halfRooms">
-        <img src="view/img/SUBLIMACION SERVICIOS.png">
+        <a href="sublimacion">  <img src="view/img/SUBLIMACION SERVICIOS.png"> </a> 
+        
     </div>
     <div class="half halfRooms">
-        <img src="view/img/SERIGRAFIA SERVICIOS.png">
+        <a href="serigrafia"> <img src="view/img/SERIGRAFIA SERVICIOS.png "></a> 
     </div>
     <div class="half halfRooms">
-        <img src="view/img/ROTULACION SERVICIOS.png">
+        <a href="rotulacion">  <img src="view/img/ROTULACION SERVICIOS.png"> </a> 
     </div>
     <div class="half halfRooms">
-        <img src="view/img/RECORTE SERVICIOS.png">
+      <a href="vinilcorte">  <img src="view/img/RECORTE SERVICIOS.png"> </a> 
     </div>
 </section>
