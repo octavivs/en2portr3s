@@ -29,16 +29,17 @@
                <!-- <div class="large-1 medium-1 columns" >
                     <img src="view/img/izquierda.png" alt="" class="izquierda" />
                 </div>  
--->
+-->             <img src="view/img/derecha.png" alt="" class="derecha" />
+                <img src="view/img/izquierda.png" alt="" class="izquierda" />
                 <div class="large-3 medium-3 columns">
-                    <header>
+                    <header> 
                         <img src="view/img/logo.png" alt="" class="logo" />
+                        
                     </header>
                 </div>
 
-
-                <div class="large-5 medium-5 columns">
-                    <ul class="inline-list">
+                <div class="large-5 medium-5 columns" id="titulo">
+                    <ul class="inline-list" >
                         <li><h3>Diseño gráfico</h3></li>
                         <li><h3>Publicidad</h3></li>
                     </ul>

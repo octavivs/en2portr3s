@@ -172,6 +172,44 @@ div#page-content{
     max-width: 100%;
 }
 
+@media only screen and (min-width: 1200px) {
+    #titulo{
+        padding-top:6%;
+        float:left;
+        
+    }
+}
+
+#titulo{
+    padding-top:6%;
+    float: left;
+    margin-left: 7%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .derecha, .izquierda{
+        padding-bottom: 1%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .derecha, .izquierda{
+        display:none;
+    }
+}
+
+.derecha{
+    float:right;
+}
+
+.izquierda{
+    float:left;
+}
+
+.derecha, .izquierda{
+    height: 162px;
+    padding-top:1%;
+}
 
 #top_upper img.logo {
     margin-top: 0.7rem;
