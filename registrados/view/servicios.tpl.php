@@ -14,7 +14,7 @@ div.large-12{
 
 <section id="secciones" class="fullScreen">
     
-   <div class="half halfRooms">
+    <div class="half halfRooms">
         <a href="lonaimpresa"> <img src="view/img/LONA SERVICIOS.png"> </a> 
     </div>
     <div class="half halfRooms">

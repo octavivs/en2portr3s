@@ -1,8 +1,8 @@
 <?php
 
-namespace en2portr3s\admin;
+namespace en2portr3s\registrados;
 
-use en2portr3s\admin\library\Request;
+use en2portr3s\registrados\library\Request;
 use en2portr3s\model\Account;
 
 spl_autoload_register(function ($qualified_class_name) {
@@ -22,7 +22,7 @@ spl_autoload_register(function ($qualified_class_name) {
     $namespaces = str_replace(array($vendor_name . '\\', $class_name), '', $qualified_class_name);
     $route = str_replace('\\', '/', $namespaces);
 
-   // echo $prefix . $route . $class_name . ".php" . '<br />' . PHP_EOL;
+    //echo $prefix . $route . $class_name . ".php" . '<br />' . PHP_EOL;
     require $prefix . $route . $class_name . ".php";
 });
 
