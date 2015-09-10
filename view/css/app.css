@@ -71,6 +71,53 @@ span.required {
     padding-left: 0px;
   }
 
+  
+#ser h5{
+   color: #fff;
+    font-size: 20px;
+    margin-top: 250px;
+    margin-bottom: 100px;
+    padding-right: 0px;
+    padding-left: 0px;
+    
+}
+
+#gra{
+   background: #DBDEE5; 
+   
+}
+#graf {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  #sub h5{
+   color: #fff;
+    font-size: 20px;
+    margin-top: 250px;
+    margin-bottom: 100px;
+    padding-right: 0px;
+    padding-left: 0px;
+    
+}
+
+#subl{
+   background: #DBDEE5; 
+   
+}
+#su {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+#subli {
+    
+     background-image: url("../img/BLUE.jpg");
+}
 #lona {
     
      background-image: url("../img/servilona.jpg");
@@ -80,6 +127,10 @@ span.required {
     background-image: url("../img/VEHICULAR.PNG");
 }
 
+
+#seri {
+    background-image: url("../img/rojo.PNG");
+}
 
 #ro{
     padding: 20px;
