@@ -8,30 +8,30 @@ div.large-12{
 }
 
 .row{
-  max-width: 100%
+  max-width: 100%;
 }
 </style>
 
 <section id="secciones" class="fullScreen">
-    
+
    <div class="half halfRooms">
-        <a href="lonaimpresa"> <img src="view/img/LONA SERVICIOS.png"> </a> 
+        <a href="lonaimpresa"> <img src="view/img/LONA SERVICIOS.png"> </a>
     </div>
     <div class="half halfRooms">
-       <a href="vinil"> <img src="view/img/VINIL SERVICIOS.png"> </a> 
-       
+       <a href="vinil"> <img src="view/img/VINIL SERVICIOS.png"> </a>
+
     </div>
     <div class="half halfRooms">
-        <a href="sublimacion">  <img src="view/img/SUBLIMACION SERVICIOS.png"> </a> 
-        
+        <a href="sublimacion">  <img src="view/img/SUBLIMACION SERVICIOS.png"> </a>
+
     </div>
     <div class="half halfRooms">
-        <a href="serigrafia"> <img src="view/img/SERIGRAFIA SERVICIOS.png "></a> 
+        <a href="serigrafia"> <img src="view/img/SERIGRAFIA SERVICIOS.png "></a>
     </div>
     <div class="half halfRooms">
-        <a href="rotulacion">  <img src="view/img/ROTULACION SERVICIOS.png"> </a> 
+        <a href="rotulacion">  <img src="view/img/ROTULACION SERVICIOS.png"> </a>
     </div>
     <div class="half halfRooms">
-      <a href="vinilcorte">  <img src="view/img/RECORTE SERVICIOS.png"> </a> 
+      <a href="vinilcorte">  <img src="view/img/RECORTE SERVICIOS.png"> </a>
     </div>
 </section>

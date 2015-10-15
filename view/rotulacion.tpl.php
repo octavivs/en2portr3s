@@ -1,9 +1,24 @@
-<?php
-?>
+<style type="text/css">
+div.large-12{
+  padding: 0;
+}
+
+#page-content {
+    margin-bottom:0px;
+}
+
+.row{
+  max-width: 100%;
+}
+
+.row .row{
+  margin: 0px;
+}
+</style>
 <div id="rotu" class="row">
     <div class="medium-5 medium-5 columns" >
-        <img  src="view/img/ROTULA.png">  
-    </div>     
+        <img  src="view/img/ROTULA.png">
+    </div>
 
     <div  class="medium-5 medium-5 columns" id="ro">
         <p>La rotulación de vehículos consiste en el pegado de vinil adhesivo en todo o una parte del vehículo.</p>
@@ -14,10 +29,10 @@
 
     </div>
     <div class="medium-1 medium-1 columns" id="fle">
-        <img  src="view/img/FLECHA.png">  
+        <img  src="view/img/FLECHA.png">
     </div>
-    
+
 </div>
 <div   class="row" id="se">
- <img  src="view/img/CAMIONETAS.png"> 
+ <img  src="view/img/CAMIONETAS.png">
 </div>

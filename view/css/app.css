@@ -57,12 +57,12 @@ span.required {
     margin-bottom: 100px;
     padding-right: 0px;
     padding-left: 0px;
-    
+
 }
 
 #es{
-   background: #DBDEE5; 
-   
+   background: #DBDEE5;
+
 }
 #fl {
     margin-top: 150px;
@@ -71,7 +71,7 @@ span.required {
     padding-left: 0px;
   }
 
-  
+
 #ser h5{
    color: #fff;
     font-size: 20px;
@@ -79,12 +79,12 @@ span.required {
     margin-bottom: 100px;
     padding-right: 0px;
     padding-left: 0px;
-    
+
 }
 
 #gra{
-   background: #DBDEE5; 
-   
+   background: #DBDEE5;
+
 }
 #graf {
     margin-top: 150px;
@@ -100,12 +100,12 @@ span.required {
     margin-bottom: 100px;
     padding-right: 0px;
     padding-left: 0px;
-    
+
 }
 
 #subl{
-   background: #DBDEE5; 
-   
+   background: #DBDEE5;
+
 }
 #su {
     margin-top: 150px;
@@ -115,11 +115,11 @@ span.required {
   }
 
 #subli {
-    
+
      background-image: url("../img/BLUE.jpg");
 }
 #lona {
-    
+
      background-image: url("../img/servilona.jpg");
 }
 
@@ -152,8 +152,8 @@ span.required {
 }
 
 #se{
-   background: #DBDEE5; 
-   
+   background: #DBDEE5;
+
 }
 #fle{
     margin-top: 150px;
@@ -202,7 +202,7 @@ div#page-content{
     width: 100%; }
 }
 .halfRooms img {
-    
+
     height: 497px;
     width: 100%; }
     .halfRooms img:hover {
@@ -217,7 +217,7 @@ div#page-content{
 
   #go_up {
     display: none; }
-  
+
   .half {
     display: block;
     width: 100%;
@@ -232,7 +232,7 @@ div#page-content{
 
 #about {
     background:  url(http://s.cdpn.io/79/cloud_tl.png) no-repeat fixed left top,
-        url(http://s.cdpn.io/79/cloud_br.png) no-repeat fixed right bottom, 
+        url(http://s.cdpn.io/79/cloud_br.png) no-repeat fixed right bottom,
         #cfd6da url(http://s.cdpn.io/79/zeppelin-bg.jpg) no-repeat fixed center top;
     text-align: justify ;
 }
@@ -297,7 +297,7 @@ div#page-content{
     #titulo{
         padding-top:6%;
         float:left;
-        
+
     }
 }
 
@@ -391,7 +391,7 @@ div#page-content{
     }
 
     #login-id,
-    #login-pass, 
+    #login-pass,
     #login-btn {
         margin-bottom: 1rem;
         padding: 0.5rem 1rem 0.5rem 1rem;
@@ -562,7 +562,7 @@ p.copyright {
     border-top: 1px solid #DDDDDD;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;  
+    box-sizing: border-box;
 }
 
 .msg_a {
